@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Strategic_Advising"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Strategic Advising" Height="540" Width="960">
     <Grid>
-        
+        <TextBlock Text="Welcome to Strategic Advising" FontSize="24" HorizontalAlignment="Center"></TextBlock>
     </Grid>
 </Window>
