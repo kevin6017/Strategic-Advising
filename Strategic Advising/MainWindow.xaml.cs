@@ -24,5 +24,10 @@ namespace Strategic_Advising
         {
             InitializeComponent();
         }
+
+        private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
