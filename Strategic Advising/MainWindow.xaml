@@ -8,5 +8,8 @@
         Title="Strategic Advising" Height="540" Width="960">
     <Grid>
         <TextBlock Text="Welcome to Strategic Advising" FontSize="24" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Select a major: " FontSize="18" Margin="50,50,0,0" ></TextBlock>
+        <RadioButton GroupName="majorSelect" IsChecked="True" Content="Computer Science" FontSize="18" Margin="200,50,0,0"></RadioButton>
+        <RadioButton GroupName="majorSelect" Content="Mathematics" FontSize="18" Margin="400,50,0,0"></RadioButton>
     </Grid>
 </Window>
