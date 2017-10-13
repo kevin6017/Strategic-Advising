@@ -8,8 +8,15 @@
         Title="Strategic Advising" Height="540" Width="960">
     <Grid>
         <TextBlock Text="Welcome to Strategic Advising" FontSize="24" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="Select a major: " FontSize="18" Margin="50,50,0,0" ></TextBlock>
+        <TextBlock Text="Select a Major: " FontSize="18" Margin="50,50,0,0" ></TextBlock>
         <RadioButton GroupName="majorSelect" IsChecked="True" Content="Computer Science" FontSize="18" Margin="200,50,0,0"></RadioButton>
         <RadioButton GroupName="majorSelect" Content="Mathematics" FontSize="18" Margin="400,50,0,0"></RadioButton>
+        <TextBlock Text="Minimum Credit Hours: " FontSize="18" HorizontalAlignment="Center" Margin="50,85,712,-36"></TextBlock>
+        <TextBlock Text="Maximum Credit Hours: " FontSize="18" HorizontalAlignment="Center" Margin="50,120,708,-71"></TextBlock>
+        <ComboBox HorizontalAlignment="Left" Margin="245,91,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="245,128,0,0" VerticalAlignment="Top" Width="120"/>
+
+
+
     </Grid>
 </Window>
