@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace Strategic_Advising
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CompletedClasses.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CompletedClasses : Page
     {
-        public MainWindow()
+        public CompletedClasses()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }
