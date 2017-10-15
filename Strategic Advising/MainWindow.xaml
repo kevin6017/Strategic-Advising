@@ -7,34 +7,6 @@
         mc:Ignorable="d"
         Title="Strategic Advising" Height="540" Width="960" ResizeMode="NoResize">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Welcome to Strategic Advising" FontSize="24" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Row="1" Text="Select a Major: " FontSize="18" HorizontalAlignment="Left" Margin="60,25,0,2" Grid.RowSpan="2"/>
-        <RadioButton Grid.Row="1" GroupName="majorSelect" IsChecked="True" Content="Computer Science" FontSize="18" Margin="200,26,0,5"/>
-        <RadioButton Grid.Row="1" GroupName="majorSelect" IsChecked="False" Content="Mathematics" FontSize="18" Margin="400,25,-200,-11" Grid.RowSpan="2"/>
-        <TextBlock Grid.Row="2" Text="Minimum Credit Hour: " FontSize="18" Margin="60,30,-60,-30" />
-        <TextBlock Grid.Row="2" Text="Maximum Credit Hour: " FontSize="18" Margin="60,75,-60,-75" />
-        <ComboBox Grid.Row="2" Margin="251,30,571,-30" >
-            <ComboBoxItem Content="Test 1" HorizontalAlignment="Left" Width="120"/>
-            <ComboBoxItem Content="Test 2" HorizontalAlignment="Left" Width="120"/>
-            <ComboBoxItem Content="Test 3" HorizontalAlignment="Left" Width="120"/>
-        </ComboBox>
-        <ComboBox Grid.Row="2" Margin="252,75,571,-75" >
-            <ComboBoxItem Content="Test 4" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem Content="Test 5" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem Content="Test 6" HorizontalAlignment="Left" Width="118"/>
-        </ComboBox>
-        <TextBlock Grid.Row="2" Text="Start Semester: " FontSize="18" Margin="60,165,-60,-165"/>
-        <TextBlock Grid.Row="2" Text="End Semester: " FontSize="18" Margin="400,165,-400,-165"/>
-        <TextBox Grid.Row="2" Margin="210,165,617,-165"/>
-        <TextBox Grid.Row="2" Margin="530,165,297,-165"/>
-        <TextBlock Grid.Row="2" Text="Current Semester: " FontSize="18" Margin="60,220,-60,-220"/>
-        <TextBox Grid.Row="2" Margin="210,220,617,-220"/>
-        <Button Grid.Row="2" Content="Editor" Margin="30,370,842,-370" Click="Button_Click"/>
-        <Button Grid.Row="2" Content="Submit" Margin="848,370,24,-370" Click="Button_Click_1"/>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

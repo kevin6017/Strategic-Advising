@@ -9,6 +9,6 @@
       Title="CompletedClasses">
 
     <Grid>
-        
+        <TextBlock Text="This is the completed classes page" ></TextBlock>
     </Grid>
 </Page>

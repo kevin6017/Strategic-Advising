@@ -16,16 +16,24 @@ using System.Windows.Shapes;
 namespace Strategic_Advising
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Startup.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Startup : Page
     {
-        public MainWindow()
+        public Startup()
         {
             InitializeComponent();
-            MainFrame.Content = new Startup();
         }
 
-        
+        private void onSubmit(object sender, RoutedEventArgs e)
+        {
+            CompletedClasses window = new CompletedClasses();
+            this.NavigationService.Navigate(window);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
