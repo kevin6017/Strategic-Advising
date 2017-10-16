@@ -5,10 +5,25 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Strategic_Advising"
       mc:Ignorable="d" 
-      d:DesignHeight="540" d:DesignWidth="900"
+      d:DesignHeight="725" d:DesignWidth="1200"
       Title="Editor">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Welcome to Strategic Advising" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="65,119,0,-114" Grid.Row="2" FontSize="18" TextWrapping="Wrap" Text="Select Class List: " Height="25" VerticalAlignment="Top"/>
+        <Button Content="Computer Science" HorizontalAlignment="Left" Margin="214,119,0,-85" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="131"/>
+        <Button Content="Mathematics" HorizontalAlignment="Left" Margin="426,119,0,-80" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="132"/>
+        <Button Content="Core Classes" HorizontalAlignment="Left" Margin="642,119,0,-81" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="132"/>
+        <Button Content="Honors Classes" HorizontalAlignment="Left" Margin="857,119,0,-78" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="132"/>
+        <Button Content="Home" HorizontalAlignment="Left" Margin="1070,602,0,-525" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="80" Click="homeClick"/>
+        <!-- uncomment out the following 3 lines to remove the octopus -->
+        <!-- <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\shane\Source\Repos\Strategic-Advising\Strategic Advising\res\octopus.jpg" />
+        </Grid.Background> -->
     </Grid>
 </Page>

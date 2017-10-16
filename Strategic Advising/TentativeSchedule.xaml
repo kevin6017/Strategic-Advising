@@ -5,10 +5,23 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Strategic_Advising"
       mc:Ignorable="d" 
-      d:DesignHeight="540" d:DesignWidth="900"
+      d:DesignHeight="725" d:DesignWidth="1200"
       Title="TentativeSchedule">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Tentative Schedule" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <Button Content="Home" HorizontalAlignment="Left" Margin="34,8,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click" Grid.RowSpan="2"/>
+        <Button Content="Export" HorizontalAlignment="Left" Margin="1067,576,0,-573" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="80"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="39,576,0,-539" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="80" Click="Button_Click_1"/>
+        <!-- uncomment out the following 3 lines to remove the octopus -->
+        <!-- <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\shane\Source\Repos\Strategic-Advising\Strategic Advising\res\octopus.jpg" />
+        </Grid.Background> -->
     </Grid>
+    
 </Page>

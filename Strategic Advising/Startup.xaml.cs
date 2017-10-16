@@ -31,9 +31,10 @@ namespace Strategic_Advising
             this.NavigationService.Navigate(window);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void editorClick(object sender, RoutedEventArgs e)
         {
-
+            Editor window = new Editor();
+            this.NavigationService.Navigate(window);
         }
     }
 }

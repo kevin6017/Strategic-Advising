@@ -24,5 +24,11 @@ namespace Strategic_Advising
         {
             InitializeComponent();
         }
+
+        private void homeClick(object sender, RoutedEventArgs e)
+        {
+            Startup window = new Startup();
+            this.NavigationService.Navigate(window);
+        }
     }
 }

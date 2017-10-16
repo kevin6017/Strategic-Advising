@@ -5,10 +5,424 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Strategic_Advising"
       mc:Ignorable="d" 
-      d:DesignHeight="540" d:DesignWidth="900"
+      d:DesignHeight="725" d:DesignWidth="1200"
       Title="CompletedClasses">
 
     <Grid>
-        <TextBlock Text="This is the completed classes page" ></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Completed Classes" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <!--<TextBlock HorizontalAlignment="Left" Margin="200,40,0,-27" Grid.Row="2" TextWrapping="Wrap" Text="Core Classes" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="820,40,0,-26" Grid.Row="2" TextWrapping="Wrap" Text="Major Classes" VerticalAlignment="Top" FontSize="24"/>-->
+        <FlowDocumentReader Margin="74,70,-74,-69" Grid.RowSpan="3">
+            <FlowDocument>
+                <Table CellSpacing="5">
+                    <Table.Columns>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>
+
+                        <TableRow Background="SkyBlue">
+                            <TableCell ColumnSpan="3" TextAlignment="Center">
+                                <Paragraph FontSize="18pt" FontWeight="Bold">Core Classes</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="LightGoldenrodYellow">
+                            <TableCell>
+                                <Paragraph FontSize="12pt" FontWeight="Bold">Yes/No</Paragraph>
+                            </TableCell>
+
+                            <TableCell>
+                                <Paragraph FontSize="12pt" FontWeight="Bold">Course Name</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph FontSize="12pt" FontWeight="Bold">Credit Hours</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>COMM210</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>English 103</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Egnlish 104</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Fine Arts</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>History</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Humanities</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Math 161/165</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3/4</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Math 162/166</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3/4</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Natural Sciences</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3-6</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Personal Finance</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>1/3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Physical Fitness</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>2</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Social Sciences</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>TIER 2: Fine Arts/Design/ Humanities</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>TIER 2: Natural Science/Social Science</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Writing Proficiency</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>0</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentReader>
+
+        <FlowDocumentReader Margin="704,70,-704,-70" Grid.RowSpan="3">
+            <FlowDocument>
+                <Table CellSpacing="5">
+                    <Table.Columns>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>
+
+                        <TableRow Background="SkyBlue">
+                            <TableCell ColumnSpan="3" TextAlignment="Center">
+                                <Paragraph FontSize="18pt" FontWeight="Bold">Major Classes</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="LightGoldenrodYellow">
+                            <TableCell>
+                                <Paragraph FontSize="12pt" FontWeight="Bold">Yes/No</Paragraph>
+                            </TableCell>
+
+                            <TableCell>
+                                <Paragraph FontSize="12pt" FontWeight="Bold">Course Name</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph FontSize="12pt" FontWeight="Bold">Credit Hours</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS120</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>4</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS121</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>4</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS222</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS224</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS230</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS239</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>1</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS327</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS335</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS346</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS376</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS380</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="White">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS495</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph>Checkbox here</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>CS498</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>3</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentReader>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="40,148.333,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click_1" />
+        <Button Content="Continue" HorizontalAlignment="Left" Margin="1072,148.333,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click" />
+        <!-- uncomment the following 3 lines to show the owl -->
+        <!-- <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\shane\Source\Repos\Strategic-Advising\Strategic Advising\res\Owl.jpg" />
+        </Grid.Background> -->
     </Grid>
 </Page>

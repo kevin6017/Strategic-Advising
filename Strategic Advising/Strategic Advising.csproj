@@ -120,5 +120,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\Owl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\octopus.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
