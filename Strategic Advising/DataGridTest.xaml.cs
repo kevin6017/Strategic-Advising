@@ -20,9 +20,9 @@ namespace Strategic_Advising
     /// <summary>
     /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class DataGridTest : Page
     {
-        public Page1()
+        public DataGridTest()
         {
             InitializeComponent();
         }
@@ -33,8 +33,16 @@ namespace Strategic_Advising
         {
             dataTable = new DataTable("sampleTable");
             DataColumn dc1 = new DataColumn("CourseID", typeof(string));
+            DataColumn dc2 = new DataColumn("Course Num", typeof(string));
             dataTable.Columns.Add(dc1);
+            dataTable.Columns.Add(dc2);
             sampleGrid.ItemsSource = dataTable.DefaultView;
+            DataRow dr = dataTable.NewRow();
+            dr[0] = "CS120";
+            dr[1] = "CS121";
+            dataTable.Rows.Add(dr);
+            sampleGrid.ItemsSource = dataTable.DefaultView;
+
         }
         
     }

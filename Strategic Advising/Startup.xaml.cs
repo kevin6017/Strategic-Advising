@@ -27,8 +27,10 @@ namespace Strategic_Advising
 
         private void onSubmit(object sender, RoutedEventArgs e)
         {
-            CompletedClasses window = new CompletedClasses();
-            this.NavigationService.Navigate(window);
+            //CompletedClasses window = new CompletedClasses();
+            //this.NavigationService.Navigate(window);
+            DataGridTest test = new DataGridTest();
+            this.NavigationService.Navigate(test);
         }
 
         private void editorClick(object sender, RoutedEventArgs e)
