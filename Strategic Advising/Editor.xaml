@@ -23,7 +23,7 @@
         <Button Content="Home" HorizontalAlignment="Left" Margin="1070,602,0,-525" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="80" Click="homeClick"/>
         <!-- uncomment out the following 3 lines to remove the octopus -->
         <!-- <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\shane\Source\Repos\Strategic-Advising\Strategic Advising\res\octopus.jpg" />
+            <ImageBrush ImageSource="res\octopus.jpg" />
         </Grid.Background> -->
     </Grid>
 </Page>

@@ -422,7 +422,7 @@
         <Button Content="Continue" HorizontalAlignment="Left" Margin="1072,148.333,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click" />
         <!-- uncomment the following 3 lines to show the owl -->
         <!-- <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\shane\Source\Repos\Strategic-Advising\Strategic Advising\res\Owl.jpg" />
+            <ImageBrush ImageSource="res\Owl.jpg" />
         </Grid.Background> -->
     </Grid>
 </Page>
