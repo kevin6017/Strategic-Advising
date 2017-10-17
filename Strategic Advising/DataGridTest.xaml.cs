@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Strategic_Advising
 {
@@ -32,18 +34,45 @@ namespace Strategic_Advising
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dataTable = new DataTable("sampleTable");
-            DataColumn dc1 = new DataColumn("CourseID", typeof(string));
-            DataColumn dc2 = new DataColumn("Course Num", typeof(string));
+            DataColumn dc1 = new DataColumn("FName", typeof(string));
+            DataColumn dc2 = new DataColumn("LName", typeof(string));
             dataTable.Columns.Add(dc1);
             dataTable.Columns.Add(dc2);
             sampleGrid.ItemsSource = dataTable.DefaultView;
-            DataRow dr = dataTable.NewRow();
-            dr[0] = "CS120";
-            dr[1] = "CS121";
-            dataTable.Rows.Add(dr);
-            sampleGrid.ItemsSource = dataTable.DefaultView;
-
+            var jsonObject = loadJson();
+            for (var i=0; i<jsonObject.Count; i++)
+            {
+                DataRow dr = dataTable.NewRow();
+                dr[0] = jsonObject[i].fname;
+                dr[1] = jsonObject[i].lname;
+                dataTable.Rows.Add(dr);
+                sampleGrid.ItemsSource = dataTable.DefaultView;
+            }
         }
+
+        private List<person> loadJson()
+        {
+            string json = System.IO.File.ReadAllText(path: "../../res/tsconfig1.json" );
+            var jsonObject = JsonConvert.DeserializeObject<List<person>>(json);
+            return jsonObject;
+            
+            
+        }
+
+        class person
+        {
+            public string fname
+            {
+                get; set;
+            }
+
+            public string lname
+            {
+                get; set;
+            }
+        }
+
+        
         
     }
 }

@@ -9,7 +9,9 @@
       Title="Page1" Loaded="Window_Loaded">
 
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="321" VerticalAlignment="Top" Width="313" Margin="73,143,0,0" AutoGenerateColumns="True" Name="sampleGrid"/>
+        <DataGrid HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto" Margin="73,143,0,0" AutoGenerateColumns="True" Name="sampleGrid">
+       
+        </DataGrid>
         <TextBlock>This is the datagrid page</TextBlock>
     </Grid>
 </Page>
