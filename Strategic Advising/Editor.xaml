@@ -14,16 +14,25 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Welcome to Strategic Advising" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-        <TextBlock HorizontalAlignment="Left" Margin="65,119,0,-114" Grid.Row="2" FontSize="18" TextWrapping="Wrap" Text="Select Class List: " Height="25" VerticalAlignment="Top"/>
-        <Button Content="Computer Science" HorizontalAlignment="Left" Margin="214,119,0,-85" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="131"/>
-        <Button Content="Mathematics" HorizontalAlignment="Left" Margin="426,119,0,-80" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="132"/>
-        <Button Content="Core Classes" HorizontalAlignment="Left" Margin="642,119,0,-81" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="132"/>
-        <Button Content="Honors Classes" HorizontalAlignment="Left" Margin="857,119,0,-78" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="132"/>
+        <TextBlock Grid.Row="0" Text="Class List Editor" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="65,119,0,-114" Grid.Row="2" FontSize="18" TextWrapping="Wrap" Text="Select Class List to Edit: " Height="25" VerticalAlignment="Top"/>
         <Button Content="Home" HorizontalAlignment="Left" Margin="1070,602,0,-525" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="80" Click="homeClick"/>
+        <!-- <RadioButton Content="Computer Science" FontSize="18" HorizontalAlignment="Left" Margin="280,125,0,0" Grid.Row="2" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton Content="Mathematics" FontSize="18" HorizontalAlignment="Left" Margin="480,125,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <RadioButton Content="University Core" FontSize="18" HorizontalAlignment="Left" Margin="680,125,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <RadioButton Content="Honors Core" FontSize="18" HorizontalAlignment="Left" Margin="880,125,0,0" Grid.Row="2" VerticalAlignment="Top"/> -->
+        <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="450,84,0,0" Grid.Row="2"/>
+        <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="597,84,0,0" Grid.Row="2" RenderTransformOrigin="0.85,-4.367"/>
+        <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="743,84,0,0" Grid.Row="2"/>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="269,84,0,-18" Grid.Row="2" VerticalAlignment="Top" Width="120">
+            <ListBoxItem Content="Computer Science"/>
+            <ListBoxItem Content="Mathematics"/>
+            <ListBoxItem Content="University Core"/>
+            <ListBoxItem Content="Honors Core"/>
+        </ListBox>
         <!-- uncomment out the following 3 lines to remove the octopus -->
         <!-- <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\shane\Source\Repos\Strategic-Advising\Strategic Advising\res\octopus.jpg" />
+            <ImageBrush ImageSource="res\octopus.jpg" />
         </Grid.Background> -->
     </Grid>
 </Page>
