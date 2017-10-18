@@ -34,26 +34,35 @@ namespace Strategic_Advising
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dataTable = new DataTable("sampleTable");
-            DataColumn dc1 = new DataColumn("FName", typeof(string));
-            DataColumn dc2 = new DataColumn("LName", typeof(string));
+            DataColumn dc1 = new DataColumn("Course Number", typeof(string));
+            DataColumn dc2 = new DataColumn("Credit Hours", typeof(int));
+            DataColumn dc3 = new DataColumn("Spring Class", typeof(bool));
+            DataColumn dc4 = new DataColumn("Fall Class", typeof(bool));
+            DataColumn dc5 = new DataColumn("Prerequisites", typeof(string[]));
             dataTable.Columns.Add(dc1);
             dataTable.Columns.Add(dc2);
+            dataTable.Columns.Add(dc3);
+            dataTable.Columns.Add(dc4);
+            dataTable.Columns.Add(dc5);
             sampleGrid.ItemsSource = dataTable.DefaultView;
-            var jsonObject = loadJson();
-            for (var i=0; i<jsonObject.Count; i++)
+            var JSONclasses = loadCourseList();
+            for (var i=0; i<JSONclasses.Count; i++)
             {
                 DataRow dr = dataTable.NewRow();
-                dr[0] = jsonObject[i].fname;
-                dr[1] = jsonObject[i].lname;
+                dr[0] = JSONclasses[i].courseNumber;
+                dr[1] = JSONclasses[i].creditHours;
+                dr[2] = JSONclasses[i].fall;
+                dr[3] = JSONclasses[i].spring;
+                dr[4] = JSONclasses[i].prerequisites;
                 dataTable.Rows.Add(dr);
                 sampleGrid.ItemsSource = dataTable.DefaultView;
             }
         }
 
-        private List<person> loadJson()
+        private List<Course> loadCourseList()
         {
-            string json = System.IO.File.ReadAllText(path: "../../res/tsconfig1.json" );
-            var jsonObject = JsonConvert.DeserializeObject<List<person>>(json);
+            string json = System.IO.File.ReadAllText(path: "../../res/CSclasses.json" );
+            var jsonObject = JsonConvert.DeserializeObject<List<Course>>(json);
             return jsonObject;
             
             

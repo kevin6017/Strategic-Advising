@@ -1,0 +1,29 @@
+[
+
+  {
+    "courseNumber": "CS 120",
+    "creditHours": 4,
+    "fall": true,
+    "spring": false,
+    "prerequisites": [ "" ]
+  },
+  {
+    "courseNumber": "CS 121",
+    "creditHours": 4,
+    "fall": true,
+    "spring": false,
+    "prerequisites": [ "" ]
+  }
+
+]
+/*
+  {
+    "courseNumber":,
+    "creditHours":,
+    "fall":,
+    "spring": ,
+    "prerequisites": 
+  },
+
+
+*/
