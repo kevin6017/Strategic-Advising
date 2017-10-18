@@ -8,7 +8,7 @@
       d:DesignHeight="725" d:DesignWidth="1200"
       Title="Editor">
 
-    <Grid>
+    <Grid Background="LightCyan">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -21,16 +21,16 @@
         <RadioButton Content="Mathematics" FontSize="18" HorizontalAlignment="Left" Margin="480,125,0,0" Grid.Row="2" VerticalAlignment="Top"/>
         <RadioButton Content="University Core" FontSize="18" HorizontalAlignment="Left" Margin="680,125,0,0" Grid.Row="2" VerticalAlignment="Top"/>
         <RadioButton Content="Honors Core" FontSize="18" HorizontalAlignment="Left" Margin="880,125,0,0" Grid.Row="2" VerticalAlignment="Top"/> -->
-        <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="450,84,0,0" Grid.Row="2"/>
-        <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="597,84,0,0" Grid.Row="2" RenderTransformOrigin="0.85,-4.367"/>
-        <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="743,84,0,0" Grid.Row="2"/>
+        <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="475,84,0,0" Grid.Row="2"/>
+        <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="650,84,0,0" Grid.Row="2" RenderTransformOrigin="0.85,-4.367"/>
+        <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="825,84,0,0" Grid.Row="2"/>
         <ListBox HorizontalAlignment="Left" Height="100" Margin="269,84,0,-18" Grid.Row="2" VerticalAlignment="Top" Width="120">
             <ListBoxItem Content="Computer Science"/>
             <ListBoxItem Content="Mathematics"/>
             <ListBoxItem Content="University Core"/>
             <ListBoxItem Content="Honors Core"/>
         </ListBox>
-        <!-- uncomment out the following 3 lines to remove the octopus -->
+        <!-- uncomment out the following 3 lines to show the octopus -->
         <!-- <Grid.Background>
             <ImageBrush ImageSource="res\octopus.jpg" />
         </Grid.Background> -->
