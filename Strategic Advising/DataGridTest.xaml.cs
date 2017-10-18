@@ -72,7 +72,16 @@ namespace Strategic_Advising
             }
         }
 
-        
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TentativeSchedule window = new TentativeSchedule();
+            this.NavigationService.Navigate(window);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Startup window = new Startup();
+            this.NavigationService.Navigate(window);
+        }
     }
 }
