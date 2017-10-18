@@ -9,7 +9,7 @@
       Title="Page1" Loaded="Window_Loaded">
 
     <Grid Background="LightCyan">
-        <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,143,0,0" AutoGenerateColumns="True" Name="sampleGrid"/>
+        <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,143,0,0" AutoGenerateColumns="True" IsReadOnly="True" Name="sampleGrid"/>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Completed Class Lists" FontSize="24" FontWeight="Bold" VerticalAlignment="Top"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="51,631,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click_1"/>
         <Button Content="Continue" HorizontalAlignment="Left" Margin="1061,631,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click"/>
