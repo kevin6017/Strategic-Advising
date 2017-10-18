@@ -10,6 +10,8 @@ namespace Strategic_Advising
     {
         public string courseNumber { get; set; }
 
+        public string courseTitle { get; set; }
+
         public string creditHours { get; set; }
 
         public bool fall { get; set; }

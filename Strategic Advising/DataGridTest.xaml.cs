@@ -35,25 +35,28 @@ namespace Strategic_Advising
         {
             dataTable = new DataTable("sampleTable");
             DataColumn dc1 = new DataColumn("Course Number", typeof(string));
-            DataColumn dc2 = new DataColumn("Credit Hours", typeof(int));
-            DataColumn dc3 = new DataColumn("Spring Class", typeof(bool));
-            DataColumn dc4 = new DataColumn("Fall Class", typeof(bool));
-            DataColumn dc5 = new DataColumn("Prerequisites", typeof(string[]));
+            DataColumn dc2 = new DataColumn("Course Title", typeof(string));
+            DataColumn dc3 = new DataColumn("Credit Hours", typeof(int));
+            DataColumn dc4 = new DataColumn("Spring Class", typeof(bool));
+            DataColumn dc5 = new DataColumn("Fall Class", typeof(bool));
+            DataColumn dc6 = new DataColumn("Prerequisites", typeof(string[]));
             dataTable.Columns.Add(dc1);
             dataTable.Columns.Add(dc2);
             dataTable.Columns.Add(dc3);
             dataTable.Columns.Add(dc4);
             dataTable.Columns.Add(dc5);
+            dataTable.Columns.Add(dc6);
             sampleGrid.ItemsSource = dataTable.DefaultView;
             var JSONclasses = loadCourseList();
             for (var i=0; i<JSONclasses.Count; i++)
             {
                 DataRow dr = dataTable.NewRow();
                 dr[0] = JSONclasses[i].courseNumber;
-                dr[1] = JSONclasses[i].creditHours;
-                dr[2] = JSONclasses[i].fall;
-                dr[3] = JSONclasses[i].spring;
-                dr[4] = JSONclasses[i].prerequisites;
+                dr[1] = JSONclasses[i].courseTitle;
+                dr[2] = JSONclasses[i].creditHours;
+                dr[3] = JSONclasses[i].fall;
+                dr[4] = JSONclasses[i].spring;
+                dr[5] = JSONclasses[i].prerequisites;
                 dataTable.Rows.Add(dr);
                 sampleGrid.ItemsSource = dataTable.DefaultView;
             }
