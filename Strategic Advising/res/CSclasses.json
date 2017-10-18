@@ -49,6 +49,22 @@
     "prerequisites": [ "CS 222" ]
   },
   {
+    "courseNumber": "CS 3XX",
+    "courseTitle": "Elective Placeholder 1",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [ "CS 121" ]
+  },
+  {
+    "courseNumber": "CS 3XY",
+    "courseTitle": "Elective Placeholder 2",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [ "CS 121", "CS 222" ]
+  },
+  {
     "courseNumber": "CS 327",
     "courseTitle": "Distributed Processing and Networks",
     "creditHours": 3,
@@ -89,6 +105,22 @@
     "prerequisites": [ "CS 224" ]
   },
   {
+    "courseNumber": "CS 4XX",
+    "courseTitle": "Elective Placeholder 3",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [ "CS 121", "CS 222" ]
+  },
+  {
+    "courseNumber": "CS 4XY",
+    "courseTitle": "Elective Placeholder 4",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [ "CS 121", "CS 222" ]
+  },
+  {
     "courseNumber": "CS 495",
     "courseTitle": "Software Engineering 1",
     "creditHours": 3,
@@ -102,7 +134,7 @@
     "creditHours": 3,
     "fall": false,
     "spring": true,
-    "prerequisites": ["CS 495"]
+    "prerequisites": [ "CS 495" ]
   }
 ]
 /* Template for copypasta

@@ -48,14 +48,14 @@ namespace Strategic_Advising
             dataTable.Columns.Add(dc6);
             sampleGrid.ItemsSource = dataTable.DefaultView;
             var JSONclasses = loadCourseList();
-            for (var i=0; i<JSONclasses.Count; i++)
+            for (var i=0; i<JSONclasses.Count; i++) //theres an extra row being created here? (Issue #2)
             {
                 DataRow dr = dataTable.NewRow();
                 dr[0] = JSONclasses[i].courseNumber;
                 dr[1] = JSONclasses[i].courseTitle;
                 dr[2] = JSONclasses[i].creditHours;
-                dr[3] = JSONclasses[i].fall;
-                dr[4] = JSONclasses[i].spring;
+                dr[3] = JSONclasses[i].fall; //these two are clickable (Issue #1)
+                dr[4] = JSONclasses[i].spring; //not sure how to lock them
                 dr[5] = JSONclasses[i].prerequisites;
                 dataTable.Rows.Add(dr);
                 sampleGrid.ItemsSource = dataTable.DefaultView;
