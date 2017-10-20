@@ -56,7 +56,7 @@ namespace Strategic_Advising
                 dr[2] = JSONclasses[i].creditHours;
                 dr[3] = JSONclasses[i].fall; //these two are clickable (Issue #1)
                 dr[4] = JSONclasses[i].spring; //not sure how to lock them
-                dr[5] = JSONclasses[i].prerequisites;
+                dr[5] = JSONclasses[i].prerequisites; //not sure how to make this print actual values
                 dataTable.Rows.Add(dr);
                 sampleGrid.ItemsSource = dataTable.DefaultView;
             }
@@ -71,7 +71,7 @@ namespace Strategic_Advising
             
         }
 
-        class person
+        class person //test code that is no longer useful
         {
             public string fname
             {

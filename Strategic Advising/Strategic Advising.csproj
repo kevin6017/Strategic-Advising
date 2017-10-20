@@ -123,6 +123,7 @@
     </None>
     <None Include="res\tsconfig1.json" />
     <None Include="res\CSclasses.json" />
+    <EmbeddedResource Include="res\HonorsCoreClasses.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
