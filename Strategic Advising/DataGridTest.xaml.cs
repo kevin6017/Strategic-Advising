@@ -16,6 +16,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace Strategic_Advising
 {
@@ -30,6 +31,8 @@ namespace Strategic_Advising
         }
 
         DataTable dataTable;
+        Assembly _assembly;
+        StreamReader _textStreamReader;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -56,7 +59,7 @@ namespace Strategic_Advising
                 dr[2] = JSONclasses[i].creditHours;
                 dr[3] = JSONclasses[i].fall; //these two are clickable (Issue #1)
                 dr[4] = JSONclasses[i].spring; //not sure how to lock them
-                dr[5] = JSONclasses[i].prerequisites; //not sure how to make this print actual values
+                dr[5] = JSONclasses[i].prerequisites;
                 dataTable.Rows.Add(dr);
                 sampleGrid.ItemsSource = dataTable.DefaultView;
             }
@@ -64,24 +67,12 @@ namespace Strategic_Advising
 
         private List<Course> loadCourseList()
         {
-            string json = System.IO.File.ReadAllText(path: "../../res/CSclasses.json" );
+            _assembly = Assembly.GetExecutingAssembly();
+            _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("Strategic_Advising.res.CSclasses.json"));
+            string json = _textStreamReader.ReadToEnd();
             var jsonObject = JsonConvert.DeserializeObject<List<Course>>(json);
             return jsonObject;
             
-            
-        }
-
-        class person //test code that is no longer useful
-        {
-            public string fname
-            {
-                get; set;
-            }
-
-            public string lname
-            {
-                get; set;
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
