@@ -8,7 +8,7 @@
       d:DesignHeight="725" d:DesignWidth="1200"
       Title="Editor">
 
-    <Grid Background="LightCyan">
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
