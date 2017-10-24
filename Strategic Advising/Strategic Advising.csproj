@@ -127,7 +127,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="res\HonorsCoreClasses.json" />
+    <EmbeddedResource Include="res\HonorsCoreClasses.json" />
     <None Include="res\tsconfig1.json" />
     <EmbeddedResource Include="res\CSclasses.json" />
   </ItemGroup>
