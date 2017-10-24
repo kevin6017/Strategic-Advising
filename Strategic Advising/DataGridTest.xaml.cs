@@ -42,7 +42,7 @@ namespace Strategic_Advising
             DataColumn dc3 = new DataColumn("Credit Hours", typeof(int));
             DataColumn dc4 = new DataColumn("Spring Class", typeof(bool));
             DataColumn dc5 = new DataColumn("Fall Class", typeof(bool));
-            DataColumn dc6 = new DataColumn("Prerequisites", typeof(string[]));
+            DataColumn dc6 = new DataColumn("Prerequisites", typeof(string));
             dataTable.Columns.Add(dc1);
             dataTable.Columns.Add(dc2);
             dataTable.Columns.Add(dc3);
@@ -59,7 +59,7 @@ namespace Strategic_Advising
                 dr[2] = JSONclasses[i].creditHours;
                 dr[3] = JSONclasses[i].fall; //these two are clickable (Issue #1)
                 dr[4] = JSONclasses[i].spring; //not sure how to lock them
-                dr[5] = JSONclasses[i].prerequisites;
+                dr[5] = string.Join(", ", JSONclasses[i].prerequisites);
                 dataTable.Rows.Add(dr);
                 sampleGrid.ItemsSource = dataTable.DefaultView;
             }
