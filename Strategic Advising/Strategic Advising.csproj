@@ -62,6 +62,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Semester.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="DataGridTest.xaml.cs">
       <DependentUpon>DataGridTest.xaml</DependentUpon>
@@ -128,7 +129,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <EmbeddedResource Include="res\HonorsCoreClasses.json" />
-    <None Include="res\tsconfig1.json" />
+    <None Include="res\SampleSchedule.json" />
     <EmbeddedResource Include="res\CSclasses.json" />
   </ItemGroup>
   <ItemGroup>
