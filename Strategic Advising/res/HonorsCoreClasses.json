@@ -82,10 +82,10 @@
   {
     "courseNumber": "HONR 202",
     "courseTitle": "Inquires in the Middle Ages & 21st Century",
-    "creditHours":,
-    "fall":,
-    "spring":,
-    "prerequisites": []
+    "creditHours":3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [""]
   }
 ]
 /* Template for copypasta
