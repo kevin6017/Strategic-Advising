@@ -9,7 +9,7 @@
       Title="TentativeSchedule"
       Loaded="Window_Loaded">
 
-    <Grid Background="LightCyan">
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
