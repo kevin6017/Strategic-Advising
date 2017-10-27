@@ -31,24 +31,21 @@ namespace Strategic_Advising
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            /*System.Windows.Controls.DataGrid dataGrid = new DataGrid();
-            DataTable dt = new DataTable("sampleTable");
-            DataColumn dc1 = new DataColumn("Course Number", typeof(string));
-            dt.Columns.Add(dc1);
-            DataRow dr = dt.NewRow();
-            dr[0] = "CS222";
-            dt.Rows.Add(dr);
-            dataGrid.ItemsSource = dt.DefaultView;
-            stackPanel.Children.Add(dataGrid);*/
+            System.Windows.Controls.DataGrid bigDG = new DataGrid();
+            DataTable bigDataTable = new DataTable("massiveTable");
+            bigDataTable.Columns.Add(new DataColumn(("Fall"), typeof(DataGrid)));
+            bigDataTable.Columns.Add(new DataColumn(("Spring"), typeof(DataGrid)));
+            List<DataGrid> dataGridList = new List<DataGrid>();
 
             var jsonSchedule = loadSchedule();
+
+            bool isFall = true;
+
             for (var i = 0; i<jsonSchedule.Count; i++)
             {
                 System.Windows.Controls.DataGrid dg = new DataGrid();
                 DataTable dt = new DataTable("semesterTable");
                 dt.Columns.Add(new DataColumn("Course Title", typeof(string)));
-                /*dr[0] = string.Join(" ", jsonSchedule[i].classes);
-                dt.Rows.Add(dr);*/
                 for (var j = 0; j<jsonSchedule[i].classes.Count(); j++)
                 {
                     DataRow dr = dt.NewRow();
@@ -56,11 +53,36 @@ namespace Strategic_Advising
                     dt.Rows.Add(dr);
                 }
                 dg.ItemsSource = dt.DefaultView;
-                stackPanel.Children.Add(dg);
+                //dataGridList.Add(dg);
+                if (isFall)
+                {
+                    stackPanelFall.Children.Add(dg);
+                }
+                else
+                {
+                    stackPanelSpring.Children.Add(dg);
+                }
+                isFall = !isFall;
             }
-            
 
-            
+            /*while (dataGridList.Count > 0)
+            {
+                DataRow dr = bigDataTable.NewRow();
+                if (dataGridList.Count != 1) { // if there is not just one semester left                    
+                    dr[0] = dataGridList.ElementAt(0);
+                    dataGridList.Remove(dataGridList[0]);
+                    dr[1] = dataGridList[0];
+                    dataGridList.Remove(dataGridList[0]);                    
+                }
+                else
+                {
+                    dr[0] = dataGridList[0];
+                    dataGridList.Remove(dataGridList[0]);
+                }
+                bigDataTable.Rows.Add(dr);
+            }
+            bigDG.ItemsSource = bigDataTable.DefaultView;
+            stackPanel.Children.Add(bigDG);*/
         }
 
         private List<Semester> loadSchedule()
