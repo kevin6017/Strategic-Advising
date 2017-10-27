@@ -30,5 +30,10 @@ namespace Strategic_Advising
             Startup window = new Startup();
             this.NavigationService.Navigate(window);
         }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }

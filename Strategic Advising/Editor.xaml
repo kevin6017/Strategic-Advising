@@ -24,7 +24,7 @@
         <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="475,84,0,0" Grid.Row="2"/>
         <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="650,84,0,0" Grid.Row="2" RenderTransformOrigin="0.85,-4.367"/>
         <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="825,84,0,0" Grid.Row="2"/>
-        <ListBox HorizontalAlignment="Left" Height="100" Margin="269,84,0,-18" Grid.Row="2" VerticalAlignment="Top" Width="120">
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="269,84,0,-18" Grid.Row="2" VerticalAlignment="Top" Width="120" SelectionChanged="ListBox_SelectionChanged">
             <ListBoxItem Content="Computer Science"/>
             <ListBoxItem Content="Mathematics"/>
             <ListBoxItem Content="University Core"/>
