@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
+using Newtonsoft.Json;
+using System.Reflection;
+using System.IO;
 
 namespace Strategic_Advising
 {
@@ -28,7 +31,7 @@ namespace Strategic_Advising
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            System.Windows.Controls.DataGrid dataGrid = new DataGrid();
+            /*System.Windows.Controls.DataGrid dataGrid = new DataGrid();
             DataTable dt = new DataTable("sampleTable");
             DataColumn dc1 = new DataColumn("Course Number", typeof(string));
             dt.Columns.Add(dc1);
@@ -36,9 +39,37 @@ namespace Strategic_Advising
             dr[0] = "CS222";
             dt.Rows.Add(dr);
             dataGrid.ItemsSource = dt.DefaultView;
-            stackPanel.Children.Add(dataGrid);
+            stackPanel.Children.Add(dataGrid);*/
+
+            var jsonSchedule = loadSchedule();
+            for (var i = 0; i<jsonSchedule.Count; i++)
+            {
+                System.Windows.Controls.DataGrid dg = new DataGrid();
+                DataTable dt = new DataTable("semesterTable");
+                dt.Columns.Add(new DataColumn("Course Title", typeof(string)));
+                /*dr[0] = string.Join(" ", jsonSchedule[i].classes);
+                dt.Rows.Add(dr);*/
+                for (var j = 0; j<jsonSchedule[i].classes.Count(); j++)
+                {
+                    DataRow dr = dt.NewRow();
+                    dr[0] = jsonSchedule[i].classes[j];
+                    dt.Rows.Add(dr);
+                }
+                dg.ItemsSource = dt.DefaultView;
+                stackPanel.Children.Add(dg);
+            }
+            
 
             
+        }
+
+        private List<Semester> loadSchedule()
+        {
+            Assembly assemblly = Assembly.GetExecutingAssembly();
+            StreamReader reader = new StreamReader(assemblly.GetManifestResourceStream("Strategic_Advising.res.SampleSchedule.json"));
+            string json = reader.ReadToEnd();
+            var jsonObject = JsonConvert.DeserializeObject<List<Semester>>(json);
+            return jsonObject;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

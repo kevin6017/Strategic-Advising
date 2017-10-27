@@ -129,7 +129,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <EmbeddedResource Include="res\HonorsCoreClasses.json" />
-    <None Include="res\SampleSchedule.json" />
+    <EmbeddedResource Include="res\SampleSchedule.json" />
     <EmbeddedResource Include="res\CSclasses.json" />
   </ItemGroup>
   <ItemGroup>
