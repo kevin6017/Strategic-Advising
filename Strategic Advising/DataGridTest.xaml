@@ -6,9 +6,10 @@
       xmlns:local="clr-namespace:Strategic_Advising"
       mc:Ignorable="d" 
       d:DesignHeight="725" d:DesignWidth="1200"
-      Title="Page1" Loaded="Window_Loaded">
+      Title="Page1" 
+      Loaded="Window_Loaded">
 
-    <Grid Background="White">
+    <Grid Background="LightCyan">
         <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,143,0,0" AutoGenerateColumns="True" IsReadOnly="True" Name="sampleGrid"/>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Completed Class Lists" FontSize="24" FontWeight="Bold" VerticalAlignment="Top"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="51,631,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click_1"/>
