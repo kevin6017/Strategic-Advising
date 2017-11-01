@@ -13,31 +13,40 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Welcome to Strategic Advising" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Row="1" Text="Select a Major: " FontSize="18" HorizontalAlignment="Left" Margin="60,25,0,2" Grid.RowSpan="2"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="1200"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Text="Welcome to Strategic Advising" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="413,0,441,0" Width="346"/>
+        <TextBlock Grid.Row="1" Text="Select a Major: " FontSize="18" HorizontalAlignment="Left" Margin="60,25,0,2" Grid.RowSpan="2" Width="121"/>
         <RadioButton Grid.Row="1" GroupName="majorSelect" IsChecked="True" Content="Computer Science" FontSize="18" Margin="200,26,0,5"/>
-        <RadioButton Grid.Row="1" GroupName="majorSelect" IsChecked="False" Content="Mathematics" FontSize="18" Margin="400,25,-200,-11" Grid.RowSpan="2"/>
-        <TextBlock Grid.Row="2" Text="Minimum Credit Hour: " FontSize="18" Margin="60,30,-60,-30" />
-        <TextBlock Grid.Row="2" Text="Maximum Credit Hour: " FontSize="18" Margin="60,75,-60,-75" />
-        <ComboBox Grid.Row="2" Margin="251,30,800,-30" >
+        <RadioButton Grid.Row="1" GroupName="majorSelect" IsChecked="False" Content="Mathematics" FontSize="18" Margin="400,25,645,-11" Grid.RowSpan="2"/>
+        <TextBlock Grid.Row="2" Text="Minimum Credit Hour: " FontSize="18" Margin="60,30,-55,-30" Grid.ColumnSpan="3" />
+        <TextBlock Grid.Row="3" Text="Maximum Credit Hour: " FontSize="18" Margin="60,75,-55,-75" Grid.ColumnSpan="3" />
+        <ComboBox Grid.Row="2" Margin="251,30,800,-30" Height="30" >
             <ComboBoxItem Content="Test 1" HorizontalAlignment="Left" Width="120"/>
             <ComboBoxItem Content="Test 2" HorizontalAlignment="Left" Width="120"/>
             <ComboBoxItem Content="Test 3" HorizontalAlignment="Left" Width="120"/>
         </ComboBox>
-        <ComboBox Grid.Row="2" Margin="252,75,800,-75" >
+        <ComboBox Grid.Row="3" Margin="252,75,800,-75" Height="30" >
             <ComboBoxItem Content="Test 4" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Test 5" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Test 6" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
-        <TextBlock Grid.Row="2" Text="Start Semester: " FontSize="18" Margin="60,165,-60,-165"/>
-        <TextBlock Grid.Row="2" Text="End Semester: " FontSize="18" Margin="400,165,-400,-165"/>
-        <TextBox Grid.Row="2" Margin="210,165,800,-165"/>
-        <TextBox Grid.Row="2" Margin="530,165,480,-165"/>
-        <TextBlock Grid.Row="2" Text="Current Semester: " FontSize="18" Margin="60,220,-60,-220"/>
-        <TextBox Grid.Row="2" Margin="210,220,800,-220"/>
-        <Button Grid.Row="2" Content="Editor" Margin="44,540,1074,-539" Height="30" Click="editorClick"/>
-        <Button Grid.Row="2" Content="Submit" Margin="1074,541,39,-539" Height="30" Click="onSubmit"/>
-        
+        <TextBlock Grid.Row="4" Text="Start Semester: " FontSize="18" Margin="60,165,-55,-165" Grid.ColumnSpan="3"/>
+        <TextBlock Grid.Row="4" Text="End Semester: " FontSize="18" Margin="400,165,-395,-165" Grid.ColumnSpan="3"/>
+        <TextBox Grid.Row="4" Margin="210,165,800,-165"/>
+        <TextBox Grid.Row="4" Margin="530,165,480,-165"/>
+        <TextBlock Grid.Row="5" Text="Current Semester: " FontSize="18" Margin="60,220,-55,-220" Grid.ColumnSpan="3"/>
+        <TextBox Grid.Row="5" Margin="210,220,800,-220"/>
+        <Button Grid.Row="6" Content="Editor" Margin="40,0,0,-493" Height="30" Width="80" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="editorClick"/>
+        <Button Grid.Row="6" Content="Submit" Margin="0,0,41,-493" Height="30" Width="80" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="onSubmit"/>
+
     </Grid>
 </Page>
