@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Welcome to Strategic Advising" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="413,0,441,0" Width="346"/>
+        <TextBlock Grid.Row="0" Text="Welcome to Strategic Advising" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="400,0,441,0"/>
         <TextBlock Grid.Row="1" Text="Select a Major: " FontSize="18" HorizontalAlignment="Left" Margin="60,25,0,0" Width="121"/>
         <RadioButton Grid.Row="1" GroupName="majorSelect" IsChecked="True" Content="Computer Science" FontSize="18" Margin="200,26,645,5"/>
         <RadioButton Grid.Row="1" GroupName="majorSelect" IsChecked="False" Content="Mathematics" FontSize="18" Margin="400,25,645,0"/>
@@ -52,6 +52,6 @@
         <TextBlock Grid.Row="5" Text="Current Semester: " FontSize="18" Margin="60,10,-55,107" Grid.ColumnSpan="3"/>
         <TextBox Grid.Row="5" Margin="218,10,0,107" HorizontalAlignment="Left" Width="190"/>
         <Button Grid.Row="6" Content="Editor" Click="editorClick" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Margin="30,0,0,30"/>
-        <Button Grid.Row="6" Content="Submit" Margin="0,0,30,30" Width="80" HorizontalAlignment="Right" Click="onSubmit" Height="29" VerticalAlignment="Bottom"/>
+        <Button Grid.Row="6" Content="Submit" Margin="0,0,30,30" Width="80" HorizontalAlignment="Right" Click="onSubmit" Height="30" VerticalAlignment="Bottom"/>
     </Grid>
 </Page>

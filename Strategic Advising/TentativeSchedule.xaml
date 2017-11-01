@@ -11,20 +11,20 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="60"/>
+            <RowDefinition Height="Auto" MinHeight="511"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Tentative Schedule" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-        <Button Content="Home" HorizontalAlignment="Left" Margin="34,8,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click" Grid.RowSpan="2"/>
-        <Button Content="Export" HorizontalAlignment="Left" Margin="1067,570,0,-525" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="80"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="39,570,0,-530" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="80" Click="Button_Click_1"/>
-        <ScrollViewer Grid.Row="2" HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="411" Margin="109,58,0,-428.6"  RenderTransformOrigin="0.5,0.495" CanContentScroll="True" VerticalScrollBarVisibility="Visible">
-        <StackPanel HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="411" Name="stackPanelFall" Grid.Row="2" RenderTransformOrigin="0.5,0.495">
-        </StackPanel>
+        <TextBlock Grid.Row="0" Text="Tentative Schedule" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="494,0" Width="212"/>
+        <Button Content="Home" HorizontalAlignment="Left" Margin="30,30,0,0" Grid.Row="0" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click"/>
+        <Button Content="Export" HorizontalAlignment="Right" Margin="0,0,30,30" Grid.Row="2" VerticalAlignment="Bottom" Height="30" Width="80"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,30" Grid.Row="2" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click_1"/>
+        <ScrollViewer Grid.Row="1" HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="411" Margin="109,58,0,0"  RenderTransformOrigin="0.5,0.495" CanContentScroll="True" VerticalScrollBarVisibility="Visible">
+            <StackPanel HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="411" Name="stackPanelFall" Grid.Row="2" RenderTransformOrigin="0.5,0.495">
+            </StackPanel>
         </ScrollViewer>
-        <ScrollViewer Grid.Row="2" HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="411" Margin="654,58,0,-426.2" RenderTransformOrigin="0.5,0.495" CanContentScroll="True" VerticalScrollBarVisibility="Visible">
-        <StackPanel HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="411" Name ="stackPanelSpring" Grid.Row="2" RenderTransformOrigin="0.5,0.495"></StackPanel>
+        <ScrollViewer Grid.Row="1" HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="411" Margin="654,58,0,0" RenderTransformOrigin="0.5,0.495" CanContentScroll="True" VerticalScrollBarVisibility="Visible">
+            <StackPanel HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="411" Name ="stackPanelSpring" Grid.Row="2" RenderTransformOrigin="0.5,0.495"></StackPanel>
         </ScrollViewer>
 
 

@@ -10,11 +10,11 @@
       Loaded="Window_Loaded">
 
     <Grid Background="White">
-        
+
         <DataGrid />
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Completed Class Lists" FontSize="24" FontWeight="Bold" VerticalAlignment="Top"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="51,631,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click_1"/>
-        <Button Content="Continue" HorizontalAlignment="Left" Margin="1061,631,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,30" Width="80" Click="Button_Click_1" Height="30" VerticalAlignment="Bottom"/>
+        <Button Content="Continue" Margin="0,0,30,30" Click="Button_Click" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="80"/>
         <WindowsFormsHost HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,143,0,0" Name="sampleGrid"/>
 
 
