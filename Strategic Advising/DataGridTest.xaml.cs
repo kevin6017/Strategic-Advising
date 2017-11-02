@@ -17,6 +17,7 @@ using System.Data.SqlClient;
 using System.IO;
 using Newtonsoft.Json;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace Strategic_Advising
 {
@@ -30,9 +31,11 @@ namespace Strategic_Advising
             InitializeComponent();
         }
 
+        DataGridView dgv;
         DataTable dataTable;
         Assembly _assembly;
         StreamReader _textStreamReader;
+
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -55,7 +58,7 @@ namespace Strategic_Advising
             dataTable.Columns.Add(dc5);
             dataTable.Columns.Add(dc6);
             
-            sampleGrid.ItemsSource = dataTable.DefaultView;
+            
             var JSONclasses = loadCourseList();
             for (var i=0; i<JSONclasses.Count; i++) //theres an extra row being created here? (Issue #2)
             {
@@ -68,13 +71,22 @@ namespace Strategic_Advising
                 dr[5] = string.Join(", ", JSONclasses[i].prerequisites);
                 
                 dataTable.Rows.Add(dr);
-                sampleGrid.ItemsSource = dataTable.DefaultView;
+                
             }
+            dgv = new DataGridView();
+            dgv.AutoGenerateColumns = false;
+            dgv.ColumnCount = 6;
+            dgv.Columns[0].DataPropertyName = "Course Number";
+            dgv.Columns[1].DataPropertyName = "Course Title";
+            dgv.Columns[2].DataPropertyName = "Credit Hours";
+            dgv.Columns[3].DataPropertyName = "Spring Class";
+            dgv.Columns[4].DataPropertyName = "Fall Class";
+            dgv.Columns[5].DataPropertyName = "Prerequisites";
+            dgv.DataSource = dataTable;
             DataGridCheckBoxColumn checkColumn = new DataGridCheckBoxColumn();
             checkColumn.Header = "Class taken?";
             checkColumn.Width = 100;
-            sampleGrid.IsReadOnly = false;
-            sampleGrid.Columns.Add(checkColumn);
+            sampleGrid.Child = dgv;
 
         }
 
