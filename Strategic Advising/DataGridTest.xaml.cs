@@ -83,11 +83,16 @@ namespace Strategic_Advising
             dgv.Columns[4].DataPropertyName = "Fall Class";
             dgv.Columns[5].DataPropertyName = "Prerequisites";
             dgv.DataSource = dataTable;
-            DataGridCheckBoxColumn checkColumn = new DataGridCheckBoxColumn();
-            checkColumn.Header = "Class taken?";
-            checkColumn.Width = 100;
+            DataGridViewCheckBoxColumn ckCol = new DataGridViewCheckBoxColumn();
+            ckCol.HeaderText = "Check Column";
+            ckCol.CellTemplate = new DataGridViewCheckBoxCell();
+            ckCol.ReadOnly = false;
+            dgv.Columns.Add(ckCol);
+            for (int i = 0; i<6; i++)
+            {
+                dgv.Columns[i].ReadOnly = true;
+            }
             sampleGrid.Child = dgv;
-
         }
 
         private List<Course> loadCourseList()
