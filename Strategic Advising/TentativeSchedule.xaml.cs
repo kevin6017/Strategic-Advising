@@ -35,6 +35,8 @@ namespace Strategic_Advising
             
             FlowLayoutPanel fallpanel = new FlowLayoutPanel();
             FlowLayoutPanel springpanel = new FlowLayoutPanel();
+            fallpanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            springpanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 
             var jsonSchedule = new JsonLoader().loadScheduleList("Strategic_Advising.res.SampleSchedule.json");
 
@@ -43,6 +45,7 @@ namespace Strategic_Advising
             for (var i = 0; i < jsonSchedule.Count; i++)
             {
                 DataGridView dgv = new DataGridView();
+                dgv.ColumnCount = 4;
                 DataTable dt = new DataTable("semesterTable");
                 dt.Columns.Add(new DataColumn("Course Title", typeof(string)));
                 for (var j = 0; j < jsonSchedule[i].classes.Count(); j++)
@@ -51,8 +54,9 @@ namespace Strategic_Advising
                     dr[0] = jsonSchedule[i].classes[j];
                     dt.Rows.Add(dr);
                 }
-                dgv.Width = fallpanel.Width;
+                dgv.Width = 453;
                 dgv.DataSource = dt;
+                
                 if (isFall)
                 {
                     fallpanel.Controls.Add(dgv);
