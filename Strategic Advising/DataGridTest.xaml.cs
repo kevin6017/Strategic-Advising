@@ -92,7 +92,9 @@ namespace Strategic_Advising
             {
                 dgv.Columns[i].ReadOnly = true;
             }
+            
             sampleGrid.Child = dgv;
+
         }
 
         /*private List<Course> loadCourseList()

@@ -16,6 +16,7 @@ using System.Data;
 using Newtonsoft.Json;
 using System.Reflection;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Strategic_Advising
 {
@@ -31,68 +32,43 @@ namespace Strategic_Advising
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            System.Windows.Controls.DataGrid bigDG = new DataGrid();
-            DataTable bigDataTable = new DataTable("massiveTable");
-            bigDataTable.Columns.Add(new DataColumn(("Fall"), typeof(DataGrid)));
-            bigDataTable.Columns.Add(new DataColumn(("Spring"), typeof(DataGrid)));
-            List<DataGrid> dataGridList = new List<DataGrid>();
+            
+            FlowLayoutPanel fallpanel = new FlowLayoutPanel();
+            FlowLayoutPanel springpanel = new FlowLayoutPanel();
 
             var jsonSchedule = new JsonLoader().loadScheduleList("Strategic_Advising.res.SampleSchedule.json");
 
             bool isFall = true;
 
-            for (var i = 0; i<jsonSchedule.Count; i++)
+            for (var i = 0; i < jsonSchedule.Count; i++)
             {
-                System.Windows.Controls.DataGrid dg = new DataGrid();
+                DataGridView dgv = new DataGridView();
                 DataTable dt = new DataTable("semesterTable");
                 dt.Columns.Add(new DataColumn("Course Title", typeof(string)));
-                for (var j = 0; j<jsonSchedule[i].classes.Count(); j++)
+                for (var j = 0; j < jsonSchedule[i].classes.Count(); j++)
                 {
                     DataRow dr = dt.NewRow();
                     dr[0] = jsonSchedule[i].classes[j];
                     dt.Rows.Add(dr);
                 }
-                dg.ItemsSource = dt.DefaultView;
-                //dataGridList.Add(dg);
+                dgv.Width = fallpanel.Width;
+                dgv.DataSource = dt;
                 if (isFall)
                 {
-                    stackPanelFall.Children.Add(dg);
+                    fallpanel.Controls.Add(dgv);
                 }
                 else
                 {
-                    stackPanelSpring.Children.Add(dg);
+                    springpanel.Controls.Add(dgv);
                 }
+
                 isFall = !isFall;
             }
+            fallForm.Child = fallpanel;
+            springForm.Child = springpanel;
 
-            /*while (dataGridList.Count > 0)
-            {
-                DataRow dr = bigDataTable.NewRow();
-                if (dataGridList.Count != 1) { // if there is not just one semester left                    
-                    dr[0] = dataGridList.ElementAt(0);
-                    dataGridList.Remove(dataGridList[0]);
-                    dr[1] = dataGridList[0];
-                    dataGridList.Remove(dataGridList[0]);                    
-                }
-                else
-                {
-                    dr[0] = dataGridList[0];
-                    dataGridList.Remove(dataGridList[0]);
-                }
-                bigDataTable.Rows.Add(dr);
-            }
-            bigDG.ItemsSource = bigDataTable.DefaultView;
-            stackPanel.Children.Add(bigDG);*/
+
         }
-
-        /*private List<Semester> loadSchedule()
-        {
-            Assembly assemblly = Assembly.GetExecutingAssembly();
-            StreamReader reader = new StreamReader(assemblly.GetManifestResourceStream("Strategic_Advising.res.SampleSchedule.json"));
-            string json = reader.ReadToEnd();
-            var jsonObject = JsonConvert.DeserializeObject<List<Semester>>(json);
-            return jsonObject;
-        }*/
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
