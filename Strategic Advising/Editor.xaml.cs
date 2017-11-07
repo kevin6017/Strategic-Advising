@@ -36,22 +36,32 @@ namespace Strategic_Advising
             
         }
 
+        string selectedMajor;
+
         private void Button_ClickAdd(object sender, RoutedEventArgs e)
         {
+            getSelectedClass();
             Add window = new Add();
             this.NavigationService.Navigate(window);
         }
 
         private void Button_ClickEdit(object sender, RoutedEventArgs e)
         {
+            getSelectedClass();
             Edit window = new Edit();
             this.NavigationService.Navigate(window);
         }
 
         private void Button_ClickRemove(object sender, RoutedEventArgs e)
         {
+            getSelectedClass()
             Remove window = new Remove();
             this.NavigationService.Navigate(window);
+        }
+
+        private void getSelectedClass()
+        {
+            selectedMajor = majorSelect.SelectedItem.ToString();
         }
     }
 }
