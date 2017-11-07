@@ -107,6 +107,18 @@ namespace Strategic_Advising
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            List<string> completedClasses = new List<string>();
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                
+                DataGridViewCheckBoxCell currentCell = new DataGridViewCheckBoxCell();
+                currentCell = (DataGridViewCheckBoxCell)row.Cells[6];
+                if (currentCell.Value != null && (bool)currentCell.Value == true)
+                {
+                    completedClasses.Add((string)row.Cells[0].Value);
+                }
+            }
+
             TentativeSchedule window = new TentativeSchedule();
             this.NavigationService.Navigate(window);
         }
