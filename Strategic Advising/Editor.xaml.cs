@@ -35,5 +35,23 @@ namespace Strategic_Advising
         {
             
         }
+
+        private void Button_ClickAdd(object sender, RoutedEventArgs e)
+        {
+            Add window = new Add();
+            this.NavigationService.Navigate(window);
+        }
+
+        private void Button_ClickEdit(object sender, RoutedEventArgs e)
+        {
+            Edit window = new Edit();
+            this.NavigationService.Navigate(window);
+        }
+
+        private void Button_ClickRemove(object sender, RoutedEventArgs e)
+        {
+            Remove window = new Remove();
+            this.NavigationService.Navigate(window);
+        }
     }
 }

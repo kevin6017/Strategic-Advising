@@ -1,0 +1,20 @@
+﻿<Page x:Class="Strategic_Advising.Remove"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Strategic_Advising"
+      mc:Ignorable="d" 
+      d:DesignHeight="725" d:DesignWidth="1200"
+      Title="Remove">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Remove Classes" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="1086,635,0,-632" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="80" Click="Button_Click"/>
+    </Grid>
+</Page>

@@ -17,13 +17,9 @@
         <TextBlock Grid.Row="0" Text="Class List Editor" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Margin="65,119,0,-114" Grid.Row="2" FontSize="18" TextWrapping="Wrap" Text="Select Class List to Edit: " Height="25" VerticalAlignment="Top"/>
         <Button Content="Home" HorizontalAlignment="Left" Margin="1070,602,0,-525" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="80" Click="homeClick"/>
-        <!-- <RadioButton Content="Computer Science" FontSize="18" HorizontalAlignment="Left" Margin="280,125,0,0" Grid.Row="2" VerticalAlignment="Top" IsChecked="True"/>
-        <RadioButton Content="Mathematics" FontSize="18" HorizontalAlignment="Left" Margin="480,125,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <RadioButton Content="University Core" FontSize="18" HorizontalAlignment="Left" Margin="680,125,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <RadioButton Content="Honors Core" FontSize="18" HorizontalAlignment="Left" Margin="880,125,0,0" Grid.Row="2" VerticalAlignment="Top"/> -->
-        <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="475,84,0,0" Grid.Row="2"/>
-        <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="650,84,0,0" Grid.Row="2" RenderTransformOrigin="0.85,-4.367"/>
-        <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="825,84,0,0" Grid.Row="2"/>
+        <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="475,84,0,0" Grid.Row="2" Click="Button_ClickAdd"/>
+        <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="650,84,0,0" Grid.Row="2" Click="Button_ClickEdit"/>
+        <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="825,84,0,0" Grid.Row="2" Click="Button_ClickRemove"/>
         <ListBox HorizontalAlignment="Left" Height="100" Margin="269,84,0,-18" Grid.Row="2" VerticalAlignment="Top" Width="120" SelectionChanged="ListBox_SelectionChanged">
             <ListBoxItem Content="Computer Science"/>
             <ListBoxItem Content="Mathematics"/>
