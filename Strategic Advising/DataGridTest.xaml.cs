@@ -59,7 +59,7 @@ namespace Strategic_Advising
             dataTable.Columns.Add(dc6);
             
             
-            var JSONclasses = loadCourseList();
+            var JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res.HonorsCoreClasses.json");
             for (var i=0; i<JSONclasses.Count; i++) //theres an extra row being created here? (Issue #2)
             {
                 DataRow dr = dataTable.NewRow();
@@ -95,7 +95,7 @@ namespace Strategic_Advising
             sampleGrid.Child = dgv;
         }
 
-        private List<Course> loadCourseList()
+        /*private List<Course> loadCourseList()
         {
             _assembly = Assembly.GetExecutingAssembly();
             _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("Strategic_Advising.res.HonorsCoreClasses.json"));
@@ -103,7 +103,7 @@ namespace Strategic_Advising
             var jsonObject = JsonConvert.DeserializeObject<List<Course>>(json);
             return jsonObject;
             
-        }
+        }*/
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
