@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto" MinHeight="511"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Tentative Schedule" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="494,0" Width="212"/>
+        <TextBlock Grid.Row="0" Text="  Tentative Schedule" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="494,0,462,0" Width="244"/>
         <Button Content="Home" HorizontalAlignment="Left" Margin="30,30,0,0" Grid.Row="0" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click"/>
         <Button Content="Export" HorizontalAlignment="Right" Margin="0,0,30,30" Grid.Row="2" VerticalAlignment="Bottom" Height="30" Width="80"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,30" Grid.Row="2" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click_1"/>
