@@ -54,7 +54,7 @@ namespace Strategic_Advising
 
         private void Button_ClickRemove(object sender, RoutedEventArgs e)
         {
-            getSelectedClass()
+            getSelectedClass();
             Remove window = new Remove();
             this.NavigationService.Navigate(window);
         }

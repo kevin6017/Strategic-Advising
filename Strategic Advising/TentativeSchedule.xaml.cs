@@ -37,7 +37,7 @@ namespace Strategic_Advising
             bigDataTable.Columns.Add(new DataColumn(("Spring"), typeof(DataGrid)));
             List<DataGrid> dataGridList = new List<DataGrid>();
 
-            var jsonSchedule = loadSchedule();
+            var jsonSchedule = new JsonLoader().loadScheduleList("Strategic_Advising.res.SampleSchedule.json");
 
             bool isFall = true;
 
@@ -85,14 +85,14 @@ namespace Strategic_Advising
             stackPanel.Children.Add(bigDG);*/
         }
 
-        private List<Semester> loadSchedule()
+        /*private List<Semester> loadSchedule()
         {
             Assembly assemblly = Assembly.GetExecutingAssembly();
             StreamReader reader = new StreamReader(assemblly.GetManifestResourceStream("Strategic_Advising.res.SampleSchedule.json"));
             string json = reader.ReadToEnd();
             var jsonObject = JsonConvert.DeserializeObject<List<Semester>>(json);
             return jsonObject;
-        }
+        }*/
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
