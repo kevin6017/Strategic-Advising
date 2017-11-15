@@ -109,15 +109,25 @@ namespace Strategic_Advising
 
         private void cellClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            DataGridView dgv = (sender as DataGridView);
             if(e.Button == MouseButtons.Right && e.RowIndex != -1 && e.ColumnIndex != -1)
             {
-                DataGridViewCell cell = (sender as DataGridView)[e.ColumnIndex, e.RowIndex];
+                DataGridViewCell cell = dgv[e.ColumnIndex, e.RowIndex];
                 if (!cell.Selected)
                 {
                     cell.DataGridView.ClearSelection();
                     cell.DataGridView.CurrentCell = cell;
                     cell.Selected = true;
                 }
+                System.Windows.Forms.ContextMenu menu = new System.Windows.Forms.ContextMenu();
+                menu.MenuItems.Add(new System.Windows.Forms.MenuItem("Move"));
+                menu.MenuItems.Add(new System.Windows.Forms.MenuItem("Add a class"));
+                menu.MenuItems.Add(new System.Windows.Forms.MenuItem("Remove class"));
+
+                int hitTest = dgv.HitTest(e.X, e.Y).RowIndex;
+                int hittestY = dgv.HitTest(e.X, e.Y).ColumnIndex;
+                int currentMouseOverRow = dgv.HitTest(e.X, e.Y).RowIndex;
+                menu.Show(dgv, new System.Drawing.Point(e.X+150, e.Y+25));
             }
         }
     }
