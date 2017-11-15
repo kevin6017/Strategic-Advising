@@ -85,5 +85,19 @@ namespace Strategic_Advising
             DataGridTest window = new DataGridTest();
             this.NavigationService.Navigate(window);
         }
+
+        private void ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            if (sender == fallView)
+            {
+                springView.ScrollToHorizontalOffset(e.HorizontalOffset);
+                springView.ScrollToVerticalOffset(e.VerticalOffset);
+            }
+            else
+            {
+                fallView.ScrollToHorizontalOffset(e.HorizontalOffset);
+                fallView.ScrollToVerticalOffset(e.VerticalOffset);
+            }
+        }
     }
 }
