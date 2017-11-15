@@ -45,7 +45,7 @@ namespace Strategic_Advising
             for (var i = 0; i < jsonSchedule.Count; i++)
             {
                 DataGridView dgv = new DataGridView();
-                dgv.ColumnCount = 1;
+                dgv.ColumnCount = 0;
                 DataTable dt = new DataTable("semesterTable");
                 dt.Columns.Add(new DataColumn("Course Title", typeof(string)));
                 for (var j = 0; j < jsonSchedule[i].classes.Count(); j++)
@@ -56,6 +56,13 @@ namespace Strategic_Advising
                 }
                 dgv.Width = 250;
                 dgv.DataSource = dt;
+                DataGridViewButtonColumn btnCol = new DataGridViewButtonColumn();
+                btnCol.HeaderText = "Action Button";
+                btnCol.Name = "button";
+                btnCol.Text = "Action";
+                btnCol.UseColumnTextForButtonValue = true;
+                dgv.Columns.Add(btnCol);
+                dgv.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
                 
                 if (isFall)
                 {
@@ -97,6 +104,20 @@ namespace Strategic_Advising
             {
                 fallView.ScrollToHorizontalOffset(e.HorizontalOffset);
                 fallView.ScrollToVerticalOffset(e.VerticalOffset);
+            }
+        }
+
+        private void cellClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right && e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                DataGridViewCell cell = (sender as DataGridView)[e.ColumnIndex, e.RowIndex];
+                if (!cell.Selected)
+                {
+                    cell.DataGridView.ClearSelection();
+                    cell.DataGridView.CurrentCell = cell;
+                    cell.Selected = true;
+                }
             }
         }
     }
