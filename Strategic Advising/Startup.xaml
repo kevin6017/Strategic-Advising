@@ -32,7 +32,7 @@
         <RadioButton Grid.Row="1" Grid.Column="2" GroupName="majorSelect" IsChecked="True" Content="Computer Science" FontSize="18" Margin="0,17,0,14" HorizontalAlignment="Left" Width="172"/>
         <RadioButton Grid.Row="1" Grid.Column="3" GroupName="majorSelect" IsChecked="False" Content="Mathematics" FontSize="18" Margin="6,16,10,9" HorizontalAlignment="Left" Width="156"/>
         <TextBlock Grid.Row="1" Grid.Column="4" Text="Honors Core:" FontSize="18" Margin="0,15,10,10" Width="108" HorizontalAlignment="Right"/>
-        <CheckBox Grid.Row="1" Grid.Column="5" Margin="0,21,0,12" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="17" >
+        <CheckBox Grid.Row="1" Grid.Column="5" Margin="0,21,0,12" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="17" FlowDirection="RightToLeft">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
