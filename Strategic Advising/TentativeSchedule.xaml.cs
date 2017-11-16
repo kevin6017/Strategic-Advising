@@ -54,14 +54,8 @@ namespace Strategic_Advising
                     dr[0] = jsonSchedule[i].classes[j];
                     dt.Rows.Add(dr);
                 }
-                dgv.Width = 250;
+                dgv.Width = 450;
                 dgv.DataSource = dt;
-                DataGridViewButtonColumn btnCol = new DataGridViewButtonColumn();
-                btnCol.HeaderText = "Action Button";
-                btnCol.Name = "button";
-                btnCol.Text = "Action";
-                btnCol.UseColumnTextForButtonValue = true;
-                dgv.Columns.Add(btnCol);
                 dgv.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
                 
                 if (isFall)
@@ -119,15 +113,12 @@ namespace Strategic_Advising
                     cell.DataGridView.CurrentCell = cell;
                     cell.Selected = true;
                 }
-                System.Windows.Forms.ContextMenu menu = new System.Windows.Forms.ContextMenu();
-                menu.MenuItems.Add(new System.Windows.Forms.MenuItem("Move"));
-                menu.MenuItems.Add(new System.Windows.Forms.MenuItem("Add a class"));
-                menu.MenuItems.Add(new System.Windows.Forms.MenuItem("Remove class"));
-
-                int hitTest = dgv.HitTest(e.X, e.Y).RowIndex;
-                int hittestY = dgv.HitTest(e.X, e.Y).ColumnIndex;
-                int currentMouseOverRow = dgv.HitTest(e.X, e.Y).RowIndex;
-                menu.Show(dgv, new System.Drawing.Point(e.X+150, e.Y+25));
+                System.Windows.Forms.ContextMenuStrip menuStrip = new System.Windows.Forms.ContextMenuStrip();
+                menuStrip.Items.Add("Move a class");
+                menuStrip.Items.Add("Add a class");
+                menuStrip.Items.Add("Remove a class");
+                //menu.Show(dgv, new System.Drawing.Point(e.X+100, e.Y+50));
+                menuStrip.Show(dgv,new System.Drawing.Point(e.X+42, e.Y));
             }
         }
     }
