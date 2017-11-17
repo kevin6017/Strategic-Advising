@@ -71,8 +71,6 @@ namespace Strategic_Advising
             }
             fallForm.Child = fallpanel;
             springForm.Child = springpanel;
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -117,8 +115,28 @@ namespace Strategic_Advising
                 menuStrip.Items.Add("Move a class");
                 menuStrip.Items.Add("Add a class");
                 menuStrip.Items.Add("Remove a class");
-                //menu.Show(dgv, new System.Drawing.Point(e.X+100, e.Y+50));
+                menuStrip.ItemClicked += new ToolStripItemClickedEventHandler(menuClick);
                 menuStrip.Show(dgv,new System.Drawing.Point(e.X+42, e.Y));
+            }    
+        }
+
+        private void menuClick(object sender, ToolStripItemClickedEventArgs e)
+        {
+            /*use the following to retrieve dgv values:
+             * var strip = sender as ContextMenuStrip;
+             * var dgv = strip.SourceControl as DataGridView;
+             * */
+            if(e.ClickedItem.Text == "Move a class")
+            {
+                System.Windows.MessageBox.Show("Move a class lol");
+            }
+            if (e.ClickedItem.Text == "Add a class")
+            {
+                System.Windows.MessageBox.Show("add lol");
+            }
+            if (e.ClickedItem.Text == "Remove a class")
+            {
+                System.Windows.MessageBox.Show("Remove lol");
             }
         }
     }
