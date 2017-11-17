@@ -122,21 +122,22 @@ namespace Strategic_Advising
 
         private void menuClick(object sender, ToolStripItemClickedEventArgs e)
         {
-            /*use the following to retrieve dgv values:
-             * var strip = sender as ContextMenuStrip;
-             * var dgv = strip.SourceControl as DataGridView;
-             * */
+            //use the following to retrieve dgv values:
+            var strip = sender as ContextMenuStrip;
+            var dgv = strip.SourceControl as DataGridView;
+            DataGridViewRow row = dgv.CurrentRow;
+             
             if(e.ClickedItem.Text == "Move a class")
             {
-                System.Windows.MessageBox.Show("Move a class lol");
+                System.Windows.MessageBox.Show(row.Cells[0].Value.ToString());
             }
             if (e.ClickedItem.Text == "Add a class")
             {
-                System.Windows.MessageBox.Show("add lol");
+                System.Windows.MessageBox.Show(row.Cells[0].Value.ToString());
             }
             if (e.ClickedItem.Text == "Remove a class")
             {
-                System.Windows.MessageBox.Show("Remove lol");
+                System.Windows.MessageBox.Show(row.Cells[0].Value.ToString());
             }
         }
     }
