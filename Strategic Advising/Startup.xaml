@@ -8,12 +8,15 @@
       d:DesignHeight="725" d:DesignWidth="1200"
       Title="Startup">
 
-    <Grid Background="White">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="res\SAB_StartUp.png"></ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" /> 
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -27,7 +30,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.ColumnSpan="7" Text=" Welcome to Strategic Advising" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,0" Width="365"/>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="7" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,0" Width="365"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Select a Major: " FontSize="18" HorizontalAlignment="Right" Margin="0,16,10,9" Width="124"/>
         <RadioButton Grid.Row="1" Grid.Column="2" GroupName="majorSelect" IsChecked="True" Content="Computer Science" FontSize="18" Margin="0,17,0,14" HorizontalAlignment="Left" Width="172"/>
         <RadioButton Grid.Row="1" Grid.Column="3" GroupName="majorSelect" IsChecked="False" Content="Mathematics" FontSize="18" Margin="6,16,10,9" HorizontalAlignment="Left" Width="156"/>

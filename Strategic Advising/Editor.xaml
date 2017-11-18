@@ -8,13 +8,15 @@
       d:DesignHeight="725" d:DesignWidth="1200"
       Title="Editor">
 
-    <Grid Background="White">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="res\SAB_Editor.png" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="52"/>
             <RowDefinition Height="Auto" MinHeight="90"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="  Class List Editor" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="504,0,470,0" Width="226"/>
         <TextBlock HorizontalAlignment="Left" Margin="67,89,0,0" Grid.Row="1" FontSize="18" TextWrapping="Wrap" Text="Select Class List to Edit: " Height="25" VerticalAlignment="Top" Width="189"/>
         <Button Content="Home" Margin="0,0,30,30" Grid.Row="2" Click="homeClick" HorizontalAlignment="Right" Width="80" Height="30" VerticalAlignment="Bottom"/>
         <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="495,84,0,0" Grid.Row="1" Click="Button_ClickAdd"/>
@@ -26,9 +28,5 @@
             <ListBoxItem Content="University Core"/>
             <ListBoxItem Content="Honors Core"/>
         </ListBox>
-        <!-- uncomment out the following 3 lines to show the octopus -->
-        <!-- <Grid.Background>
-            <ImageBrush ImageSource="res\octopus.jpg" />
-        </Grid.Background> -->
     </Grid>
 </Page>

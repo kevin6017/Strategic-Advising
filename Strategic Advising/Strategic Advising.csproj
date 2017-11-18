@@ -162,13 +162,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="res\Owl.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="res\octopus.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\SAB_Editor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\SAB_CCL.png" />
+    <Resource Include="res\SAB_StartUp.png" />
+    <Resource Include="res\SAB_TS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\SAB_Add.png" />
+    <Resource Include="res\SAB_Edit.png" />
+    <Resource Include="res\SAB_Remove.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.2.0.0\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\dotnet\Fody.targets')" />

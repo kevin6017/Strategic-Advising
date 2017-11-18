@@ -9,14 +9,16 @@
       Title="TentativeSchedule"
       Loaded="Window_Loaded">
 
-    <Grid Background="White">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="res\SAB_TS.png"></ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="60"/>
             <RowDefinition Height="Auto" MinHeight="511"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="  Tentative Schedule" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="494,0,462,0" Width="244"/>
-        <Button Content="Home" HorizontalAlignment="Left" Margin="30,30,0,0" Grid.Row="0" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click"/>
+        <Button Content="Home" HorizontalAlignment="Left" Margin="30,15,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="30" Click="Button_Click"/>
         <Button Content="Export" HorizontalAlignment="Right" Margin="0,0,30,30" Grid.Row="2" VerticalAlignment="Bottom" Height="30" Width="80"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,30" Grid.Row="2" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click_1"/>
         <ScrollViewer Grid.Row="1" Name="springView" ScrollChanged="ScrollChanged" HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="411" Margin="109,58,0,0"  RenderTransformOrigin="0.5,0.495" CanContentScroll="True" VerticalScrollBarVisibility="Visible">
@@ -29,9 +31,9 @@
             <!--><StackPanel HorizontalAlignment="Left" Height="453" VerticalAlignment="Top" Width="411" Name ="stackPanelSpring" Grid.Row="2" RenderTransformOrigin="0.5,0.495"></StackPanel>
         -->
         </ScrollViewer>
-        
 
-        
+
+
 
 
         <!-- uncomment out the following 3 lines to remove the octopus -->
