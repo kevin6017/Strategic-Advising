@@ -8,7 +8,10 @@
       d:DesignHeight="725" d:DesignWidth="1200"
       Title="Remove">
 
-    <Grid Background="White">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="res\SAB_Remove.png"></ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto" />
@@ -17,7 +20,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Remove Classes" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="1" Text="Course Number: " FontSize="18" HorizontalAlignment="Left" Margin="60,25,0,0"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="199,25,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button Content="Back" Margin="0,0,30,30" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
