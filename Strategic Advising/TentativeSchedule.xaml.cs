@@ -81,7 +81,7 @@ namespace Strategic_Advising
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            DataGridTest window = new DataGridTest();
+            CompletedClasses window = new CompletedClasses();
             this.NavigationService.Navigate(window);
         }
 

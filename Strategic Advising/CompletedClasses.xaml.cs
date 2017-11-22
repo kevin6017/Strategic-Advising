@@ -24,9 +24,9 @@ namespace Strategic_Advising
     /// <summary>
     /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class DataGridTest : Page
+    public partial class CompletedClasses : Page
     {
-        public DataGridTest()
+        public CompletedClasses()
         {
             InitializeComponent();
         }

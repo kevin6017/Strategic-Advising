@@ -29,8 +29,8 @@ namespace Strategic_Advising
         {
             //CompletedClasses window = new CompletedClasses();
             //this.NavigationService.Navigate(window);
-            DataGridTest test = new DataGridTest();
-            this.NavigationService.Navigate(test);
+            CompletedClasses window = new CompletedClasses();
+            this.NavigationService.Navigate(window);
         }
 
         private void editorClick(object sender, RoutedEventArgs e)
