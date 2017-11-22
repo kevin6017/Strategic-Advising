@@ -5,7 +5,8 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [ "" ]
+    "prerequisites": [ "" ],
+    "courseDescription": ""
   },
   {
     "courseNumber": "ENG 104",
@@ -13,7 +14,8 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [ "" ]
+    "prerequisites": [ "" ],
+    "courseDescription": ""
   },
   {
     "courseNumber": "COMM 210",
@@ -21,7 +23,8 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [ "" ]
+    "prerequisites": [ "" ],
+    "courseDescription": ""
   },
   {
     "courseNumber": "HIST 150",
@@ -29,7 +32,8 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [ "" ]
+    "prerequisites": [ "" ],
+    "courseDescription": ""
   },
   {
     "courseNumber": "FIN 101",
@@ -37,7 +41,8 @@
     "creditHours": 1,
     "fall": true,
     "spring": true,
-    "prerequisites": [ "" ]
+    "prerequisites": [ "" ],
+    "courseDescription": ""
   },
   {
     "courseNumber": "PFW 1XX",
@@ -45,7 +50,8 @@
     "creditHours": 2,
     "fall": true,
     "spring": true,
-    "prerequisites": [ "" ]
+    "prerequisites": [ "" ],
+    "courseDescription": ""
   },
   {
     "courseNumber": "????? can be both muhi or art appreciaiton",
@@ -53,7 +59,8 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [ "" ]
+    "prerequisites": [ "" ],
+    "courseDescription": ""
   },
   {
     "courseNumber": "PHYC ???",
@@ -61,7 +68,8 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [ "" ]
+    "prerequisites": [ "" ],
+    "courseDescription": ""
   },
   {
     "courseNumber": "HONR 297",
@@ -69,7 +77,8 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [ "" ]
+    "prerequisites": [ "" ],
+    "courseDescription": ""
   },
   {
     "courseNumber": "HONR 201",
@@ -77,15 +86,17 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [ "" ]
+    "prerequisites": [ "" ],
+    "courseDescription": ""
   },
   {
     "courseNumber": "HONR 202",
     "courseTitle": "Inquires in the Middle Ages & 21st Century",
-    "creditHours":3,
+    "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [""]
+    "prerequisites": [ "" ],
+    "courseDescription": ""
   }
 ]
 /* Template for copypasta
@@ -95,7 +106,8 @@
     "creditHours":,
     "fall":,
     "spring": ,
-    "prerequisites": []
+    "prerequisites": [],
+    "courseDescription":  ""
   },
 
 
