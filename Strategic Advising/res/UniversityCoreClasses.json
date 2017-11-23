@@ -1,0 +1,132 @@
+[
+  {
+    "courseNumber": "ENG 103",
+    "courseTitle": "Rhetoric and Writing",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [],
+    "courseDescription": "ENG 102, ENG 103 subsititues"
+  },
+  {
+    "courseNumber": "ENG 1X4",
+    "courseTitle": "Composition Credit",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [ "ENG 103" ],
+    "courseDescription": "ENG 104 Composing Research OR /nENG 114 Composing Research (HC) "
+  },
+  {
+    "courseNumber": "COMM 210",
+    "courseTitle": "Fundamentals of Public Comm",
+    "creditHours": 3,
+    "fall": true,
+    "spring": false,
+    "prerequisites": [],
+    "courseDescription": ""
+  },
+  {
+    "courseNumber": "MATH ???",
+    "courseTitle": "Math Core Classes",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [],
+    "courseDescription": ""
+  },
+  {
+    "courseNumber": "HIST 150",
+    "courseTitle": "The West in the World",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [],
+    "courseDescription": "HIST 151 or 152 substitutes"
+  },
+  {
+    "courseNumber": "PFW ???",
+    "courseTitle": "Physical Wellness Credit",
+    "creditHours": 2,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [],
+    "courseDescription": ""
+  },
+  {
+    "courseNumber": "FIN 110",
+    "courseTitle": "Personal Finance",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [],
+    "courseDescription": "FIN 135 or FIN 110 alternative"
+  },
+  {
+    "courseNumber": "T1 101",
+    "courseTitle": "Fine Arts Credit",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [],
+    "courseDescription": "TIER 1 Domain"
+  },
+  {
+    "courseNumber": "T1 102",
+    "courseTitle": "Humanities Credit",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [],
+    "courseDescription": "TIER 1 Domain"
+  },
+  {
+    "courseNumber": "T1 103",
+    "courseTitle": "Natural Sciences Credit",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [],
+    "courseDescription": "TIER 1 Domain"
+  },
+  {
+    "courseNumber": "T1 104",
+    "courseTitle": "Social Sciences Credit",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [],
+    "courseDescription": "TIER 1 Domain"
+  },
+  {
+    "courseNumber": "T2 101",
+    "courseTitle": "Fine Arts/Design/Humanities Credit",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [],
+    "courseDescription": "TIER 2 Domain"
+  },
+  {
+    "courseNumber": "T2 102",
+    "courseTitle": "Natural Sciences/Social Sciences Credit",
+    "creditHours": 3,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [],
+    "courseDescription": "TIER 2 Domain"
+  }
+]
+/* Template for copypasta
+  {
+    "courseNumber":,
+    "courseTitle": ,
+    "creditHours":,
+    "fall":,
+    "spring": ,
+    "prerequisites": [],
+    "courseDescription":  ""
+  },
+
+
+*/
