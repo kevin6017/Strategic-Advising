@@ -42,10 +42,8 @@ namespace Strategic_Advising
         private void Button_ClickAdd(object sender, RoutedEventArgs e)
         {
             getSelectedClass();
-            /*
             Add window = new Add();
             this.NavigationService.Navigate(window);
-            */
         }
 
         private void Button_ClickEdit(object sender, RoutedEventArgs e)
