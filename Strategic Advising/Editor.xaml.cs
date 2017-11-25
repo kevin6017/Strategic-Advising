@@ -42,7 +42,7 @@ namespace Strategic_Advising
         private void Button_ClickAdd(object sender, RoutedEventArgs e)
         {
             getSelectedClass();
-            Add window = new Add();
+            Add window = new Add(selectedMajorJSONFile);
             this.NavigationService.Navigate(window);
         }
 

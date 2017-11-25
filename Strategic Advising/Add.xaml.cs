@@ -20,10 +20,13 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Add : Page
     {
-        public Add()
+        public Add(string passedFilePath)
         {
             InitializeComponent();
+            filePath = passedFilePath;
         }
+
+        string filePath;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
