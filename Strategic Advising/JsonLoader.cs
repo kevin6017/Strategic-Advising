@@ -17,9 +17,8 @@ namespace Strategic_Advising
 
         public List<Course> loadCourseList(string filepath)
         {
-            var tempFilePath = "Strategic_Advising.res.HonorsCoreClasses.json";
             assembly = Assembly.GetExecutingAssembly();
-            var temp = assembly.GetManifestResourceStream(tempFilePath); //change this to "filepath" to change to dynamic loading
+            var temp = assembly.GetManifestResourceStream(filepath); //change this to "filepath" to change to dynamic loading
             streamReader = new StreamReader(temp);
             string json = streamReader.ReadToEnd();
             var jsonObject = JsonConvert.DeserializeObject<List<Course>>(json);
