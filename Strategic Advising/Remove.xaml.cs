@@ -22,11 +22,12 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Remove : Page
     {
-        public Remove()
+        public Remove(string currentFile)
         {
             InitializeComponent();
+            currentFilePath = currentFile;
         }
-
+        string currentFilePath;
         DataGridView dgv;
         DataTable dataTable;
 
@@ -37,9 +38,8 @@ namespace Strategic_Advising
             DataColumn dc2 = new DataColumn("Course Title", typeof(string));
             dataTable.Columns.Add(dc1);
             dataTable.Columns.Add(dc2);
-
-            //Eventually I think maybe this should be loaded on the first page, then passed on to the next?
-            var JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res.HonorsCoreClasses.json");
+            
+            var JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res." + currentFilePath);
             for (var i = 0; i < JSONclasses.Count; i++) //theres an extra row being created here? (Issue #2)
             {
                 DataRow dr = dataTable.NewRow();

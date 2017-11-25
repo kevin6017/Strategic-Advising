@@ -23,10 +23,10 @@
         <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="660,84,0,0" Grid.Row="1" Click="Button_ClickEdit"/>
         <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="825,84,0,0" Grid.Row="1" Click="Button_ClickRemove"/>
         <ListBox HorizontalAlignment="Left" Height="100" Margin="287,44,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="ListBox_SelectionChanged" Name="majorSelect">
-            <ListBoxItem Content="Computer Science" IsSelected="True"/>
-            <ListBoxItem Content="Mathematics"/>
-            <ListBoxItem Content="University Core"/>
-            <ListBoxItem Content="Honors Core"/>
+            <ListBoxItem Content="Computer Science" Name="CSclasses" IsSelected="True"/>
+            <ListBoxItem Content="Mathematics" Name="MathClasses"/>
+            <ListBoxItem Content="University Core" Name="UniversityCoreClasses"/>
+            <ListBoxItem Content="Honors Core" Name="HonorsCoreClasses"/>
         </ListBox>
     </Grid>
 </Page>

@@ -5,7 +5,7 @@
     "creditHours": 420,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": "Test"
   }
 ]

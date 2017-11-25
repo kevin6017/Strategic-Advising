@@ -73,6 +73,9 @@
       <DependentUpon>Edit.xaml</DependentUpon>
     </Compile>
     <Compile Include="JsonLoader.cs" />
+    <Compile Include="EditSelector.xaml.cs">
+      <DependentUpon>EditSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Remove.xaml.cs">
       <DependentUpon>Remove.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
     <Page Include="CompletedClasses.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Remove.xaml">
       <SubType>Designer</SubType>

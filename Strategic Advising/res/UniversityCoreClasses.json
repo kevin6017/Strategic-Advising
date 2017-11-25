@@ -5,7 +5,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [""],
     "courseDescription": "ENG 102, ENG 103 subsititues"
   },
   {
@@ -23,7 +23,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": false,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": ""
   },
   {
@@ -32,7 +32,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": ""
   },
   {
@@ -41,7 +41,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": "HIST 151 or 152 substitutes"
   },
   {
@@ -50,7 +50,7 @@
     "creditHours": 2,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": ""
   },
   {
@@ -59,7 +59,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": "FIN 135 or FIN 110 alternative"
   },
   {
@@ -68,7 +68,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": "TIER 1 Domain"
   },
   {
@@ -77,7 +77,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": "TIER 1 Domain"
   },
   {
@@ -86,7 +86,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": "TIER 1 Domain"
   },
   {
@@ -95,7 +95,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": "TIER 1 Domain"
   },
   {
@@ -104,7 +104,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": "TIER 2 Domain"
   },
   {
@@ -113,7 +113,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription": "TIER 2 Domain"
   }
 ]
@@ -124,7 +124,7 @@
     "creditHours":,
     "fall":,
     "spring": ,
-    "prerequisites": [],
+    "prerequisites": [ "" ],
     "courseDescription":  ""
   },
 

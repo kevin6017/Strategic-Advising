@@ -36,32 +36,39 @@ namespace Strategic_Advising
             
         }
 
-        string selectedMajor;
+        string selectedMajorName;
+        string selectedMajorJSONFile;
 
         private void Button_ClickAdd(object sender, RoutedEventArgs e)
         {
             getSelectedClass();
+            /*
             Add window = new Add();
             this.NavigationService.Navigate(window);
+            */
         }
 
         private void Button_ClickEdit(object sender, RoutedEventArgs e)
         {
             getSelectedClass();
-            Edit window = new Edit();
+            EditSelector window = new EditSelector();
             this.NavigationService.Navigate(window);
         }
 
         private void Button_ClickRemove(object sender, RoutedEventArgs e)
         {
             getSelectedClass();
-            Remove window = new Remove();
+            Remove window = new Remove(selectedMajorJSONFile);
             this.NavigationService.Navigate(window);
         }
 
         private void getSelectedClass()
         {
-            selectedMajor = majorSelect.SelectedItem.ToString();
+            ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
+            selectedMajorJSONFile = temp.Name + ".json"; //probably a more official way to do this besides using the name but oh well
+            selectedMajorName = (string) temp.Content;
+            // noClassesMessage = System.Windows.MessageBox.Show(selectedMajorJSONFile + "\r\n" + selectedMajorName, "Confirmation", MessageBoxButton.OK);
+
         }
     }
 }
