@@ -49,7 +49,7 @@ namespace Strategic_Advising
         private void Button_ClickEdit(object sender, RoutedEventArgs e)
         {
             getSelectedClass();
-            EditSelector window = new EditSelector();
+            EditSelector window = new EditSelector(selectedMajorJSONFile);
             this.NavigationService.Navigate(window);
         }
 
@@ -63,7 +63,7 @@ namespace Strategic_Advising
         private void getSelectedClass()
         {
             ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
-            selectedMajorJSONFile = temp.Name + ".json"; //probably a more official way to do this besides using the name but oh well
+            selectedMajorJSONFile = "Strategic_Advising.res." + temp.Name + ".json"; //probably a more official way to do this besides using the name but oh well
             selectedMajorName = (string) temp.Content;
             // noClassesMessage = System.Windows.MessageBox.Show(selectedMajorJSONFile + "\r\n" + selectedMajorName, "Confirmation", MessageBoxButton.OK);
 

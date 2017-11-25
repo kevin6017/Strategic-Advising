@@ -20,14 +20,33 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Edit : Page
     {
-        public Edit()
+        public Edit(string passedFilePath, int passedClassIndex)
         {
             InitializeComponent();
+            filePath = passedFilePath;
+            classIndex = passedClassIndex;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        string filePath;
+        int classIndex;
+        List<Course> JSONclasses;
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Editor window = new Editor();
+            //JSONclasses = new JsonLoader().loadCourseList(filePath);
+            JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res.HonorsCoreClasses.json");
+            courseNumberInput.Text = JSONclasses[classIndex].courseNumber; //popular online opinion says we should use bindings and dependencies to do this instead of doing directly
+            courseTitleInput.Text = JSONclasses[classIndex].courseTitle;
+            creditHoursInput.Text = JSONclasses[classIndex].creditHours;
+            fallInput.IsChecked = JSONclasses[classIndex].fall;
+            springInput.IsChecked = JSONclasses[classIndex].spring;
+            prerequisitesInput.Text = string.Join(", ", JSONclasses[classIndex].prerequisites); ; //will need a better way to do this, need to preserve string[]
+            //MessageBoxResult noClassesMessage = System.Windows.MessageBox.Show(JSONclasses[classIndex].courseTitle, "Confirmation", MessageBoxButton.OK);
+        }
+
+            private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            EditSelector window = new EditSelector(filePath);
             this.NavigationService.Navigate(window);
         }
     }

@@ -22,13 +22,16 @@ namespace Strategic_Advising
     /// </summary>
     public partial class EditSelector : Page
     {
-        public EditSelector()
+        public EditSelector(string passedFilePath)
         {
             InitializeComponent();
+            filePath = passedFilePath;
         }
 
         DataGridView dgv;
         DataTable dataTable;
+        List<Course> JSONclasses;
+        string filePath;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -38,9 +41,9 @@ namespace Strategic_Advising
             dataTable.Columns.Add(dc1);
             dataTable.Columns.Add(dc2);
 
-            //Eventually I think maybe this should be loaded on the first page, then passed on to the next?
-            var JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res.HonorsCoreClasses.json");
-            for (var i = 0; i < JSONclasses.Count; i++) //theres an extra row being created here? (Issue #2)
+            //JSONclasses = new JsonLoader().loadCourseList(filePath);
+            JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res.HonorsCoreClasses.json");
+            for (var i = 0; i < JSONclasses.Count; i++)
             {
                 DataRow dr = dataTable.NewRow();
                 dr[0] = JSONclasses[i].courseNumber;
@@ -59,13 +62,7 @@ namespace Strategic_Advising
             buttonColumn.HeaderText = "Edit Class?";
             buttonColumn.CellTemplate = new DataGridViewButtonCell();
             dgv.Columns.Add(buttonColumn);
-            /*
-            DataGridViewCheckBoxColumn ckCol = new DataGridViewCheckBoxColumn();
-            ckCol.HeaderText = "Remove Class?";
-            ckCol.CellTemplate = new DataGridViewCheckBoxCell();
-            ckCol.ReadOnly = false;
-            dgv.Columns.Add(ckCol);
-            */
+            dgv.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
             for (int i = 0; i < numberOfColumns; i++)
             {
                 dgv.Columns[i].ReadOnly = true;
@@ -73,6 +70,18 @@ namespace Strategic_Advising
 
             editSelectorGrid.Child = dgv;
         }
+
+        private void cellClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                Edit window = new Edit(filePath, e.RowIndex);
+                this.NavigationService.Navigate(window);
+            }
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Editor window = new Editor();

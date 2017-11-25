@@ -95,7 +95,7 @@
     "creditHours": 3,
     "fall": true,
     "spring": true,
-    "prerequisites": [ "" ],
+    "prerequisites": [ "HONR 201" ],
     "courseDescription": ""
   }
 ]

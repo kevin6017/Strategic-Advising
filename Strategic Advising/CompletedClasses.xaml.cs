@@ -95,7 +95,7 @@ namespace Strategic_Advising
             
             sampleGrid.Child = dgv;
 
-           
+            
 
         }
 
