@@ -164,7 +164,7 @@
     <EmbeddedResource Include="res\HonorsCoreClasses.json" />
     <EmbeddedResource Include="res\SampleSchedule.json" />
     <EmbeddedResource Include="res\CSclasses.json" />
-    <None Include="res\MathClasses.json" />
+    <EmbeddedResource Include="res\MathClasses.json" />
     <None Include="res\UniversityCoreClasses.json" />
   </ItemGroup>
   <ItemGroup>
