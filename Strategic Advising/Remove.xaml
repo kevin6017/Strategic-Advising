@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Strategic_Advising"
       mc:Ignorable="d" 
-      d:DesignHeight="725" d:DesignWidth="1200"
+      d:DesignHeight="1080" d:DesignWidth="1920"
       Title="Remove">
 
     <Grid>
@@ -13,17 +13,14 @@
             <ImageBrush ImageSource="res\SAB_Remove.png"></ImageBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" MinHeight="67"/>
+            <RowDefinition Height="Auto" MinHeight="98"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Row="1" Text="Course Number: " FontSize="18" HorizontalAlignment="Left" Margin="60,25,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="199,25,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Back" Margin="0,0,30,30" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
-        <Button Content="Remove" HorizontalAlignment="Left" Margin="333,18,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="80"/>
+        <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="960,0" Width="0"/>
+        <TextBlock Grid.Row="2" Text="Course Number: " FontSize="18" Margin="77,9,1707,880"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="218,12,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,100" Grid.Row="2" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
+        <Button Content="Remove" HorizontalAlignment="Left" Margin="350,9,0,0" Grid.Row="2" VerticalAlignment="Top" Height="30" Width="80"/>
     </Grid>
 </Page>

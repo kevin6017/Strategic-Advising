@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Strategic_Advising"
       mc:Ignorable="d" 
-      d:DesignHeight="725" d:DesignWidth="1200"
+      d:DesignHeight="1080" d:DesignWidth="1920"
       Title="Startup">
 
     <Grid>
@@ -13,41 +13,44 @@
             <ImageBrush ImageSource="res\SAB_StartUp.png"></ImageBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" MinHeight="45"/>
+            <RowDefinition Height="Auto" MinHeight="35" />
+            <RowDefinition Height="50.667" />
+            <RowDefinition Height="21.333"/>
+            <RowDefinition Height="29.333" />
+            <RowDefinition Height="217.667"/>
+            <RowDefinition Height="32.333"/>
+            <RowDefinition Height="71.667"/>
+            <RowDefinition Height="Auto" MinHeight="141"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.ColumnSpan="7" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,0" Width="365"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="Select a Major: " FontSize="18" HorizontalAlignment="Right" Margin="0,16,10,9" Width="124"/>
-        <RadioButton Grid.Row="1" Grid.Column="2" GroupName="majorSelect" IsChecked="True" Content="Computer Science" FontSize="18" Margin="0,17,0,14" HorizontalAlignment="Left" Width="172"/>
-        <RadioButton Grid.Row="1" Grid.Column="3" GroupName="majorSelect" IsChecked="False" Content="Mathematics" FontSize="18" Margin="6,16,10,9" HorizontalAlignment="Left" Width="156"/>
-        <TextBlock Grid.Row="1" Grid.Column="4" Text="Honors Core:" FontSize="18" Margin="0,15,10,10" Width="108" HorizontalAlignment="Right"/>
-        <CheckBox Grid.Row="1" Grid.Column="5" Margin="0,21,0,12" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="17" FlowDirection="RightToLeft">
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="234*"/>
+            <ColumnDefinition Width="109*"/>
+            <ColumnDefinition Width="172*"/>
+            <ColumnDefinition Width="171*"/>
+            <ColumnDefinition Width="171*"/>
+            <ColumnDefinition Width="172*"/>
+            <ColumnDefinition Width="171*"/>
+        </Grid.ColumnDefinitions>-->
+        <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="778,0" Width="364"/>
+        <TextBlock Grid.Row="4" Text="Select a Major: " FontSize="18" Margin="139,0,937,5"/>
+        <RadioButton Grid.Row="4" GroupName="majorSelect" IsChecked="True" Content="Computer Science" FontSize="18" Margin="285,1,0,5" HorizontalAlignment="Left" Width="172"/>
+        <RadioButton Grid.Row="4" GroupName="majorSelect" IsChecked="False" Content="Mathematics" FontSize="18" Margin="471,1,0,4" HorizontalAlignment="Left" Width="156"/>
+        <TextBlock Grid.Row="3" Text="Honors Core:" FontSize="18" Margin="720,16,0,10" Width="108" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+        <CheckBox Grid.Row="4" Margin="829,2,0,12" RenderTransformOrigin="0.49,0.533" HorizontalAlignment="Left" Width="17" FlowDirection="RightToLeft">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
                     <SkewTransform/>
                     <RotateTransform/>
-                    <TranslateTransform/>
+                    <TranslateTransform X="0.34"/>
                 </TransformGroup>
             </CheckBox.RenderTransform>
         </CheckBox>
-        <TextBlock Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Text="  Minimum Credit Hour: " FontSize="18" Margin="0,25,0,23" HorizontalAlignment="Center" Width="222" />
-        <TextBlock Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Text="  Maximum Credit Hour: " FontSize="18" Margin="61,26,72,14" HorizontalAlignment="Center" Width="210"/>
-        <ComboBox Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Margin="0,25,0,23" HorizontalAlignment="Center" Width="150" Height="30">
+        <TextBlock Grid.Row="5" Text="  Minimum Credit Hour: " FontSize="18" Margin="133,55.667,0,138" HorizontalAlignment="Left" Width="222" />
+        <TextBlock Grid.Row="5" Text="  Maximum Credit Hour: " FontSize="18" Margin="133,108.667,0,79" HorizontalAlignment="Left" Width="210"/>
+        <ComboBox Grid.Row="5" Grid.ColumnSpan="1" Margin="330,55.667,0,138" HorizontalAlignment="Left" Width="150">
             <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="120"/>
             <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="120"/>
             <ComboBoxItem Content="11" HorizontalAlignment="Left" Width="120"/>
@@ -56,7 +59,7 @@
             <ComboBoxItem Content="14" HorizontalAlignment="Left" Width="120"/>
             <ComboBoxItem Content="15" HorizontalAlignment="Left" Width="120"/>
         </ComboBox>
-        <ComboBox Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Margin="0,26,0,20" HorizontalAlignment="Center" Width="150" Height="30">
+        <ComboBox Grid.Row="5" Margin="330,108.667,0,84" HorizontalAlignment="Left" Width="150">
             <ComboBoxItem Content="16" HorizontalAlignment="Left" Width="120"/>
             <ComboBoxItem Content="17" HorizontalAlignment="Left" Width="120"/>
             <ComboBoxItem Content="18" HorizontalAlignment="Left" Width="120"/>
@@ -64,13 +67,13 @@
             <ComboBoxItem Content="20" HorizontalAlignment="Left" Width="120"/>
             <ComboBoxItem Content="21" HorizontalAlignment="Left" Width="120"/>
         </ComboBox>
-        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" Text="Start Semester: " FontSize="18" Margin="0,18,0,62" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="1" Text="End Semester: " FontSize="18" Margin="0,18,0,62" HorizontalAlignment="Center"/>
-        <TextBox Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="1" Margin="0,18,0,62" HorizontalAlignment="Center" Width="150" Height="30"/>
-        <TextBox Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="1" Margin="0,18,0,62" HorizontalAlignment="Center" Width="150" Height="30"/>
-        <TextBlock Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Text="Current Semester: " FontSize="18" Margin="0,10,0,107" HorizontalAlignment="Center"/>
-        <TextBox Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2"  Margin="0,10,0,107" HorizontalAlignment="Center" Width="150" Height="30"/>
-        <Button Grid.Row="6" Grid.Column="0" Content="Editor" Click="editorClick" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Margin="30,0,0,30"/>
-        <Button Grid.Row="6" Grid.Column="6" Content="Submit" Margin="0,0,30,30" Width="80" HorizontalAlignment="Right" Click="onSubmit" Height="30" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="6" Text="Start Semester: " FontSize="18" Margin="147,21,0,59" HorizontalAlignment="Left" Width="124" Grid.RowSpan="2"/>
+        <TextBlock Grid.Row="7" Text="End Semester: " FontSize="18" Margin="147,38,0,10" HorizontalAlignment="Left" Width="118"/>
+        <TextBox Grid.Row="6" Margin="307,21,1463,59" HorizontalAlignment="Center" Width="150" Grid.RowSpan="2"/>
+        <TextBox Grid.Row="7" Margin="307,38,1463,9" HorizontalAlignment="Center" Width="150"/>
+        <TextBlock Grid.Row="8" Text="Current Semester: " FontSize="18" Margin="147,19,0,98" HorizontalAlignment="Left" Width="148"/>
+        <TextBox Grid.Row="8" Margin="307,19,1463,98" HorizontalAlignment="Center" Width="150"/>
+        <Button Grid.Row="9" Content="Editor" Click="editorClick" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Margin="30,0,0,30"/>
+        <Button Grid.Row="9"  Content="Submit" Margin="0,0,30,30" Width="80" HorizontalAlignment="Right" Click="onSubmit" Height="30" VerticalAlignment="Bottom"/>
     </Grid>
 </Page>
