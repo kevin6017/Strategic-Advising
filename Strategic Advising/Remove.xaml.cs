@@ -59,8 +59,9 @@ namespace Strategic_Advising
             DataGridViewCheckBoxColumn ckCol = new DataGridViewCheckBoxColumn();
             ckCol.HeaderText = "Remove Class?";
             ckCol.CellTemplate = new DataGridViewCheckBoxCell();
-            ckCol.ReadOnly = false;
+            ckCol.ReadOnly = true;
             dgv.Columns.Add(ckCol);
+            dgv.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
             for (int i = 0; i < numberOfColumns; i++)
             {
                 dgv.Columns[i].ReadOnly = true;
@@ -72,6 +73,27 @@ namespace Strategic_Advising
         {
             Editor window = new Editor();
             this.NavigationService.Navigate(window);
+
+        }
+
+        private void cellClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
+            {
+                DataGridViewCheckBoxCell currentCell = new DataGridViewCheckBoxCell();
+                var row = dgv.Rows[e.RowIndex];
+                currentCell = (DataGridViewCheckBoxCell)row.Cells[2];
+                if (currentCell.Value == null)
+                {
+                    currentCell.Value = true;
+                }
+                else
+                {
+                    currentCell.Value = !(bool)currentCell.Value;
+                }
+            }
         }
 
         private void Button_Click_Remove(object sender, RoutedEventArgs e)
