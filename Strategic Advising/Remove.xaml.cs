@@ -40,7 +40,7 @@ namespace Strategic_Advising
             dataTable.Columns.Add(dc2);
             //string filePath = "Strategic_Advising.res." + currentFilePath;    now file path is built entirely in editor C#
             var tempFilePath = "Strategic_Advising.res.HonorsCoreClasses.json";
-            var JSONclasses = new JsonLoader().loadCourseList(tempFilePath);
+            var JSONclasses = new JsonLoader().loadCourseList(filePath);
             for (var i = 0; i < JSONclasses.Count; i++) //theres an extra row being created here? (Issue #2)
             {
                 DataRow dr = dataTable.NewRow();

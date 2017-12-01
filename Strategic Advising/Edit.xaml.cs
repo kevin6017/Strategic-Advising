@@ -33,8 +33,8 @@ namespace Strategic_Advising
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //JSONclasses = new JsonLoader().loadCourseList(filePath);
-            JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res.HonorsCoreClasses.json");
+            JSONclasses = new JsonLoader().loadCourseList(filePath);
+            //JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res.HonorsCoreClasses.json");
             courseNumberInput.Text = JSONclasses[classIndex].courseNumber; //popular online opinion says we should use bindings and dependencies to do this instead of doing directly
             courseTitleInput.Text = JSONclasses[classIndex].courseTitle;
             creditHoursInput.Text = JSONclasses[classIndex].creditHours;
