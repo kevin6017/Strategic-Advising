@@ -19,11 +19,11 @@
             <RowDefinition Height="963" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="960,0" Width="0"/>
-        <TextBlock Grid.Row="1" Text="Course Number: " FontSize="18" HorizontalAlignment="Left" Margin="71,86,0,854"/>
+        <TextBlock Grid.Row="1" Text="Course Number: " FontSize="18" HorizontalAlignment="Left" Margin="71,123,0,817"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="210,123,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="courseNumberInput"/>
         <TextBlock Grid.Row="1" Text="Course Title: " FontSize="18" HorizontalAlignment="Left" Margin="71,50,0,889"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="210,51,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="courseTitleInput"/>
-        <TextBlock Grid.Row="1" Text="Credit Hours: " FontSize="18" HorizontalAlignment="Left" Margin="71,123,0,820"/>
+        <TextBlock Grid.Row="1" Text="Credit Hours: " FontSize="18" HorizontalAlignment="Left" Margin="71,89,0,854"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="210,86,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="creditHoursInput"/>
         <CheckBox Content="Fall" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="18" Margin="71,151,0,0" Grid.Row="1" VerticalAlignment="Top" Width="154" Name="fallInput">
             <CheckBox.Resources>
