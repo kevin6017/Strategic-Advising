@@ -18,7 +18,6 @@
             <RowDefinition Height="Auto" MinHeight="117"/>
             <RowDefinition Height="963" />
         </Grid.RowDefinitions>
-<<<<<<< BrianEditorChanges
         <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="960,0" Width="0"/>
         <TextBlock Grid.Row="1" Text="Course Number: " FontSize="18" HorizontalAlignment="Left" Margin="60,25,0,0"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="199,25,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="courseNumberInput"/>
@@ -33,25 +32,16 @@
                 </Style>
             </CheckBox.Resources>
         </CheckBox>
-<<<<<<< BrianEditorChanges
-        <CheckBox Content="Spring" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="18" Margin="60,12,0,0" Grid.Row="5" VerticalAlignment="Top" Width="154" Name="springInput">
-=======
-        <CheckBox Content="Spring" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="18" Margin="60,108,0,0" Grid.Row="1" VerticalAlignment="Top" Width="154" Height="23">
->>>>>>> master
+
+        <CheckBox Content="Spring" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="18" Margin="60,108,0,0" Grid.Row="1" VerticalAlignment="Top" Width="154" Height="23" Name="springInput">
             <CheckBox.Resources>
                 <Style TargetType="{x:Type Path}">
                     <Setter Property="FlowDirection" Value="LeftToRight"/>
                 </Style>
             </CheckBox.Resources>
         </CheckBox>
-<<<<<<< BrianEditorChanges
-        <TextBlock Grid.Row="2" Text="Prerequisites: " FontSize="18" HorizontalAlignment="Left" Margin="60,105,0,-71"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="199,105,0,-64" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="prerequisitesInput"/>
-        <Button Content="Back" Margin="0,0,30,30" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
-=======
         <TextBlock Grid.Row="1" Text="Prerequisites: " FontSize="18" HorizontalAlignment="Left" Margin="60,154,0,786" Width="111"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="199,154,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="199,154,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="prerequisitesInput"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,100" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
->>>>>>> master
     </Grid>
 </Page>
