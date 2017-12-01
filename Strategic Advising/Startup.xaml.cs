@@ -27,8 +27,6 @@ namespace Strategic_Advising
 
         private void onSubmit(object sender, RoutedEventArgs e)
         {
-            //CompletedClasses window = new CompletedClasses();
-            //this.NavigationService.Navigate(window);
             CompletedClasses window = new CompletedClasses();
             this.NavigationService.Navigate(window);
         }

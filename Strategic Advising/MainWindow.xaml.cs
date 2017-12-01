@@ -24,8 +24,6 @@ namespace Strategic_Advising
         {
             InitializeComponent();
             MainFrame.Content = new Startup();
-        }
-
-        
+        }        
     }
 }

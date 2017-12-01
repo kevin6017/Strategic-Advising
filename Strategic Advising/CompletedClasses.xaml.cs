@@ -33,8 +33,6 @@ namespace Strategic_Advising
 
         DataGridView dgv;
         DataTable dataTable;
-        //Assembly _assembly;
-        //StreamReader _textStreamReader;
 
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -66,8 +64,8 @@ namespace Strategic_Advising
                 dr[0] = JSONclasses[i].courseNumber;
                 dr[1] = JSONclasses[i].courseTitle;
                 dr[2] = JSONclasses[i].creditHours;
-                dr[3] = JSONclasses[i].fall; //these two are clickable (Issue #1)
-                dr[4] = JSONclasses[i].spring; //not sure how to lock them
+                dr[3] = JSONclasses[i].fall;
+                dr[4] = JSONclasses[i].spring;
                 dr[5] = string.Join(", ", JSONclasses[i].prerequisites);
                 
                 dataTable.Rows.Add(dr);
@@ -98,16 +96,6 @@ namespace Strategic_Advising
             
 
         }
-
-        /*private List<Course> loadCourseList()
-        {
-            _assembly = Assembly.GetExecutingAssembly();
-            _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("Strategic_Advising.res.HonorsCoreClasses.json"));
-            string json = _textStreamReader.ReadToEnd();
-            var jsonObject = JsonConvert.DeserializeObject<List<Course>>(json);
-            return jsonObject;
-            
-        }*/
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

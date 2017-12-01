@@ -42,7 +42,6 @@ namespace Strategic_Advising
             dataTable.Columns.Add(dc2);
 
             JSONclasses = new JsonLoader().loadCourseList(filePath);
-            //JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res.HonorsCoreClasses.json");
             for (var i = 0; i < JSONclasses.Count; i++)
             {
                 DataRow dr = dataTable.NewRow();

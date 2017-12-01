@@ -65,8 +65,6 @@ namespace Strategic_Advising
             ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
             selectedMajorJSONFile = "Strategic_Advising.res." + temp.Name + ".json"; //probably a more official way to do this besides using the name but oh well
             selectedMajorName = (string) temp.Content;
-            // noClassesMessage = System.Windows.MessageBox.Show(selectedMajorJSONFile + "\r\n" + selectedMajorName, "Confirmation", MessageBoxButton.OK);
-
         }
     }
 }

@@ -33,7 +33,5 @@ namespace Strategic_Advising
             var jsonObject = JsonConvert.DeserializeObject<List<Semester>>(json);
             return jsonObject;
         }
-    }
-
-    
+    }    
 }
