@@ -73,6 +73,9 @@
       <DependentUpon>Edit.xaml</DependentUpon>
     </Compile>
     <Compile Include="JsonLoader.cs" />
+    <Compile Include="EditSelector.xaml.cs">
+      <DependentUpon>EditSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Remove.xaml.cs">
       <DependentUpon>Remove.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EditSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Remove.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +164,7 @@
     <EmbeddedResource Include="res\HonorsCoreClasses.json" />
     <EmbeddedResource Include="res\SampleSchedule.json" />
     <EmbeddedResource Include="res\CSclasses.json" />
+    <EmbeddedResource Include="res\MathClasses.json" />
     <None Include="res\UniversityCoreClasses.json" />
   </ItemGroup>
   <ItemGroup>

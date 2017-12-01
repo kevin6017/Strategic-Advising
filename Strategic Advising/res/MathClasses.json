@@ -1,0 +1,24 @@
+[
+  {
+    "courseNumber": "MATH 80085",
+    "courseTitle": "Genergic Math Class",
+    "creditHours": 420,
+    "fall": true,
+    "spring": true,
+    "prerequisites": [ "" ],
+    "courseDescription": "Test"
+  }
+]
+/* Template for copypasta
+  {
+    "courseNumber":,
+    "courseTitle": ,
+    "creditHours":,
+    "fall":,
+    "spring": ,
+    "prerequisites": [],
+    "courseDescription":  ""
+  },
+
+
+*/

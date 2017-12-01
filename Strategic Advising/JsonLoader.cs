@@ -18,7 +18,8 @@ namespace Strategic_Advising
         public List<Course> loadCourseList(string filepath)
         {
             assembly = Assembly.GetExecutingAssembly();
-            streamReader = new StreamReader(assembly.GetManifestResourceStream(filepath));
+            var temp = assembly.GetManifestResourceStream(filepath);
+            streamReader = new StreamReader(temp);
             string json = streamReader.ReadToEnd();
             var jsonObject = JsonConvert.DeserializeObject<List<Course>>(json);
             return jsonObject;

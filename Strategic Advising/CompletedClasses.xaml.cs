@@ -33,8 +33,8 @@ namespace Strategic_Advising
 
         DataGridView dgv;
         DataTable dataTable;
-        Assembly _assembly;
-        StreamReader _textStreamReader;
+        //Assembly _assembly;
+        //StreamReader _textStreamReader;
 
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -94,6 +94,8 @@ namespace Strategic_Advising
             }
             
             sampleGrid.Child = dgv;
+
+            
 
         }
 
