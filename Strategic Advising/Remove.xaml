@@ -15,7 +15,7 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="67"/>
-            <RowDefinition Height="Auto" MinHeight="98"/>
+            <RowDefinition Height="*" MinHeight="98"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Content="Back" Margin="30,0,0,30" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>

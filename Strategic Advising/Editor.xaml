@@ -14,8 +14,7 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="119"/>
-            <RowDefinition Height="Auto" MinHeight="351"/>
-            <RowDefinition/>
+            <RowDefinition Height="*" MinHeight="351"/>
         </Grid.RowDefinitions>
         <TextBlock HorizontalAlignment="Left" Margin="67,89,0,0" Grid.Row="1" FontSize="18" TextWrapping="Wrap" Text="Select Class List to Edit: " Height="25" VerticalAlignment="Top" Width="189"/>
         <Button Content="Home" Margin="0,0,30,30" Grid.Row="2" Click="homeClick" HorizontalAlignment="Right" Width="80" Height="30" VerticalAlignment="Bottom"/>

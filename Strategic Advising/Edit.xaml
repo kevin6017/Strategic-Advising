@@ -16,7 +16,7 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="117"/>
-            <RowDefinition Height="963" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="960,0" Width="0"/>
         <TextBlock Grid.Row="1" Text="Course Number: " FontSize="18" HorizontalAlignment="Left" Margin="71,123,0,817"/>
@@ -42,6 +42,6 @@
         </CheckBox>
         <TextBlock Grid.Row="1" Text="Prerequisites: " FontSize="18" HorizontalAlignment="Left" Margin="71,202,0,738" Width="111"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="210,202,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="prerequisitesInput"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,100" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="71,0,0,480" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
     </Grid>
 </Page>

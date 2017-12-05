@@ -14,31 +14,32 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="121"/>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" MinHeight="816.8" />
+            <RowDefinition Height="auto" MinHeight="142.4"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="960,0" Width="0"/>
-        <TextBlock Grid.Row="1" Text="Course Number: " FontSize="18" HorizontalAlignment="Left" Margin="62,71,0,865" Width="134"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="201,71,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock Grid.Row="1" Text="Course Title: " FontSize="18" HorizontalAlignment="Left" Margin="62,42,0,895" Width="103"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="201,43,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock Grid.Row="1" Text="Credit Hours: " FontSize="18" HorizontalAlignment="Left" Margin="64,99,0,839" Width="109"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="201,99,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <CheckBox Content="Fall" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="18" Margin="62,129,0,0" Grid.Row="1" VerticalAlignment="Top" Width="154" Height="23">
+        <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="960,0,960,815.6" Width="0" Grid.RowSpan="2"/>
+        <TextBlock Grid.Row="1" Text="Course Number: " FontSize="18" HorizontalAlignment="Left" Margin="62,71.2,0,719.6" Width="134"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="201,71.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock Grid.Row="1" Text="Course Title: " FontSize="18" HorizontalAlignment="Left" Margin="62,42.2,0,749.6" Width="103"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="201,43.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock Grid.Row="1" Text="Credit Hours: " FontSize="18" HorizontalAlignment="Left" Margin="64,99.2,0,693.6" Width="109"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="201,99.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <CheckBox Content="Fall" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="18" Margin="62,129.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="154" Height="23">
             <CheckBox.Resources>
                 <Style TargetType="{x:Type Path}">
                     <Setter Property="FlowDirection" Value="LeftToRight"/>
                 </Style>
             </CheckBox.Resources>
         </CheckBox>
-        <CheckBox Content="Spring" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="18" Margin="62,152,0,0" Grid.Row="1" VerticalAlignment="Top" Width="154" Height="23">
+        <CheckBox Content="Spring" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="18" Margin="62,152.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="154" Height="23">
             <CheckBox.Resources>
                 <Style TargetType="{x:Type Path}">
                     <Setter Property="FlowDirection" Value="LeftToRight"/>
                 </Style>
             </CheckBox.Resources>
         </CheckBox>
-        <TextBlock Grid.Row="1" Text="Prerequisites: " FontSize="18" HorizontalAlignment="Left" Margin="62,176,0,760" Width="111"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="201,176,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,100" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
+        <TextBlock Grid.Row="1" Text="Prerequisites: " FontSize="18" HorizontalAlignment="Left" Margin="62,176.2,0,614.6" Width="111"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="201,176.2,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="62,0,0,297.6" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
     </Grid>
 </Page>
