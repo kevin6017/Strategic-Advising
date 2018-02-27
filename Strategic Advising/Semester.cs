@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace Strategic_Advising
 {
-    class Semester
+    public class Semester
     {
-        public String semester { get; set; }
+        public string semester { get; set; }
 
         public int position { get; set; }
 
-        public string[] classes { get; set; }
+        public List<Course> classes { get; set; }
+
+        public int totalCreditHours { get; internal set; }
+
+        public bool isFall { get; internal set; }
     }
 }

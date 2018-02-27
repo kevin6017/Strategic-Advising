@@ -36,7 +36,7 @@ namespace Strategic_Advising
             JSONclasses = new JsonLoader().loadCourseList(filePath);
             courseNumberInput.Text = JSONclasses[classIndex].courseNumber; //popular online opinion says we should use bindings and dependencies to do this instead of doing directly
             courseTitleInput.Text = JSONclasses[classIndex].courseTitle;
-            creditHoursInput.Text = JSONclasses[classIndex].creditHours;
+            creditHoursInput.Text = JSONclasses[classIndex].creditHours.ToString();
             fallInput.IsChecked = JSONclasses[classIndex].fall;
             springInput.IsChecked = JSONclasses[classIndex].spring;
             prerequisitesInput.Text = string.Join(", ", JSONclasses[classIndex].prerequisites); ; //will need a better way to do this, need to preserve string[]

@@ -29,6 +29,7 @@ namespace Strategic_Advising
         public CompletedClasses()
         {
             InitializeComponent();
+            
         }
 
         DataGridView dgv;
@@ -37,81 +38,97 @@ namespace Strategic_Advising
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dataTable = new DataTable("sampleTable");
+            //dataTable = new DataTable("sampleTable");
             
-            DataColumn dc1 = new DataColumn("Course Number", typeof(string));
-            DataColumn dc2 = new DataColumn("Course Title", typeof(string));
-            DataColumn dc3 = new DataColumn("Credit Hours", typeof(int));
-            DataColumn dc4 = new DataColumn("Spring Class", typeof(bool));
-            DataColumn dc5 = new DataColumn("Fall Class", typeof(bool));
-            DataColumn dc6 = new DataColumn("Prerequisites", typeof(string));
+            //DataColumn dc1 = new DataColumn("Course Number", typeof(string));
+            //DataColumn dc2 = new DataColumn("Course Title", typeof(string));
+            //DataColumn dc3 = new DataColumn("Credit Hours", typeof(int));
+            //DataColumn dc4 = new DataColumn("Spring Class", typeof(bool));
+            //DataColumn dc5 = new DataColumn("Fall Class", typeof(bool));
+            //DataColumn dc6 = new DataColumn("Prerequisites", typeof(string));
 
-            dc4.ReadOnly = true;
-            dc5.ReadOnly = true;
+            //dc4.ReadOnly = true;
+            //dc5.ReadOnly = true;
 
-            dataTable.Columns.Add(dc1);
-            dataTable.Columns.Add(dc2);
-            dataTable.Columns.Add(dc3);
-            dataTable.Columns.Add(dc4);
-            dataTable.Columns.Add(dc5);
-            dataTable.Columns.Add(dc6);
+            //dataTable.Columns.Add(dc1);
+            //dataTable.Columns.Add(dc2);
+            //dataTable.Columns.Add(dc3);
+            //dataTable.Columns.Add(dc4);
+            //dataTable.Columns.Add(dc5);
+            //dataTable.Columns.Add(dc6);
             
             
-            var JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res.HonorsCoreClasses.json");
-            for (var i=0; i<JSONclasses.Count; i++) //theres an extra row being created here? (Issue #2)
-            {
-                DataRow dr = dataTable.NewRow();
-                dr[0] = JSONclasses[i].courseNumber;
-                dr[1] = JSONclasses[i].courseTitle;
-                dr[2] = JSONclasses[i].creditHours;
-                dr[3] = JSONclasses[i].fall;
-                dr[4] = JSONclasses[i].spring;
-                dr[5] = string.Join(", ", JSONclasses[i].prerequisites);
-                
-                dataTable.Rows.Add(dr);
-                
-            }
+            //var JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res.HonorsCoreClasses.json");
+            YAMLLoader loader = new YAMLLoader();
+            List<Course> courseList = loader.getCurriculum(0);
+            courseList.AddRange(loader.getCurriculum(2));
             dgv = new DataGridView();
-            dgv.AutoGenerateColumns = false;
-            dgv.ColumnCount = 6;
-            dgv.Columns[0].DataPropertyName = "Course Number";
-            dgv.Columns[1].DataPropertyName = "Course Title";
-            dgv.Columns[2].DataPropertyName = "Credit Hours";
-            dgv.Columns[3].DataPropertyName = "Spring Class";
-            dgv.Columns[4].DataPropertyName = "Fall Class";
-            dgv.Columns[5].DataPropertyName = "Prerequisites";
-            dgv.DataSource = dataTable;
-            DataGridViewCheckBoxColumn ckCol = new DataGridViewCheckBoxColumn();
-            ckCol.HeaderText = "Check Column";
-            ckCol.CellTemplate = new DataGridViewCheckBoxCell();
-            ckCol.ReadOnly = false;
-            dgv.Columns.Add(ckCol);
-            for (int i = 0; i<6; i++)
-            {
-                dgv.Columns[i].ReadOnly = true;
-            }
-            
+            dgv.DataSource = courseList;
+            dgv.ReadOnly = true;
             sampleGrid.Child = dgv;
+            
+            //foreach(Course course in courseList) //theres an extra row being created here? (Issue #2)
+            //{
+            //    DataRow dr = dataTable.NewRow();
+            //    dr[0] = JSONclasses[i].courseNumber;
+            //    dr[1] = JSONclasses[i].courseTitle;
+            //    dr[2] = JSONclasses[i].creditHours;
+            //    dr[3] = JSONclasses[i].fall;
+            //    dr[4] = JSONclasses[i].spring;
+            //    dr[5] = string.Join(", ", JSONclasses[i].prerequisites);
+                
+            //    dataTable.Rows.Add(dr);
+                
+            //}
+            //dgv = new DataGridView();
+            //dgv.AutoGenerateColumns = false;
+            //dgv.ColumnCount = 6;
+            //dgv.Columns[0].DataPropertyName = "Course Number";
+            //dgv.Columns[1].DataPropertyName = "Course Title";
+            //dgv.Columns[2].DataPropertyName = "Credit Hours";
+            //dgv.Columns[3].DataPropertyName = "Spring Class";
+            //dgv.Columns[4].DataPropertyName = "Fall Class";
+            //dgv.Columns[5].DataPropertyName = "Prerequisites";
+            //dgv.DataSource = dataTable;
+            //DataGridViewCheckBoxColumn ckCol = new DataGridViewCheckBoxColumn();
+            //ckCol.HeaderText = "Check Column";
+            //ckCol.CellTemplate = new DataGridViewCheckBoxCell();
+            //ckCol.ReadOnly = false;
+            //dgv.Columns.Add(ckCol);
+            //for (int i = 0; i<6; i++)
+            //{
+            //    dgv.Columns[i].ReadOnly = true;
+            //}
+            
+            //sampleGrid.Child = dgv;
 
             
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<string> completedClasses = new List<string>();
-            foreach (DataGridViewRow row in dgv.Rows)
+            List<Course> completedCourses = new List<Course>();
+            foreach(DataGridViewRow row in dgv.SelectedRows)
             {
-                
-                DataGridViewCheckBoxCell currentCell = new DataGridViewCheckBoxCell();
-                currentCell = (DataGridViewCheckBoxCell)row.Cells[6];
-                if (currentCell.Value != null && (bool)currentCell.Value == true)
-                {
-                    completedClasses.Add((string)row.Cells[0].Value);
-                }
+                var item = row.DataBoundItem as Course;
+                completedCourses.Add(item);
             }
-
-            TentativeSchedule window = new TentativeSchedule();
+            Scheduler scheduler = new Scheduler(completedCourses, 4, true, 0, 2);
+            List<Semester> listOfSemesters = scheduler.getSemesterList();
+            //List<string> completedClasses = new List<string>();
+            //foreach (DataGridViewRow row in dgv.Rows)
+            //{
+                
+            //    DataGridViewCheckBoxCell currentCell = new DataGridViewCheckBoxCell();
+            //    currentCell = (DataGridViewCheckBoxCell)row.Cells[6];
+            //    if (currentCell.Value != null && (bool)currentCell.Value == true)
+            //    {
+            //        completedClasses.Add((string)row.Cells[0].Value);
+            //    }
+            //}
+            //create shceduler here 
+            TentativeSchedule window = new TentativeSchedule(listOfSemesters);
             this.NavigationService.Navigate(window);
         }
 

@@ -25,9 +25,12 @@ namespace Strategic_Advising
     /// </summary>
     public partial class TentativeSchedule : Page
     {
-        public TentativeSchedule()
+        private List<Semester> semesterList;
+
+        public TentativeSchedule(List<Semester> semesters)
         {
             InitializeComponent();
+            this.semesterList = semesters;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -38,24 +41,24 @@ namespace Strategic_Advising
             fallpanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             springpanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 
-            var jsonSchedule = new JsonLoader().loadScheduleList("Strategic_Advising.res.SampleSchedule.json");
+            //var semesterList = new JsonLoader().loadScheduleList("Strategic_Advising.res.SampleSchedule.json");
 
             bool isFall = true;
 
-            for (var i = 0; i < jsonSchedule.Count; i++)
+            foreach(Semester sem in semesterList)
             {
                 DataGridView dgv = new DataGridView();
                 dgv.ColumnCount = 0;
-                DataTable dt = new DataTable("semesterTable");
-                dt.Columns.Add(new DataColumn("Course Title", typeof(string)));
-                for (var j = 0; j < jsonSchedule[i].classes.Count(); j++)
-                {
-                    DataRow dr = dt.NewRow();
-                    dr[0] = jsonSchedule[i].classes[j];
-                    dt.Rows.Add(dr);
-                }
+                //DataTable dt = new DataTable("semesterTable");
+                //dt.Columns.Add(new DataColumn("Course Title", typeof(string)));
+                //for (var j = 0; j < semesterList[i].classes.Count(); j++)
+                //{
+                //    DataRow dr = dt.NewRow();
+                //    dr[0] = semesterList[i].classes[j];
+                //    dt.Rows.Add(dr);
+                //}
                 dgv.Width = 450;
-                dgv.DataSource = dt;
+                dgv.DataSource = sem.classes.ToList<Course>();
                 dgv.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
                 
                 if (isFall)

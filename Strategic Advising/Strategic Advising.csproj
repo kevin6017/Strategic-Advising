@@ -60,6 +60,9 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="YamlDotNet, Version=4.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.4.3.1\lib\net45\YamlDotNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -69,6 +72,7 @@
     <Compile Include="Add.xaml.cs">
       <DependentUpon>Add.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Curriculum.cs" />
     <Compile Include="Edit.xaml.cs">
       <DependentUpon>Edit.xaml</DependentUpon>
     </Compile>
@@ -79,6 +83,7 @@
     <Compile Include="Remove.xaml.cs">
       <DependentUpon>Remove.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Scheduler.cs" />
     <Compile Include="Semester.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="CompletedClasses.xaml.cs">
@@ -90,6 +95,7 @@
     <Compile Include="TentativeSchedule.xaml.cs">
       <DependentUpon>TentativeSchedule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="YAMLLoader.cs" />
     <Page Include="Add.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -166,6 +172,7 @@
     <EmbeddedResource Include="res\CSclasses.json" />
     <EmbeddedResource Include="res\MathClasses.json" />
     <EmbeddedResource Include="res\UniversityCoreClasses.json" />
+    <EmbeddedResource Include="res\MasterCourseList.eyaml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

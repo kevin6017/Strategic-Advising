@@ -25,7 +25,7 @@ namespace Strategic_Advising
             InitializeComponent();
         }
 
-        private void onSubmit(object sender, RoutedEventArgs e)
+        public void onSubmit(object sender, RoutedEventArgs e)
         {
             CompletedClasses window = new CompletedClasses();
             this.NavigationService.Navigate(window);
