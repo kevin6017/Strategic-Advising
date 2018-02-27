@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
+using System.Reflection;
 
 
 namespace Strategic_Advising
@@ -16,8 +17,12 @@ namespace Strategic_Advising
 
         public YAMLLoader()
         {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            var temp = assembly.GetManifestResourceStream("Strategic_Advising.res.MasterCourseList.eyaml");
+            StreamReader rdr = new StreamReader(temp);
+            string yaml = rdr.ReadToEnd();
             var ds = new DeserializerBuilder().WithNamingConvention(new CamelCaseNamingConvention()).Build();
-            this.curric = ds.Deserialize<List<Curriculum>>(File.OpenText("..\\..\\res/MasterCourseList.eyaml"));
+            this.curric = ds.Deserialize<List<Curriculum>>(yaml);
         }
 
         public List<Curriculum> getMasterList()
