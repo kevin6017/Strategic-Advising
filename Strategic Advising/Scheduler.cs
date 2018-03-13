@@ -27,7 +27,7 @@ namespace Strategic_Advising
             buildPrereqList();
             prioritizeCourses();
             assignClassDependencyNum();
-            buildSemesterList();
+            buildSemesterList(numberOfSemesters, nextSemesterIsFall);
             printSemesters();
         }
 
@@ -124,11 +124,11 @@ namespace Strategic_Advising
             }
         }
 
-        private void buildSemesterList()
+        private void buildSemesterList(int numSemesters, bool isFall)
         {
             //Assign according to user input
-            int semestersToGo = 8;
-            bool isFallTracker = true;
+            int semestersToGo = numSemesters;
+            bool isFallTracker = isFall;
 
             int totalCreditsToGo = findTotalCredits();
             int targetHours = totalCreditsToGo / semestersToGo;

@@ -168,11 +168,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <EmbeddedResource Include="res\HonorsCoreClasses.json" />
+    <EmbeddedResource Include="res\MasterCourseList.eyaml" />
     <EmbeddedResource Include="res\SampleSchedule.json" />
     <EmbeddedResource Include="res\CSclasses.json" />
     <EmbeddedResource Include="res\MathClasses.json" />
     <EmbeddedResource Include="res\UniversityCoreClasses.json" />
-    <EmbeddedResource Include="res\MasterCourseList.eyaml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
