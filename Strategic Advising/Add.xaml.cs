@@ -20,13 +20,12 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Add : Page
     {
-        public Add(string passedFilePath)
+        public Add(List<Course> passedCourseList)
         {
             InitializeComponent();
-            filePath = passedFilePath;
+            courseList = passedCourseList;
         }
-
-        string filePath;
+        List<Course> courseList;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

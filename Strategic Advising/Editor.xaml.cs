@@ -36,35 +36,37 @@ namespace Strategic_Advising
             
         }
 
-        string selectedMajorName;
-        string selectedMajorJSONFile;
+        List<Course> courseList;
 
         private void Button_ClickAdd(object sender, RoutedEventArgs e)
         {
             getSelectedClass();
-            Add window = new Add(selectedMajorJSONFile);
+            Add window = new Add(courseList);
             this.NavigationService.Navigate(window);
         }
 
         private void Button_ClickEdit(object sender, RoutedEventArgs e)
         {
             getSelectedClass();
-            EditSelector window = new EditSelector(selectedMajorJSONFile);
+            EditSelector window = new EditSelector(courseList);
             this.NavigationService.Navigate(window);
         }
 
         private void Button_ClickRemove(object sender, RoutedEventArgs e)
         {
             getSelectedClass();
-            Remove window = new Remove(selectedMajorJSONFile);
+            Remove window = new Remove(courseList);
             this.NavigationService.Navigate(window);
         }
 
         private void getSelectedClass()
         {
             ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
-            selectedMajorJSONFile = "Strategic_Advising.res." + temp.Name + ".json"; //probably a more official way to do this besides using the name but oh well
-            selectedMajorName = (string) temp.Content;
+            int curricIndex = Int32.Parse((string) temp.Tag);
+            courseList = new YAMLLoader().getCurriculum(curricIndex);
+            //selectedMajorJSONFile = "Strategic_Advising.res." + temp.Name + ".json"; //probably a more official way to do this besides using the name but oh well
+            //selectedMajorName = (string) temp.Content;
         }
+
     }
 }

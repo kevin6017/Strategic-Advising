@@ -20,31 +20,29 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Edit : Page
     {
-        public Edit(string passedFilePath, int passedClassIndex)
+        public Edit(List<Course> passedCourseList, int passedClassIndex)
         {
             InitializeComponent();
-            filePath = passedFilePath;
+            courseList = passedCourseList;
             classIndex = passedClassIndex;
         }
 
-        string filePath;
         int classIndex;
-        List<Course> JSONclasses;
+        List<Course> courseList;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            JSONclasses = new JsonLoader().loadCourseList(filePath);
-            courseNumberInput.Text = JSONclasses[classIndex].courseNumber; //popular online opinion says we should use bindings and dependencies to do this instead of doing directly
-            courseTitleInput.Text = JSONclasses[classIndex].courseTitle;
-            creditHoursInput.Text = JSONclasses[classIndex].creditHours.ToString();
-            fallInput.IsChecked = JSONclasses[classIndex].fall;
-            springInput.IsChecked = JSONclasses[classIndex].spring;
-            prerequisitesInput.Text = string.Join(", ", JSONclasses[classIndex].prerequisites); ; //will need a better way to do this, need to preserve string[]
+            courseNumberInput.Text = courseList[classIndex].courseNumber; //popular online opinion says we should use bindings and dependencies to do this instead of doing directly
+            courseTitleInput.Text = courseList[classIndex].courseTitle;
+            creditHoursInput.Text = courseList[classIndex].creditHours.ToString();
+            fallInput.IsChecked = courseList[classIndex].fall;
+            springInput.IsChecked = courseList[classIndex].spring;
+            prerequisitesInput.Text = string.Join(", ", courseList[classIndex].prerequisites); ; //will need a better way to do this, need to preserve string[]
         }
 
             private void Button_Click(object sender, RoutedEventArgs e)
         {
-            EditSelector window = new EditSelector(filePath);
+            EditSelector window = new EditSelector(courseList);
             this.NavigationService.Navigate(window);
         }
     }

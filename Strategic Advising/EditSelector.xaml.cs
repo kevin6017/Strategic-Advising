@@ -22,16 +22,15 @@ namespace Strategic_Advising
     /// </summary>
     public partial class EditSelector : Page
     {
-        public EditSelector(string passedFilePath)
+        public EditSelector(List<Course> passedCourseList)
         {
             InitializeComponent();
-            filePath = passedFilePath;
+            courseList = passedCourseList;
         }
 
+        List<Course> courseList;
         DataGridView dgv;
         DataTable dataTable;
-        List<Course> JSONclasses;
-        string filePath;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -41,12 +40,11 @@ namespace Strategic_Advising
             dataTable.Columns.Add(dc1);
             dataTable.Columns.Add(dc2);
 
-            JSONclasses = new JsonLoader().loadCourseList(filePath);
-            for (var i = 0; i < JSONclasses.Count; i++)
+            for (var i = 0; i < courseList.Count; i++)
             {
                 DataRow dr = dataTable.NewRow();
-                dr[0] = JSONclasses[i].courseNumber;
-                dr[1] = JSONclasses[i].courseTitle;
+                dr[0] = courseList[i].courseNumber;
+                dr[1] = courseList[i].courseTitle;
 
                 dataTable.Rows.Add(dr);
             }
@@ -76,7 +74,7 @@ namespace Strategic_Advising
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                Edit window = new Edit(filePath, e.RowIndex);
+                Edit window = new Edit(courseList, e.RowIndex);
                 this.NavigationService.Navigate(window);
             }
         }

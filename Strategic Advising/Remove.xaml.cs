@@ -22,12 +22,12 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Remove : Page
     {
-        public Remove(string passedFilePath)
+        public Remove(List<Course> passedCourseList)
         {
             InitializeComponent();
-            filePath = passedFilePath;
+            courseList = passedCourseList;
         }
-        string filePath;
+        List<Course> courseList;
         DataGridView dgv;
         DataTable dataTable;
 
@@ -38,12 +38,11 @@ namespace Strategic_Advising
             DataColumn dc2 = new DataColumn("Course Title", typeof(string));
             dataTable.Columns.Add(dc1);
             dataTable.Columns.Add(dc2);
-            var JSONclasses = new JsonLoader().loadCourseList(filePath);
-            for (var i = 0; i < JSONclasses.Count; i++) //theres an extra row being created here? (Issue #2)
+            for (var i = 0; i < courseList.Count; i++) //theres an extra row being created here? (Issue #2)
             {
                 DataRow dr = dataTable.NewRow();
-                dr[0] = JSONclasses[i].courseNumber;
-                dr[1] = JSONclasses[i].courseTitle;
+                dr[0] = courseList[i].courseNumber;
+                dr[1] = courseList[i].courseTitle;
 
                 dataTable.Rows.Add(dr);
             }
