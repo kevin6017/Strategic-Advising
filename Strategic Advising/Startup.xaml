@@ -50,7 +50,7 @@
         </CheckBox>
         <TextBlock Grid.Row="5" Text="Minimum Credit Hour: " FontSize="18" Margin="144,56,0,138" HorizontalAlignment="Left" Width="181" />
         <TextBlock Grid.Row="5" Text="Maximum Credit Hour: " FontSize="18" Margin="144,109,0,79" HorizontalAlignment="Left" Width="181"/>
-        <ComboBox Grid.Row="5" Grid.ColumnSpan="1" Margin="330,56,0,138" HorizontalAlignment="Left" Width="45">
+        <ComboBox Grid.Row="5" Grid.ColumnSpan="1" Margin="330,56,0,138" SelectedIndex="3" HorizontalAlignment="Left" Width="45">
             <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="11" HorizontalAlignment="Left" Width="30"/>
@@ -59,7 +59,7 @@
             <ComboBoxItem Content="14" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="15" HorizontalAlignment="Left" Width="30"/>
         </ComboBox>
-        <ComboBox Grid.Row="5" Margin="330,109,0,84" HorizontalAlignment="Left" Width="45">
+        <ComboBox Grid.Row="5" Margin="330,109,0,84" SelectedIndex="2" HorizontalAlignment="Left" Width="45">
             <ComboBoxItem Content="16" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="17" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="18" HorizontalAlignment="Left" Width="30"/>
@@ -70,10 +70,10 @@
         <TextBlock Grid.Row="6" Text="Start Semester: " FontSize="18" Margin="139,13,0,67" HorizontalAlignment="Left" Width="124" Grid.RowSpan="2"/>
         <Button Grid.Row="9" Content="Editor" Click="editorClick" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Margin="30,0,0,30"/>
         <Button Grid.Row="9"  Content="Submit" Margin="0,0,30,30" Width="80" HorizontalAlignment="Right" Click="onSubmit" Height="30" VerticalAlignment="Bottom"/>
-        <RadioButton Content="Fall" FontSize="18" HorizontalAlignment="Left" Margin="263,19,0,0" Grid.Row="6" VerticalAlignment="Top" Grid.RowSpan="2" x:Name="Fall"/>
+        <RadioButton Content="Fall" FontSize="18" HorizontalAlignment="Left" Margin="263,19,0,0" Grid.Row="6" IsChecked="True" VerticalAlignment="Top" Grid.RowSpan="2" x:Name="Fall"/>
         <RadioButton Content="Spring" FontSize="18" HorizontalAlignment="Left" Margin="263,15,0,0" Grid.Row="7" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="8" Text="Semesters Remaining: " FontSize="18" Margin="139,47,0,70" HorizontalAlignment="Left" Width="175"/>
-        <ComboBox Grid.Row="8" Grid.ColumnSpan="1" Margin="330,47,0,70" HorizontalAlignment="Left" Width="45" x:Name="ddlSemesters">
+        <ComboBox Grid.Row="8" Grid.ColumnSpan="1" Margin="330,47,0,70" HorizontalAlignment="Left" Width="45" SelectedIndex="5" x:Name="ddlSemesters">
             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="30"/>
