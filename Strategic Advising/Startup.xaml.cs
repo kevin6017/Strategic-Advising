@@ -27,7 +27,23 @@ namespace Strategic_Advising
 
         public void onSubmit(object sender, RoutedEventArgs e)
         {
-            CompletedClasses window = new CompletedClasses();
+            int majorIndex = -1;
+            int coreIndex = 0;
+            if (CS.IsChecked == true)
+            {
+                majorIndex = 3;
+            }
+            else
+            {
+                majorIndex = 2;
+            }
+            if(chkHonors.IsChecked == true)
+            {
+                coreIndex = 1;
+            }
+            bool isFall = (bool)Fall.IsChecked;
+            int numSemesters = Int32.Parse(((ComboBoxItem)ddlSemesters.SelectedItem).Content.ToString());
+            CompletedClasses window = new CompletedClasses(majorIndex, coreIndex, isFall, numSemesters);
             this.NavigationService.Navigate(window);
         }
 

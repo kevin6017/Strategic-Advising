@@ -26,14 +26,22 @@ namespace Strategic_Advising
     /// </summary>
     public partial class CompletedClasses : Page
     {
-        public CompletedClasses()
+        public CompletedClasses(int major, int core, bool fall, int semesters)
         {
             InitializeComponent();
-            
+            majorIndex = major;
+            coreIndex = core;
+            isFall = fall;
+            numSemesters = semesters;
         }
 
         DataGridView dgv;
         DataTable dataTable;
+        int majorIndex;
+        int coreIndex;
+        bool isFall;
+        int numSemesters;
+
 
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -60,8 +68,8 @@ namespace Strategic_Advising
             
             //var JSONclasses = new JsonLoader().loadCourseList("Strategic_Advising.res.HonorsCoreClasses.json");
             YAMLLoader loader = new YAMLLoader();
-            List<Course> courseList = loader.getCurriculum(0);
-            courseList.AddRange(loader.getCurriculum(2));
+            List<Course> courseList = loader.getCurriculum(coreIndex);
+            courseList.AddRange(loader.getCurriculum(majorIndex));
             dgv = new DataGridView();
             dgv.DataSource = courseList;
             dgv.ReadOnly = true;
@@ -114,7 +122,7 @@ namespace Strategic_Advising
                 var item = row.DataBoundItem as Course;
                 completedCourses.Add(item);
             }
-            Scheduler scheduler = new Scheduler(completedCourses, 4, true, 0, 2);
+            Scheduler scheduler = new Scheduler(completedCourses, numSemesters, isFall, coreIndex, majorIndex);
             List<Semester> listOfSemesters = scheduler.getSemesterList();
             //List<string> completedClasses = new List<string>();
             //foreach (DataGridViewRow row in dgv.Rows)
@@ -128,7 +136,7 @@ namespace Strategic_Advising
             //    }
             //}
             //create shceduler here 
-            TentativeSchedule window = new TentativeSchedule(listOfSemesters);
+            TentativeSchedule window = new TentativeSchedule(listOfSemesters, this);
             this.NavigationService.Navigate(window);
         }
 

@@ -35,10 +35,10 @@
         </Grid.ColumnDefinitions>-->
         <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="778,0" Width="364"/>
         <TextBlock Grid.Row="4" Text="Select a Major: " FontSize="18" Margin="139,0,1657,5" RenderTransformOrigin="0.419,3.361"/>
-        <RadioButton Grid.Row="4" GroupName="majorSelect" IsChecked="True" Content="Computer Science" FontSize="18" Margin="285,1,0,5" HorizontalAlignment="Left" Width="172"/>
-        <RadioButton Grid.Row="4" GroupName="majorSelect" IsChecked="False" Content="Mathematics" FontSize="18" Margin="471,1,0,4" HorizontalAlignment="Left" Width="156"/>
+        <RadioButton Grid.Row="4" GroupName="majorSelect" x:Name="CS" IsChecked="True" Content="Computer Science" FontSize="18" Margin="285,1,0,5" HorizontalAlignment="Left" Width="172"/>
+        <RadioButton Grid.Row="4" GroupName="majorSelect" x:Name="Math" IsChecked="False" Content="Mathematics" FontSize="18" Margin="471,1,0,4" HorizontalAlignment="Left" Width="156"/>
         <TextBlock Grid.Row="3" Text="Honors Core:" FontSize="18" Margin="720,16,0,10" Width="108" HorizontalAlignment="Left" Grid.RowSpan="2"/>
-        <CheckBox Grid.Row="4" Margin="829,2,0,12" RenderTransformOrigin="0.49,0.533" HorizontalAlignment="Left" Width="17" FlowDirection="RightToLeft">
+        <CheckBox Grid.Row="4" Margin="829,2,0,12" RenderTransformOrigin="0.49,0.533" HorizontalAlignment="Left" Width="17" FlowDirection="RightToLeft" x:Name="chkHonors">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -70,10 +70,10 @@
         <TextBlock Grid.Row="6" Text="Start Semester: " FontSize="18" Margin="139,13,0,67" HorizontalAlignment="Left" Width="124" Grid.RowSpan="2"/>
         <Button Grid.Row="9" Content="Editor" Click="editorClick" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Margin="30,0,0,30"/>
         <Button Grid.Row="9"  Content="Submit" Margin="0,0,30,30" Width="80" HorizontalAlignment="Right" Click="onSubmit" Height="30" VerticalAlignment="Bottom"/>
-        <RadioButton Content="Fall" FontSize="18" HorizontalAlignment="Left" Margin="263,19,0,0" Grid.Row="6" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <RadioButton Content="Fall" FontSize="18" HorizontalAlignment="Left" Margin="263,19,0,0" Grid.Row="6" VerticalAlignment="Top" Grid.RowSpan="2" x:Name="Fall"/>
         <RadioButton Content="Spring" FontSize="18" HorizontalAlignment="Left" Margin="263,15,0,0" Grid.Row="7" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="8" Text="Semesters Remaining: " FontSize="18" Margin="139,47,0,70" HorizontalAlignment="Left" Width="175"/>
-        <ComboBox Grid.Row="8" Grid.ColumnSpan="1" Margin="330,47,0,70" HorizontalAlignment="Left" Width="45">
+        <ComboBox Grid.Row="8" Grid.ColumnSpan="1" Margin="330,47,0,70" HorizontalAlignment="Left" Width="45" x:Name="ddlSemesters">
             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="30"/>
