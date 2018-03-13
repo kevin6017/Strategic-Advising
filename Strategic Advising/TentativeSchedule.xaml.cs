@@ -57,7 +57,7 @@ namespace Strategic_Advising
                 //    dr[0] = semesterList[i].classes[j];
                 //    dt.Rows.Add(dr);
                 //}
-                dgv.Width = 450;
+                dgv.Width = 600;
                 dgv.DataSource = sem.classes.ToList<Course>();
                 dgv.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
                 
