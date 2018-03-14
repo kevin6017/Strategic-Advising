@@ -26,11 +26,13 @@ namespace Strategic_Advising
     public partial class TentativeSchedule : Page
     {
         private List<Semester> semesterList;
+        private CompletedClasses completedClasses;
 
-        public TentativeSchedule(List<Semester> semesters)
+        public TentativeSchedule(List<Semester> semesters, CompletedClasses prevPage)
         {
             InitializeComponent();
             this.semesterList = semesters;
+            completedClasses = prevPage;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -57,7 +59,7 @@ namespace Strategic_Advising
                 //    dr[0] = semesterList[i].classes[j];
                 //    dt.Rows.Add(dr);
                 //}
-                dgv.Width = 450;
+                dgv.Width = 600;
                 dgv.DataSource = sem.classes.ToList<Course>();
                 dgv.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
                 
@@ -84,7 +86,7 @@ namespace Strategic_Advising
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            CompletedClasses window = new CompletedClasses();
+            CompletedClasses window = completedClasses;
             this.NavigationService.Navigate(window);
         }
 

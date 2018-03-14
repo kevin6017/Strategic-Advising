@@ -384,6 +384,7 @@
     fall: true
     spring: true
     prerequisites:
+      - *ENG104
       - *CS121
       - *DiscreteMath
   - &CS224
