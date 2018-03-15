@@ -75,6 +75,9 @@
     <Compile Include="Add.xaml.cs">
       <DependentUpon>Add.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ClassSelectorWindow.xaml.cs">
+      <DependentUpon>ClassSelectorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Curriculum.cs" />
     <Compile Include="Edit.xaml.cs">
       <DependentUpon>Edit.xaml</DependentUpon>
@@ -100,6 +103,10 @@
     </Compile>
     <Compile Include="YAMLLoader.cs" />
     <Page Include="Add.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClassSelectorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

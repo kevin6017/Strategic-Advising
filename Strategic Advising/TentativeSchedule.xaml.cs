@@ -17,6 +17,7 @@ using Newtonsoft.Json;
 using System.Reflection;
 using System.IO;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace Strategic_Advising
 {
@@ -60,7 +61,9 @@ namespace Strategic_Advising
                 //    dt.Rows.Add(dr);
                 //}
                 dgv.Width = 600;
-                dgv.DataSource = sem.classes.ToList<Course>();
+                var bindingList = new BindingList<Course>(sem.classes.ToList<Course>());
+
+                dgv.DataSource = bindingList;
                 dgv.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
                 
                 if (isFall)
@@ -134,15 +137,43 @@ namespace Strategic_Advising
              
             if(e.ClickedItem.Text == "Move a class")
             {
+                //dropdow list of other semesters to choose from? 
                 System.Windows.MessageBox.Show(row.Cells[0].Value.ToString());
             }
             if (e.ClickedItem.Text == "Add a class")
             {
+                //seperate pop up to choose classes from
+
+                //display pop up
+                ClassSelectorWindow csWindow = new ClassSelectorWindow();
+                csWindow.ShowDialog();
+                //get selecvted class
+
+                //we need to find a way to grab what semester were operating in
+
+
                 System.Windows.MessageBox.Show(row.Cells[0].Value.ToString());
             }
             if (e.ClickedItem.Text == "Remove a class")
             {
-                System.Windows.MessageBox.Show(row.Cells[0].Value.ToString());
+                //pop up confirming decision?
+                Course course = (Course)row.DataBoundItem;
+                removeClass(course, dgv);            
+            }
+        }
+
+        private void removeClass(Course course, DataGridView dgv)
+        {
+            foreach (Semester sem in semesterList)
+            {
+                //temp.Remove(temp.Find(x => x.courseNumber == course.courseNumber));
+                List<Course> courseList = sem.classes;
+                if (courseList.Remove(courseList.Find(x => x.courseNumber == course.courseNumber)))
+                {
+                    dgv.DataSource = courseList;
+                    break;
+                };
+
             }
         }
     }
