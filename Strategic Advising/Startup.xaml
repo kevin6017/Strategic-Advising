@@ -68,7 +68,7 @@
             <ComboBoxItem Content="21" HorizontalAlignment="Left" Width="30"/>
         </ComboBox>
         <TextBlock Grid.Row="6" Text="Start Semester: " FontSize="18" Margin="139,13,0,67" HorizontalAlignment="Left" Width="124" Grid.RowSpan="2"/>
-        <Button Grid.Row="9" Content="Editor" Click="editorClick" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Margin="30,0,0,30"/>
+        <Button Grid.Row="9" Content="Editor" Click="editorClick" HorizontalAlignment="Left" Width="80" Margin="30,0,0,30" Height="30" VerticalAlignment="Bottom"/>
         <Button Grid.Row="9"  Content="Submit" Margin="0,0,30,30" Width="80" HorizontalAlignment="Right" Click="onSubmit" Height="30" VerticalAlignment="Bottom"/>
         <RadioButton Content="Fall" FontSize="18" HorizontalAlignment="Left" Margin="263,19,0,0" Grid.Row="6" IsChecked="True" VerticalAlignment="Top" Grid.RowSpan="2" x:Name="Fall"/>
         <RadioButton Content="Spring" FontSize="18" HorizontalAlignment="Left" Margin="263,15,0,0" Grid.Row="7" VerticalAlignment="Top"/>
