@@ -152,18 +152,24 @@ namespace Strategic_Advising
                 {
                     case true:
                         coursesToAdd = csWindow.selectedCourses();
+                        //get selecvted class
+                        BindingList<Course> tempCourses = (BindingList<Course>)dgv.DataSource;
+                        foreach (Course c in coursesToAdd)
+                        {
+                            tempCourses.Add(c);
+                        }
+
+                        //we need to find a way to grab what semester were operating in
+
+
+                        System.Windows.MessageBox.Show(tempCourses.ToString());
                         break;
                     case false:
                         break;
                     default:
                         break;
                 }
-                //get selecvted class
-
-                //we need to find a way to grab what semester were operating in
-
-
-                System.Windows.MessageBox.Show(row.Cells[0].Value.ToString());
+                
             }
             if (e.ClickedItem.Text == "Remove a class")
             {
