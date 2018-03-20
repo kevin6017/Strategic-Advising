@@ -145,8 +145,19 @@ namespace Strategic_Advising
                 //seperate pop up to choose classes from
 
                 //display pop up
+                List<Course> coursesToAdd = new List<Course>();
                 ClassSelectorWindow csWindow = new ClassSelectorWindow();
-                csWindow.ShowDialog();
+                bool? dialogResult = csWindow.ShowDialog();
+                switch(dialogResult)
+                {
+                    case true:
+                        coursesToAdd = csWindow.selectedCourses();
+                        break;
+                    case false:
+                        break;
+                    default:
+                        break;
+                }
                 //get selecvted class
 
                 //we need to find a way to grab what semester were operating in
