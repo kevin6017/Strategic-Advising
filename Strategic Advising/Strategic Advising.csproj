@@ -95,6 +95,9 @@
     <Compile Include="CompletedClasses.xaml.cs">
       <DependentUpon>CompletedClasses.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SemesterView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Startup.xaml.cs">
       <DependentUpon>Startup.xaml</DependentUpon>
     </Compile>
