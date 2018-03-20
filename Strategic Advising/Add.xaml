@@ -17,11 +17,11 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="960,0,960,816" Width="0" Grid.RowSpan="2"/>
-        <TextBlock Grid.Row="1" Text="Course Number: " FontSize="18" HorizontalAlignment="Left" Margin="62,71,0,720" Width="134"/>
+        <TextBlock Grid.Row="1" Text="Course Number: " FontSize="18" HorizontalAlignment="Left" Margin="62,71,0,860" Width="134" />
         <TextBox HorizontalAlignment="Left" Height="23" Margin="201,71,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock Grid.Row="1" Text="Course Title: " FontSize="18" HorizontalAlignment="Left" Margin="62,42,0,750" Width="103"/>
+        <TextBlock Grid.Row="1" Text="Course Title: " FontSize="18" HorizontalAlignment="Left" Margin="62,42,0,893" Width="103"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="201,43,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock Grid.Row="1" Text="Credit Hours: " FontSize="18" HorizontalAlignment="Left" Margin="64,99,0,694" Width="109"/>
+        <TextBlock Grid.Row="1" Text="Credit Hours: " FontSize="18" HorizontalAlignment="Left" Margin="64,99,0,837" Width="109"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="201,99,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <CheckBox Content="Fall" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="18" Margin="167,129,0,0" Grid.Row="1" VerticalAlignment="Top" Width="49" Height="23">
             <CheckBox.Resources>
@@ -37,9 +37,11 @@
                 </Style>
             </CheckBox.Resources>
         </CheckBox>
-        <TextBlock Grid.Row="1" Text="Prerequisites: " FontSize="18" HorizontalAlignment="Left" Margin="62,176,0,615" Width="111"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="201,176,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,30" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="201,204,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30"/>
+        <TextBlock Grid.Row="1" Text="Prerequisites: " FontSize="18" HorizontalAlignment="Left" Margin="62,176,0,751" Width="111"/>
+        <TextBlock Grid.Row="1" Text="" FontSize="18" HorizontalAlignment="Left" Margin="201,175,0,751" Name="listOfPrereqs" Width="352"/>
+        <Button Content="Select Prerequisites" HorizontalAlignment="Left" Margin="201,209,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="120" Height="30" Click="Prereqs_Selector_Button"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,30" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Add_Class_Button"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="201,244,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30"/>
+        <Button Content="Clear Prerequisites" HorizontalAlignment="Left" Margin="326,208,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="120" Height="30" Click="Prereq_Clear_Button"/>
     </Grid>
 </Page>

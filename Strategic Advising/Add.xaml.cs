@@ -25,12 +25,54 @@ namespace Strategic_Advising
             InitializeComponent();
             courseList = passedCourseList;
         }
-        List<Course> courseList;
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        List<Course> courseList;
+        List<Course> prereqs;
+
+        private void Add_Class_Button(object sender, RoutedEventArgs e)
         {
             Editor window = new Editor();
             this.NavigationService.Navigate(window);
+        }
+
+        private void Prereqs_Selector_Button(object sender, RoutedEventArgs e)
+        {
+            ClassSelectorWindow csWindow = new ClassSelectorWindow();
+            bool? dialogResult = csWindow.ShowDialog();
+            switch (dialogResult)
+            {
+                case true:
+                    if (prereqs == null)
+                    {
+                        prereqs = csWindow.selectedCourses();
+                    }
+                    else
+                    {
+                        prereqs.AddRange(csWindow.selectedCourses());
+                    }        
+                    break;
+                case false:
+                    break;
+                default:
+                    break;
+            }
+            for (int i = 0; i < prereqs.Count; i++)
+            {
+                if (i == prereqs.Count - 1)
+                {
+                    listOfPrereqs.Text += prereqs[i].courseNumber;
+                }
+                else
+                {
+                    listOfPrereqs.Text += prereqs[i].courseNumber + ", ";
+                }
+            }
+        }
+
+        private void Prereq_Clear_Button(object sender, RoutedEventArgs e)
+        {
+            prereqs.Clear();
+            listOfPrereqs.Text = "";
         }
     }
 }
