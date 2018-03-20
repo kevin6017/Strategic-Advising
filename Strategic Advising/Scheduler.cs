@@ -134,7 +134,7 @@ namespace Strategic_Advising
             int targetHours = totalCreditsToGo / semestersToGo;
             List<Course> classList = new List<Course>();
             sortCoursesForScheduling();
-
+            int semesterPosition = 0;
             while (remainingCourseList.Count > 0)
             {
                 Semester currentSemester = new Semester();
@@ -162,6 +162,8 @@ namespace Strategic_Advising
                 }
                 semesterList.Add(currentSemester);
                 isFallTracker = !isFallTracker;
+                currentSemester.position = semesterPosition;
+                semesterPosition++;
             }
         }
 
