@@ -145,7 +145,7 @@ namespace Strategic_Advising
 
                 while (currentSemester.totalCreditHours < targetHours && currentClassIndex < remainingCourseList.Count)
                 {
-                    if (clearsChecks(currentSemester, remainingCourseList[currentClassIndex]))
+                    if (clearsChecks(currentSemester, remainingCourseList[currentClassIndex], targetHours))
                     {
                         currentSemester.classes.Add(remainingCourseList[currentClassIndex]);
                         currentSemester.totalCreditHours += remainingCourseList[currentClassIndex].creditHours;
@@ -180,7 +180,7 @@ namespace Strategic_Advising
             return creditCounter;
         }
 
-        private bool clearsChecks(Semester currentSemester, Course currentCourse)
+        private bool clearsChecks(Semester currentSemester, Course currentCourse, int targetHours)
         {
             if (currentCourse.creditHours + currentSemester.totalCreditHours > 18)
             {
@@ -195,6 +195,20 @@ namespace Strategic_Advising
                         return false;
                     }
                 }
+            }
+            if (currentCourse.courseNumber == "CS495" || currentCourse.courseNumber == "CS498" || currentCourse.courseNumber == "MATH498")
+            {
+                int remainingCredits = -currentCourse.creditHours;
+                foreach (Course c in remainingCourseList)
+                {
+                    remainingCredits += c.creditHours;
+                }
+                if (remainingCredits > 2 * targetHours)
+                {
+                    if (semesterList != null) { }
+                    return false;
+                }
+
             }
             if (currentSemester.isFall)
             {
