@@ -104,6 +104,7 @@
   - *PFW
   - *T1FINEART
   - *T1NATSCI
+  - *COMM210
   - &HONR100
     courseNumber: "HONR100"
     courseTitle: "Freshman Seminar"
@@ -334,7 +335,6 @@
       - *MATH267
 
 - &CSCourses 
-  - *COMM210
   - *MATH108
   - *MATH111
   - *MATH112
