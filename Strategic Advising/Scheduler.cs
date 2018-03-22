@@ -27,7 +27,7 @@ namespace Strategic_Advising
             buildPrereqList();
             prioritizeCourses();
             assignClassDependencyNum();
-            buildSemesterList(numberOfSemesters, nextSemesterIsFall, maxCredits);
+            buildSemesterList(numberOfSemesters, nextSemesterIsFall, maxCredits, minCredits);
             printSemesters();
         }
 
@@ -124,7 +124,7 @@ namespace Strategic_Advising
             }
         }
 
-        private void buildSemesterList(int numSemesters, bool isFall, int maxCredits)
+        private void buildSemesterList(int numSemesters, bool isFall, int maxCredits, int minCredits)
         {
             //Assign according to user input
             int semestersToGo = numSemesters;
@@ -160,11 +160,29 @@ namespace Strategic_Advising
                         }
                     }
                 }
+                while(currentSemester.totalCreditHours < minCredits)
+                {
+                    addFillerCourse(currentSemester);
+                }
                 semesterList.Add(currentSemester);
                 isFallTracker = !isFallTracker;
                 currentSemester.position = semesterPosition;
                 semesterPosition++;
             }
+        }
+
+        private void addFillerCourse(Semester currentSemester)
+        {
+            Course course = new Course();
+            course.courseNumber = "GENERIC";
+            course.courseTitle = "Filler Course";
+            course.creditHours = 3;
+            course.fall = true;
+            course.spring = true;
+            course.prerequisites = null;
+            course.priority = new int[3] { -1, -1, -1 };
+            currentSemester.classes.Add(course);
+            currentSemester.totalCreditHours += course.creditHours;
         }
 
         private void sortCoursesForScheduling()
