@@ -16,9 +16,11 @@ namespace Strategic_Advising
         public SemesterView(Semester sem)
         {
             this.semester = sem;
-            this.Width = 600;
+            this.Width = 700;
             this.courseList = new BindingList<Course>(semester.classes.ToList<Course>());
             this.DataSource = courseList;
+            this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            this.AutoResizeColumns();
             this.AllowUserToAddRows = false;
         }
 

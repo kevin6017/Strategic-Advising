@@ -50,7 +50,7 @@
         </CheckBox>
         <TextBlock Grid.Row="5" Text="Minimum Credit Hour: " FontSize="18" Margin="144,56,0,138" HorizontalAlignment="Left" Width="181" />
         <TextBlock Grid.Row="5" Text="Maximum Credit Hour: " FontSize="18" Margin="144,109,0,79" HorizontalAlignment="Left" Width="181"/>
-        <ComboBox Grid.Row="5" Grid.ColumnSpan="1" Margin="330,56,0,138" SelectedIndex="3" HorizontalAlignment="Left" Width="45">
+        <ComboBox Grid.Row="5" Grid.ColumnSpan="1" Margin="330,56,0,138" SelectedIndex="3" HorizontalAlignment="Left" Width="45" x:Name="ddlMinCredits">
             <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="11" HorizontalAlignment="Left" Width="30"/>
@@ -59,7 +59,7 @@
             <ComboBoxItem Content="14" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="15" HorizontalAlignment="Left" Width="30"/>
         </ComboBox>
-        <ComboBox Grid.Row="5" Margin="330,109,0,84" SelectedIndex="2" HorizontalAlignment="Left" Width="45">
+        <ComboBox Grid.Row="5" Margin="330,109,0,84" SelectedIndex="2" HorizontalAlignment="Left" Width="45" x:Name="ddlMaxCredits">
             <ComboBoxItem Content="16" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="17" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="18" HorizontalAlignment="Left" Width="30"/>

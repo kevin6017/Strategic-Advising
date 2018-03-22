@@ -17,7 +17,7 @@ namespace Strategic_Advising
         private  List<Semester> semesterList = new List<Semester>();
         
 
-        public Scheduler(List<Course> coursesAlreadyTaken, int numberOfSemesters, bool nextSemesterIsFall, int coreIndex, int majorIndex)
+        public Scheduler(List<Course> coursesAlreadyTaken, int numberOfSemesters, bool nextSemesterIsFall, int coreIndex, int majorIndex, int maxCredits, int minCredits)
         {
             var ds = new DeserializerBuilder().WithNamingConvention(new CamelCaseNamingConvention()).Build();
             List<Curriculum> curric = new YAMLLoader().getMasterList();
@@ -27,7 +27,7 @@ namespace Strategic_Advising
             buildPrereqList();
             prioritizeCourses();
             assignClassDependencyNum();
-            buildSemesterList(numberOfSemesters, nextSemesterIsFall);
+            buildSemesterList(numberOfSemesters, nextSemesterIsFall, maxCredits);
             printSemesters();
         }
 
@@ -124,7 +124,7 @@ namespace Strategic_Advising
             }
         }
 
-        private void buildSemesterList(int numSemesters, bool isFall)
+        private void buildSemesterList(int numSemesters, bool isFall, int maxCredits)
         {
             //Assign according to user input
             int semestersToGo = numSemesters;
@@ -145,7 +145,7 @@ namespace Strategic_Advising
 
                 while (currentSemester.totalCreditHours < targetHours && currentClassIndex < remainingCourseList.Count)
                 {
-                    if (clearsChecks(currentSemester, remainingCourseList[currentClassIndex], targetHours))
+                    if (clearsChecks(currentSemester, remainingCourseList[currentClassIndex], targetHours, maxCredits))
                     {
                         currentSemester.classes.Add(remainingCourseList[currentClassIndex]);
                         currentSemester.totalCreditHours += remainingCourseList[currentClassIndex].creditHours;
@@ -182,9 +182,9 @@ namespace Strategic_Advising
             return creditCounter;
         }
 
-        private bool clearsChecks(Semester currentSemester, Course currentCourse, int targetHours)
+        private bool clearsChecks(Semester currentSemester, Course currentCourse, int targetHours, int maxCredits)
         {
-            if (currentCourse.creditHours + currentSemester.totalCreditHours > 18)
+            if (currentCourse.creditHours + currentSemester.totalCreditHours > maxCredits)
             {
                 return false;
             }

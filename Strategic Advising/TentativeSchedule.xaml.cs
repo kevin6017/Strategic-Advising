@@ -56,7 +56,6 @@ namespace Strategic_Advising
                 
                 semView.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
 
-
                 //DataGridView dgv = new DataGridView();
                 //dgv.ColumnCount = 0;
                 //DataTable dt = new DataTable("semesterTable");
