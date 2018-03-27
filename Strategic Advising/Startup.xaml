@@ -24,21 +24,10 @@
             <RowDefinition Height="Auto" MinHeight="141"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="234*"/>
-            <ColumnDefinition Width="109*"/>
-            <ColumnDefinition Width="172*"/>
-            <ColumnDefinition Width="171*"/>
-            <ColumnDefinition Width="171*"/>
-            <ColumnDefinition Width="172*"/>
-            <ColumnDefinition Width="171*"/>
-        </Grid.ColumnDefinitions>-->
         <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="778,0" Width="364"/>
         <TextBlock Grid.Row="4" Text="Select a Major: " FontSize="18" Margin="139,0,1657,5" RenderTransformOrigin="0.419,3.361"/>
-        <RadioButton Grid.Row="4" GroupName="majorSelect" x:Name="CS" IsChecked="True" Content="Computer Science" FontSize="18" Margin="285,1,0,5" HorizontalAlignment="Left" Width="172"/>
-        <RadioButton Grid.Row="4" GroupName="majorSelect" x:Name="Math" IsChecked="False" Content="Mathematics" FontSize="18" Margin="471,1,0,4" HorizontalAlignment="Left" Width="156"/>
-        <TextBlock Grid.Row="3" Text="Honors Core:" FontSize="18" Margin="720,16,0,10" Width="108" HorizontalAlignment="Left" Grid.RowSpan="2"/>
-        <CheckBox Grid.Row="4" Margin="829,2,0,12" RenderTransformOrigin="0.49,0.533" HorizontalAlignment="Left" Width="17" FlowDirection="RightToLeft" x:Name="chkHonors">
+        <TextBlock Grid.Row="4" Text="Honors Core:" FontSize="18" Margin="612,3,0,2" Width="108" HorizontalAlignment="Left"/>
+        <CheckBox Grid.Row="4" Margin="721,10,0,4" RenderTransformOrigin="0.49,0.533" HorizontalAlignment="Left" Width="17" FlowDirection="RightToLeft" x:Name="chkHonors">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -48,9 +37,9 @@
                 </TransformGroup>
             </CheckBox.RenderTransform>
         </CheckBox>
-        <TextBlock Grid.Row="5" Text="Minimum Credit Hour: " FontSize="18" Margin="144,56,0,138" HorizontalAlignment="Left" Width="181" />
-        <TextBlock Grid.Row="5" Text="Maximum Credit Hour: " FontSize="18" Margin="144,109,0,79" HorizontalAlignment="Left" Width="181"/>
-        <ComboBox Grid.Row="5" Grid.ColumnSpan="1" Margin="330,56,0,138" SelectedIndex="3" HorizontalAlignment="Left" Width="45" x:Name="ddlMinCredits">
+        <TextBlock Grid.Row="5" Text="Minimum Credit Hour: " FontSize="18" Margin="139,108,0,86" HorizontalAlignment="Left" Width="181" />
+        <TextBlock Grid.Row="5" Text="Maximum Credit Hour: " FontSize="18" Margin="139,161,0,27" HorizontalAlignment="Left" Width="181"/>
+        <ComboBox Grid.Row="5" Grid.ColumnSpan="1" Margin="323,108,0,86" SelectedIndex="3" HorizontalAlignment="Left" Width="45" x:Name="ddlMinCredits">
             <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="11" HorizontalAlignment="Left" Width="30"/>
@@ -59,7 +48,7 @@
             <ComboBoxItem Content="14" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="15" HorizontalAlignment="Left" Width="30"/>
         </ComboBox>
-        <ComboBox Grid.Row="5" Margin="330,109,0,84" SelectedIndex="2" HorizontalAlignment="Left" Width="45" x:Name="ddlMaxCredits">
+        <ComboBox Grid.Row="5" Margin="323,161,0,32" SelectedIndex="2" HorizontalAlignment="Left" Width="45" x:Name="ddlMaxCredits">
             <ComboBoxItem Content="16" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="17" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="18" HorizontalAlignment="Left" Width="30"/>
@@ -67,11 +56,11 @@
             <ComboBoxItem Content="20" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="21" HorizontalAlignment="Left" Width="30"/>
         </ComboBox>
-        <TextBlock Grid.Row="6" Text="Start Semester: " FontSize="18" Margin="139,13,0,67" HorizontalAlignment="Left" Width="124" Grid.RowSpan="2"/>
+        <TextBlock Grid.Row="6" Text="Start Semester: " FontSize="18" Margin="139,27,0,53" HorizontalAlignment="Left" Width="124" Grid.RowSpan="2"/>
         <Button Grid.Row="9" Content="Editor" Click="editorClick" HorizontalAlignment="Left" Width="80" Margin="30,0,0,30" Height="30" VerticalAlignment="Bottom"/>
         <Button Grid.Row="9"  Content="Submit" Margin="0,0,30,30" Width="80" HorizontalAlignment="Right" Click="onSubmit" Height="30" VerticalAlignment="Bottom"/>
-        <RadioButton Content="Fall" FontSize="18" HorizontalAlignment="Left" Margin="263,19,0,0" Grid.Row="6" IsChecked="True" VerticalAlignment="Top" Grid.RowSpan="2" x:Name="Fall"/>
-        <RadioButton Content="Spring" FontSize="18" HorizontalAlignment="Left" Margin="263,15,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+        <RadioButton Content="Fall" FontSize="18" HorizontalAlignment="Left" Margin="263,1,0,0" Grid.Row="7" IsChecked="True" VerticalAlignment="Top" x:Name="Fall"/>
+        <RadioButton Content="Spring" FontSize="18" HorizontalAlignment="Left" Margin="263,29,0,0" Grid.Row="7" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="8" Text="Semesters Remaining: " FontSize="18" Margin="139,47,0,70" HorizontalAlignment="Left" Width="175"/>
         <ComboBox Grid.Row="8" Grid.ColumnSpan="1" Margin="330,47,0,70" HorizontalAlignment="Left" Width="45" SelectedIndex="5" x:Name="ddlSemesters">
             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="30"/>
@@ -85,5 +74,13 @@
             <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="30"/>
         </ComboBox>
+        <ListBox HorizontalAlignment="Left" Height="126" Margin="268,1,0,0" Grid.Row="3" VerticalAlignment="Top" Width="279" Grid.RowSpan="3">
+            <ListBoxItem Content="Computer Science" Tag="3" IsSelected="True"/>
+            <ListBoxItem Content="Mathematical Science - Applied Mathematics" Tag=""/>
+            <ListBoxItem Content="Mathematical Science - Mathematics" Tag=""/>
+            <ListBoxItem Content="Math Education - Middle School" Tag=""/>
+            <ListBoxItem Content="Math Education - Secondary School" Tag=""/>
+            <ListBoxItem Content="Actuarial Science" Tag=""/>
+        </ListBox>
     </Grid>
 </Page>

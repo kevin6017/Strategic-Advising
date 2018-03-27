@@ -34,7 +34,7 @@ namespace Strategic_Advising
             Course newClass = new Course();
             newClass.courseNumber = courseNumBox.Text;
             newClass.courseTitle = courseNumBox.Text;
-            newClass.creditHours = Int32.Parse(creditHoursBox.Text);
+            newClass.creditHours = Int32.Parse(((ComboBoxItem)creditHourInput.SelectedItem).Content.ToString());
             newClass.fall = (bool)fallInput.IsChecked;
             newClass.spring = (bool)springInput.IsChecked;
             newClass.prerequisites = prereqs;
