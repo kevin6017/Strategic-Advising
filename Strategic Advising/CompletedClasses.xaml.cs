@@ -57,12 +57,13 @@ namespace Strategic_Advising
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<Course> completedCourses = new List<Course>();
+            HashSet<Course> completedCoursesSet = new HashSet<Course>();
             foreach(DataGridViewRow row in dgv.SelectedRows)
             {
                 var item = row.DataBoundItem as Course;
-                completedCourses.Add(item);
+                completedCoursesSet = getAllPrereqs(item, completedCoursesSet);
             }
+            List<Course> completedCourses = completedCoursesSet.ToList<Course>();
             Scheduler scheduler = new Scheduler(completedCourses, numSemesters, isFall, coreIndex, majorIndex, maxCredits, minCredits);
             List<Semester> listOfSemesters = scheduler.getSemesterList();
            
@@ -74,6 +75,23 @@ namespace Strategic_Advising
         {
             Startup window = new Startup();
             this.NavigationService.Navigate(window);
+        }
+
+        private HashSet<Course> getAllPrereqs(Course course, HashSet<Course> courseSet)
+        {
+            if (course.prerequisites != null)
+            {
+                foreach (Course prereq in course.prerequisites)
+                {
+                    courseSet.Add(prereq);
+                    courseSet = getAllPrereqs(prereq, courseSet);
+                }
+                return courseSet;
+            }
+            else
+            {
+                return courseSet;
+            }
         }
     }
 }
