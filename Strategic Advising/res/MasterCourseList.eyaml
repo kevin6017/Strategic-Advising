@@ -176,7 +176,7 @@
     spring: true
     prerequisites: null
 
-- &MathCourses
+- &MathSciMathematics
   - &MATH108
     courseNumber: "MATH108"
     courseTitle: "Intermediate Algebra"
@@ -334,6 +334,121 @@
       - *MATH217
       - *MATH267
 
+- &MathSciAppliedMath
+ - *MATH108
+ - *MATH111
+ - *MATH112
+ - *MATH165
+ - *MATH166
+ - *MATH215
+ - *MATH217
+ - *MATH259
+ - *MATH267
+ - *MATH320
+ - *MATH374
+ - *MATH411
+ - *MATH471
+ - *MATH498
+ - &MATH335
+   courseNumber: "MATH335"
+   courseTitle: "Math Models"
+   creditHours: 3
+   fall: false
+   spring: true
+   prerequisites:
+     - *MATH166
+     - *MATH217
+
+ - &MATH362
+   courseNumber: "MATH362"
+   courseTitle: "Numerical Analysis"
+   creditHours: 3
+   fall: true
+   spring: false
+   prerequisites:
+     - *MATH166
+     - *MATH259
+
+- &ActuarialScience
+  - *MATH108
+  - *MATH111
+  - *MATH112
+  - *MATH165
+  - *MATH166
+  - *MATH215
+  - *MATH217
+
+  - &MATH251
+    courseNumber: "MATH251"
+    courseTitle: "Introduction to Mathematics of Finance"
+    creditHours:  2
+    fall: true
+    spring: false
+    prerequisites: 
+      - *MATH111
+      - *MATH112
+
+  - *MATH259
+  - *MATH267
+  - *MATH320
+
+  - &MATH321
+    courseNumber: "MATH321"
+    courseTitle: "Mathematical Statistics"
+    creditHours: 4
+    fall: false
+    spring: true
+    prerequisites:
+      - *MATH320
+
+  - &MATH351
+    courseNumber: "MATH351"
+    courseTitle: "Mathematical of Finance"
+    creditHours: 4
+    fall: false
+    spring: true
+    prerequisites: 
+      - *MATH165
+      - *MATH251
+  
+  - &MATH452
+    courseNumber: "MATH452"
+    courseTitle: "Mathematics of Life Contingencies"
+    creditHours: 4
+    fall: true
+    spring: false
+    prerequisites:
+      - *MATH321
+      - *MATH351
+
+  - &MATH457
+    courseNumber: "MATH457"
+    courseTitle: "Actuarial Models 1"
+    creditHours: 4
+    fall: true
+    spring: false
+    prerequisites:
+      - *MATH321
+
+  - &MATH458
+    courseNumber: "MATH458"
+    courseTitle: "Actuarial Models 2"
+    creditHours: 3
+    fall: false
+    spring: true
+    prerequisites:
+      - *MATH321
+
+  - *MATH498
+
+  - &RMI270
+    courseNumber: "RMI270"
+    courseTitle: "Principles of Risk Managment and Insurance"
+    creditHours: 3
+    fall: true
+    spring: true
+    prerequisites: null
+    
 - &CSCourses 
   - *MATH108
   - *MATH111
