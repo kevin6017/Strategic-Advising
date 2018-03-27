@@ -448,6 +448,12 @@
     fall: true
     spring: true
     prerequisites: null
+
+- &MathEdMiddle
+  - *MATH108
+
+- &MathEdSecondary
+  - *MATH108
     
 - &CSCourses 
   - *MATH108
