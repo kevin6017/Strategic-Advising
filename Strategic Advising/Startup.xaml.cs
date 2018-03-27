@@ -43,7 +43,9 @@ namespace Strategic_Advising
             }
             bool isFall = (bool)Fall.IsChecked;
             int numSemesters = Int32.Parse(((ComboBoxItem)ddlSemesters.SelectedItem).Content.ToString());
-            CompletedClasses window = new CompletedClasses(majorIndex, coreIndex, isFall, numSemesters);
+            int maxCredits = Int32.Parse(((ComboBoxItem)ddlMaxCredits.SelectedItem).Content.ToString());
+            int minCredits = Int32.Parse(((ComboBoxItem)ddlMinCredits.SelectedItem).Content.ToString());
+            CompletedClasses window = new CompletedClasses(majorIndex, coreIndex, isFall, numSemesters, maxCredits, minCredits);
             this.NavigationService.Navigate(window);
         }
 

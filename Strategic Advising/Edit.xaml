@@ -40,8 +40,10 @@
                 </Style>
             </CheckBox.Resources>
         </CheckBox>
-        <TextBlock Grid.Row="1" Text="Prerequisites: " FontSize="18" HorizontalAlignment="Left" Margin="71,202,0,738" Width="111"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="210,202,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="prerequisitesInput"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="71,0,0,480" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
+        <Button Content="Select Prerequisites" HorizontalAlignment="Left" Margin="71,202,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="120" Height="30" Click="Prereqs_Selector_Button"/>
+        <TextBlock Grid.Row="1" Text="" FontSize="18" HorizontalAlignment="Left" Margin="196,232,0,694" Name="listOfPrereqs" Width="352"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,30" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Back_Button"/>
+        <Button Content="Clear Prerequisites" HorizontalAlignment="Left" Margin="196,202,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="120" Height="30" Click="Prereq_Clear_Button"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="196,273,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30" Click="Add_Class_Button"/>
     </Grid>
 </Page>

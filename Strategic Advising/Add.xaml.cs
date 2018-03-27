@@ -31,7 +31,15 @@ namespace Strategic_Advising
 
         private void Add_Class_Button(object sender, RoutedEventArgs e)
         {
-            Editor window = new Editor();
+            Course newClass = new Course();
+            newClass.courseNumber = courseNumBox.Text;
+            newClass.courseTitle = courseNumBox.Text;
+            newClass.creditHours = Int32.Parse(creditHoursBox.Text);
+            newClass.fall = (bool)fallInput.IsChecked;
+            newClass.spring = (bool)springInput.IsChecked;
+            newClass.prerequisites = prereqs;
+            courseList.Add(newClass);
+            Editor window = new Editor(); 
             this.NavigationService.Navigate(window);
         }
 
@@ -73,6 +81,12 @@ namespace Strategic_Advising
         {
             prereqs.Clear();
             listOfPrereqs.Text = "";
+        }
+
+        private void Back_Button(object sender, RoutedEventArgs e)
+        {
+            Editor window = new Editor();
+            this.NavigationService.Navigate(window);
         }
     }
 }
