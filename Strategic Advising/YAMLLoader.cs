@@ -31,8 +31,8 @@ namespace Strategic_Advising
         }
 
         public List<Course> getCurriculum(int index)
-        { 
-            return this.curric[index].ToList<Course>();
+        {
+            return this.curric[index].courses;
         }
 
     }

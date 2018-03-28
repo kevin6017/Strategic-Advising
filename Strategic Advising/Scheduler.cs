@@ -39,8 +39,8 @@ namespace Strategic_Advising
         private List<Course> buildRemainingCourseList(int coreIndex, int majorIndex, List<Curriculum> curric, List<Course> coursesAlreadyTaken)
         {
             List<Course> temp = new List<Course>();
-            temp.AddRange(curric[coreIndex].ToList<Course>());
-            temp.AddRange(curric[majorIndex].ToList<Course>());
+            temp.AddRange(curric[coreIndex].courses);
+            temp.AddRange(curric[majorIndex].courses);
             foreach (Course course in coursesAlreadyTaken)
             {
                 temp.Remove(temp.Find(x => x.courseNumber == course.courseNumber));
