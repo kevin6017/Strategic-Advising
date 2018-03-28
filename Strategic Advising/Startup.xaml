@@ -74,13 +74,7 @@
             <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="30"/>
         </ComboBox>
-        <ListBox HorizontalAlignment="Left" Height="126" Margin="268,1,0,0" Grid.Row="3" VerticalAlignment="Top" Width="279" Grid.RowSpan="3" x:Name="lbxMajors">
-            <!--<ListBoxItem Content="Computer Science" Tag="3" IsSelected="True"/>
-            <ListBoxItem Content="Mathematical Science - Applied Mathematics" Tag=""/>
-            <ListBoxItem Content="Mathematical Science - Mathematics" Tag=""/>
-            <ListBoxItem Content="Math Education - Middle School" Tag=""/>
-            <ListBoxItem Content="Math Education - Secondary School" Tag=""/>
-            <ListBoxItem Content="Actuarial Science" Tag=""/>-->
+        <ListBox HorizontalAlignment="Left" Height="130" Margin="268,1,0,0" Grid.Row="3" VerticalAlignment="Top" Width="250" Grid.RowSpan="3" x:Name="lbxMajors">
         </ListBox>
     </Grid>
 </Page>
