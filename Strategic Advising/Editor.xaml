@@ -21,11 +21,8 @@
         <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="495,84,0,0" Grid.Row="1" Click="Button_ClickAdd"/>
         <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="660,84,0,0" Grid.Row="1" Click="Button_ClickEdit"/>
         <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" Margin="825,84,0,0" Grid.Row="1" Click="Button_ClickRemove"/>
-        <ListBox HorizontalAlignment="Left" Height="100" Margin="287,44,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="ListBox_SelectionChanged" Name="majorSelect">
-            <ListBoxItem Content="Computer Science" Name="CSclasses" Tag="3" IsSelected="True"/>
-            <ListBoxItem Content="Mathematics" Name="MathClasses" Tag="2"/>
-            <ListBoxItem Content="University Core" Name="UniversityCoreClasses" Tag="0"/>
-            <ListBoxItem Content="Honors Core" Name="HonorsCoreClasses" Tag="1"/>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="287,44,0,0" Grid.Row="1" VerticalAlignment="Top" Width="175" SelectionChanged="ListBox_SelectionChanged" Name="majorSelect">
+            
         </ListBox>
     </Grid>
 </Page>
