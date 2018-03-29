@@ -27,6 +27,7 @@ namespace Strategic_Advising
             buildPrereqList();
             prioritizeCourses();
             assignClassDependencyNum();
+            shuffleCourseOrder();
             buildSemesterList(numberOfSemesters, nextSemesterIsFall, maxCredits, minCredits);
             printSemesters();
         }
@@ -122,6 +123,47 @@ namespace Strategic_Advising
                     }
                 }
             }
+        }
+
+        private void shuffleCourseOrder()
+        {
+            List<Course> tempList = new List<Course>();
+            List<Course> shuffledList = new List<Course>();
+
+            foreach(Course course in remainingCourseList)
+            {
+                if(tempList.Count == 0)
+                {
+                    tempList.Add(course);
+                    
+                }
+                else
+                {
+                    if (course.priority.SequenceEqual(tempList[0].priority))
+                    {
+                        tempList.Add(course);
+                        
+                    }
+                    else
+                    {
+                        Random rng = new Random();
+                        int n = tempList.Count;
+                        while (n > 1)
+                        {
+                            n--;
+                            int k = rng.Next(n + 1);
+                            Course c = tempList[k];
+                            tempList[k] = tempList[n];
+                            tempList[n] = c;
+                        }
+                        shuffledList.AddRange(tempList);
+                        tempList.Clear();
+                        tempList.Add(course);
+                    }
+                }
+            }
+
+            remainingCourseList = shuffledList;
         }
 
         private void buildSemesterList(int numSemesters, bool isFall, int maxCredits, int minCredits)
