@@ -163,6 +163,21 @@ namespace Strategic_Advising
                 }
             }
 
+            if(tempList.Count != 0)
+            {
+                Random rng = new Random();
+                int n = tempList.Count;
+                while (n > 1)
+                {
+                    n--;
+                    int k = rng.Next(n + 1);
+                    Course c = tempList[k];
+                    tempList[k] = tempList[n];
+                    tempList[n] = c;
+                }
+                shuffledList.AddRange(tempList);
+                tempList.Clear();
+            }
             remainingCourseList = shuffledList;
         }
 
@@ -174,6 +189,10 @@ namespace Strategic_Advising
 
             int totalCreditsToGo = findTotalCredits();
             int targetHours = totalCreditsToGo / semestersToGo;
+            if (targetHours < minCredits)
+            {
+                targetHours = minCredits;
+            }
             List<Course> classList = new List<Course>();
             sortCoursesForScheduling();
             int semesterPosition = 0;

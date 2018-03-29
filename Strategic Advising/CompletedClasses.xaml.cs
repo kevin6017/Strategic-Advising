@@ -84,6 +84,7 @@ namespace Strategic_Advising
 
         private HashSet<Course> getAllPrereqs(Course course, HashSet<Course> courseSet)
         {
+            courseSet.Add(course);
             if (course.prerequisites != null)
             {
                 foreach (Course prereq in course.prerequisites)
