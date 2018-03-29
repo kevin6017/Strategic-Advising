@@ -491,6 +491,15 @@
       spring: true
       prerequisites:
         - *MATH161
+    - &MATH221
+      courseNumber: "MATH221"
+      courseTitle: "Probability and Statistics"
+      creditHours: 3 
+      fall: true
+      spring: true
+      prerequisites:
+        - *MATH162
+
     - &CS120
       courseNumber: "CS120"
       courseTitle: "Computer Science 1"
