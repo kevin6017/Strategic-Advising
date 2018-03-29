@@ -44,6 +44,11 @@ namespace Strategic_Advising
         int maxCredits;
         int minCredits;
 
+        public bool getIsFall()
+        {
+            return this.isFall;
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             YAMLLoader loader = new YAMLLoader();
