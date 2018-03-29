@@ -23,6 +23,24 @@ namespace Strategic_Advising
         public Editor()
         {
             InitializeComponent();
+            populateMajorSelectBox();
+        }
+
+        private void populateMajorSelectBox()
+        {
+            YAMLLoader loader = new YAMLLoader();
+            List<Curriculum> curricList = loader.getMasterList();
+            for (int i = 2; i < curricList.Count; i++)
+            {
+                ListBoxItem li = new ListBoxItem();
+                li.Content = curricList[i].name;
+                li.Tag = i;
+                if (i == 2)
+                {
+                    li.IsSelected = true;
+                }
+                majorSelect.Items.Add(li);
+            }
         }
 
         private void homeClick(object sender, RoutedEventArgs e)
@@ -62,10 +80,8 @@ namespace Strategic_Advising
         private void getSelectedClass()
         {
             ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
-            int curricIndex = Int32.Parse((string) temp.Tag);
+            int curricIndex = Int32.Parse(temp.Tag.ToString());
             courseList = new YAMLLoader().getCurriculum(curricIndex);
-            //selectedMajorJSONFile = "Strategic_Advising.res." + temp.Name + ".json"; //probably a more official way to do this besides using the name but oh well
-            //selectedMajorName = (string) temp.Content;
         }
 
     }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Strategic_Advising
 {
-    class Curriculum : List<Course>
+    public class Curriculum 
     {
+        public string name { get; set; }
+        public List<Course> courses { get; set; }
     }
 }

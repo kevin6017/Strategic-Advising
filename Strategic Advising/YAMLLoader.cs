@@ -31,8 +31,21 @@ namespace Strategic_Advising
         }
 
         public List<Course> getCurriculum(int index)
-        { 
-            return this.curric[index].ToList<Course>();
+        {
+            return this.curric[index].courses;
+        }
+
+        //may not need this stuff
+        public void addCourseToCurriculum(int index, Course course)
+        {
+            this.curric[index].courses.Add(course);
+        }
+
+        public void serializeFile()
+        {
+            Serializer serial = new SerializerBuilder().Build();
+            string yaml = serial.Serialize(this.curric);
+
         }
 
     }

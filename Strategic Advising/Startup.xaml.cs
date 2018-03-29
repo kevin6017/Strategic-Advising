@@ -23,30 +23,49 @@ namespace Strategic_Advising
         public Startup()
         {
             InitializeComponent();
+            populateMajorSelectBox();
+            
+        }
+
+        private void populateMajorSelectBox()
+        {
+            YAMLLoader loader = new YAMLLoader();
+            List<Curriculum> curricList = loader.getMasterList();
+            for(int i=2; i<curricList.Count; i++)
+            {
+                ListBoxItem li = new ListBoxItem();
+                li.Content = curricList[i].name;
+                li.Tag = i;
+                if (i == 2)
+                {
+                    li.IsSelected = true;
+                }
+                lbxMajors.Items.Add(li);
+            }
         }
 
         public void onSubmit(object sender, RoutedEventArgs e)
         {
             int majorIndex = -1;
             int coreIndex = 0;
-            if (CS.IsChecked == true)
-            {
-                majorIndex = 3;
-            }
-            else
-            {
-                majorIndex = 2;
-            }
-            if(chkHonors.IsChecked == true)
+            if (chkHonors.IsChecked == true)
             {
                 coreIndex = 1;
             }
+            majorIndex = getMajorIndex();
             bool isFall = (bool)Fall.IsChecked;
             int numSemesters = Int32.Parse(((ComboBoxItem)ddlSemesters.SelectedItem).Content.ToString());
             int maxCredits = Int32.Parse(((ComboBoxItem)ddlMaxCredits.SelectedItem).Content.ToString());
             int minCredits = Int32.Parse(((ComboBoxItem)ddlMinCredits.SelectedItem).Content.ToString());
             CompletedClasses window = new CompletedClasses(majorIndex, coreIndex, isFall, numSemesters, maxCredits, minCredits);
             this.NavigationService.Navigate(window);
+        }
+
+        private int getMajorIndex()
+        {
+            ListBoxItem li = (ListBoxItem)lbxMajors.SelectedItem;
+            int index = Int32.Parse(li.Tag.ToString());
+            return index;
         }
 
         private void editorClick(object sender, RoutedEventArgs e)

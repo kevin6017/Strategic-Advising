@@ -47,7 +47,7 @@ namespace Strategic_Advising
 
             //var semesterList = new JsonLoader().loadScheduleList("Strategic_Advising.res.SampleSchedule.json");
 
-            bool isFall = true;
+            bool isFall = this.completedClasses.getIsFall();
             semesterViews = new List<SemesterView>();
 
             foreach (Semester sem in semesterList)
@@ -139,11 +139,28 @@ namespace Strategic_Advising
                 remove.Click += (sender2, e2) => removeClass(sender2, e2, dgv);
                 menuStrip.Items.Add(remove);
 
+                bool isSemFall = completedClasses.getIsFall();
+                int fallCounter = 1;
+                int springCounter = 1;
                 foreach(Semester sem in semesterList)
                 {
-                    ToolStripMenuItem item = new ToolStripMenuItem(sem.position.ToString());
+                    int i = sem.position;
+                    string menuItemName = "";
+                    if (isSemFall)
+                    {
+                        menuItemName += "Fall " + fallCounter;
+                        fallCounter++;
+                    }
+                    else
+                    {
+                        menuItemName += "Spring " + springCounter;
+                        springCounter++;
+                    }
+                    ToolStripMenuItem item = new ToolStripMenuItem(menuItemName);
+                    item.Tag = sem.position;
                     item.Click += (sender2, e2) => moveClass(sender2, e2, dgv);
                     move.DropDownItems.Add(item);
+                    isSemFall = !isSemFall;
                 }
 
                 
@@ -162,7 +179,7 @@ namespace Strategic_Advising
         private void moveClass(object sender, EventArgs e, SemesterView dgv)
         {
             ToolStripItem clickedItem = sender as ToolStripItem;
-            int destinationPosition = int.Parse(clickedItem.Text);
+            int destinationPosition = int.Parse(clickedItem.Tag.ToString());
             DataGridViewRow row = dgv.CurrentCell.OwningRow;
             Course course = row.DataBoundItem as Course;
             semesterViews[destinationPosition].addCourse(course);

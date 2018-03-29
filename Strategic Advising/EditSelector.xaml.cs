@@ -84,10 +84,5 @@ namespace Strategic_Advising
             Editor window = new Editor();
             this.NavigationService.Navigate(window);
         }
-
-        private void Button_Click_Edit(object sender, RoutedEventArgs e)
-        {
-           
-        }
     }
 }
