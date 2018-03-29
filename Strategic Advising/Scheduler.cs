@@ -267,14 +267,22 @@ namespace Strategic_Advising
             {
                 return false;
             }
-            if (!(currentCourse.prerequisites == null || currentSemester.classes.Count == 0))
+            if (currentCourse.prerequisites != null)
             {
                 foreach (Course prereq in currentCourse.prerequisites)
                 {
-                    if (currentSemester.classes.Contains(prereq) || remainingCourseList.Contains(prereq))
+                    if (remainingCourseList.Contains(prereq))
                     {
                         return false;
                     }
+                    if(currentSemester.classes.Count != 0)
+                    {
+                        if (currentSemester.classes.Contains(prereq))
+                        {
+                            return false;
+                        }
+                    }
+                   
                 }
             }
             if (currentCourse.courseNumber == "CS495" || currentCourse.courseNumber == "CS498" || currentCourse.courseNumber == "MATH498")
@@ -286,8 +294,11 @@ namespace Strategic_Advising
                 }
                 if (remainingCredits > 2 * targetHours)
                 {
-                    if (semesterList != null) { }
-                    return false;
+                    if (semesterList != null)
+                    {
+                        return false;
+                    }
+                    
                 }
 
             }

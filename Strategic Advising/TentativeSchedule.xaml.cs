@@ -284,5 +284,10 @@ namespace Strategic_Advising
             }
             return coursesToAdd;
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
