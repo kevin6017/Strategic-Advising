@@ -30,12 +30,12 @@ namespace Strategic_Advising
         {
             YAMLLoader loader = new YAMLLoader();
             List<Curriculum> curricList = loader.getMasterList();
-            for (int i = 2; i < curricList.Count; i++)
+            for (int i = 1; i < curricList.Count; i++)
             {
                 ListBoxItem li = new ListBoxItem();
                 li.Content = curricList[i].name;
                 li.Tag = i;
-                if (i == 2)
+                if (i == 1)
                 {
                     li.IsSelected = true;
                 }
@@ -58,8 +58,11 @@ namespace Strategic_Advising
 
         private void Button_ClickAdd(object sender, RoutedEventArgs e)
         {
-            getSelectedClass();
-            Add window = new Add(courseList);
+            //getSelectedClass();
+            YAMLLoader loader = new YAMLLoader();
+            ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
+            int curricIndex = Int32.Parse(temp.Tag.ToString());
+            Add window = new Add(loader.getMasterList(), curricIndex);
             this.NavigationService.Navigate(window);
         }
 

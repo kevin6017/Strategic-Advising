@@ -36,16 +36,36 @@ namespace Strategic_Advising
         }
 
         //may not need this stuff
-        public void addCourseToCurriculum(int index, Course course)
+        public void addCourseToCurriculum(int index, Course course, List<Course> prereqs)
         {
-            this.curric[index].courses.Add(course);
+            if (prereqs != null)
+            {
+                foreach (Course p in prereqs)
+                {
+                    course.prerequisites.Add(getCourseFromMasterList(p));
+                }
+            }
+            this.curric[0].courses.Add(course);
+            this.curric[index].courses.Add(this.curric[0].courses.Find(x => x.courseNumber == course.courseNumber));
+            
+          
+        }
+
+        private Course getCourseFromMasterList(Course course)
+        {
+            return this.curric[0].courses.Find(x => x.courseNumber == course.courseNumber);
         }
 
         public void serializeFile()
         {
             Serializer serial = new SerializerBuilder().Build();
             string yaml = serial.Serialize(this.curric);
+            //File.WriteAllText("Strategic_Advising.res.MasterCourseList.eyaml", yaml);
+        }
 
+        public void setMasterList(List<Curriculum> curricList)
+        {
+            this.curric = curricList;
         }
 
     }

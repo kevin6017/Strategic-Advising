@@ -1,5 +1,5 @@
-- &UCCourses
-  name: "UC Core"
+- &MASTERLIST
+  name: "Master List"
   courses:
     - &ENG103
       courseNumber: "ENG103"
@@ -97,18 +97,6 @@
       prerequisites:
         - *T2NATSCI
         - *T2FINEART
-
-- &HonorsCoreClasses
-  name: "Honors Core"
-  courses:
-    - *ENG103
-    - *ENG104
-    - *HIST150
-    - *FIN101
-    - *PFW
-    - *T1FINEART
-    - *T1NATSCI
-    - *COMM210
     - &HONR100
       courseNumber: "HONR100"
       courseTitle: "Freshman Seminar"
@@ -179,10 +167,6 @@
       fall: true
       spring: true
       prerequisites: null
-
-- &MathSciMathematics
-  name: "Mathematical Sciences - Mathematics"
-  courses:
     - &MATH108
       courseNumber: "MATH108"
       courseTitle: "Intermediate Algebra"
@@ -339,55 +323,24 @@
       prerequisites:
         - *MATH217
         - *MATH267
-
-- &MathSciAppliedMath
-  name: "Mathematical Sciences - Applied"
-  courses: 
-  - *MATH108
-  - *MATH111
-  - *MATH112
-  - *MATH165
-  - *MATH166
-  - *MATH215
-  - *MATH217
-  - *MATH259
-  - *MATH267
-  - *MATH320
-  - *MATH374
-  - *MATH411
-  - *MATH471
-  - *MATH498
-  - &MATH335
-    courseNumber: "MATH335"
-    courseTitle: "Math Models"
-    creditHours: 3
-    fall: false
-    spring: true
-    prerequisites:
-      - *MATH166
-      - *MATH217
-
-  - &MATH362
-    courseNumber: "MATH362"
-    courseTitle: "Numerical Analysis"
-    creditHours: 3
-    fall: true
-    spring: false
-    prerequisites:
-      - *MATH166
-      - *MATH259
-
-- &ActuarialScience
-  name: "Actuarial Science"
-  courses: 
-    - *MATH108
-    - *MATH111
-    - *MATH112
-    - *MATH165
-    - *MATH166
-    - *MATH215
-    - *MATH217
-
+    - &MATH335
+      courseNumber: "MATH335"
+      courseTitle: "Math Models"
+      creditHours: 3
+      fall: false
+      spring: true
+      prerequisites:
+        - *MATH166
+        - *MATH217
+    - &MATH362
+      courseNumber: "MATH362"
+      courseTitle: "Numerical Analysis"
+      creditHours: 3
+      fall: true
+      spring: false
+      prerequisites:
+        - *MATH166
+        - *MATH259
     - &MATH251
       courseNumber: "MATH251"
       courseTitle: "Introduction to Mathematics of Finance"
@@ -397,11 +350,6 @@
       prerequisites: 
         - *MATH111
         - *MATH112
-
-    - *MATH259
-    - *MATH267
-    - *MATH320
-
     - &MATH321
       courseNumber: "MATH321"
       courseTitle: "Mathematical Statistics"
@@ -410,7 +358,6 @@
       spring: true
       prerequisites:
         - *MATH320
-
     - &MATH351
       courseNumber: "MATH351"
       courseTitle: "Mathematical of Finance"
@@ -419,8 +366,7 @@
       spring: true
       prerequisites: 
         - *MATH165
-        - *MATH251
-    
+        - *MATH251 
     - &MATH452
       courseNumber: "MATH452"
       courseTitle: "Mathematics of Life Contingencies"
@@ -430,7 +376,6 @@
       prerequisites:
         - *MATH321
         - *MATH351
-
     - &MATH457
       courseNumber: "MATH457"
       courseTitle: "Actuarial Models 1"
@@ -439,7 +384,6 @@
       spring: false
       prerequisites:
         - *MATH321
-
     - &MATH458
       courseNumber: "MATH458"
       courseTitle: "Actuarial Models 2"
@@ -448,9 +392,6 @@
       spring: true
       prerequisites:
         - *MATH321
-
-    - *MATH498
-
     - &RMI270
       courseNumber: "RMI270"
       courseTitle: "Principles of Risk Managment and Insurance"
@@ -458,23 +399,6 @@
       fall: true
       spring: true
       prerequisites: null
-
-- &MathEdMiddle
-  name: "Math Education - Middle"
-  courses:
-    - *MATH108
-
-- &MathEdSecondary
-  name: "Math Eduacation - Secondary"
-  courses: 
-    - *MATH108
-    
-- &CSCourses 
-  name: "Computer Science"
-  courses: 
-    - *MATH108
-    - *MATH111
-    - *MATH112
     - &MATH161
       courseNumber: "MATH161"
       courseTitle: "Calculus 1"
@@ -644,3 +568,143 @@
       spring: true
       prerequisites: 
       - *CS495
+
+- &UCCourses
+  name: "UC Core"
+  courses:  
+    - *ENG103
+    - *ENG104
+    - *HIST150
+    - *PFW
+    - *COMM210
+    - *FIN101
+    - *T1FINEART
+    - *T1HUMAN
+    - *T1SOCSCI
+    - *T2FINEART
+    - *T2NATSCI
+    - *T3CAPSTONE
+
+- &HonorsCoreClasses
+  name: "Honors Core"
+  courses:
+    - *ENG103
+    - *ENG104
+    - *HIST150
+    - *FIN101
+    - *PFW
+    - *T1FINEART
+    - *T1NATSCI
+    - *COMM210
+    - *HONR100
+    - *HONR189
+    - *HONR199
+    - *HONR201
+    - *HONR202
+    - *HONR203
+    - *HONR29X
+    - *HONR39X
+    - *HONR39Y
+    - *HONR499
+
+- &MathSciMathematics
+  name: "Mathematical Sciences - Mathematics"
+  courses:
+    - *MATH108
+    - *MATH111
+    - *MATH112
+    - *MATH165
+    - *MATH166
+    - *MATH215
+    - *MATH217
+    - *MATH259
+    - *MATH267
+    - *MATH320
+    - *MATH374
+    - *MATH411
+    - *MATH471
+    - *MATH498
+    - *MATH412
+    - *MATH472
+    - *MATH4XX
+    - *MATH4XY
+    - *MATH4XZ
+
+- &MathSciAppliedMath
+  name: "Mathematical Sciences - Applied"
+  courses: 
+  - *MATH108
+  - *MATH111
+  - *MATH112
+  - *MATH165
+  - *MATH166
+  - *MATH215
+  - *MATH217
+  - *MATH259
+  - *MATH267
+  - *MATH320
+  - *MATH374
+  - *MATH411
+  - *MATH471
+  - *MATH498
+  - *MATH335
+  - *MATH362
+  
+- &ActuarialScience
+  name: "Actuarial Science"
+  courses: 
+    - *MATH108
+    - *MATH111
+    - *MATH112
+    - *MATH165
+    - *MATH166
+    - *MATH215
+    - *MATH217
+    - *MATH251
+    - *MATH259
+    - *MATH267
+    - *MATH320
+    - *MATH321
+    - *MATH351
+    - *MATH452
+    - *MATH457
+    - *MATH458
+    - *RMI270
+    - *MATH498
+
+- &MathEdMiddle
+  name: "Math Education - Middle"
+  courses:
+    - *MATH108
+
+- &MathEdSecondary
+  name: "Math Eduacation - Secondary"
+  courses: 
+    - *MATH108
+    
+- &CSCourses 
+  name: "Computer Science"
+  courses: 
+    - *MATH108
+    - *MATH111
+    - *MATH112
+    - *MATH161
+    - *MATH162
+    - *CS120
+    - *DiscreteMath
+    - *CS121
+    - *CS222
+    - *CS224
+    - *CS230
+    - *CS239
+    - *CS3XX
+    - *CS3XY
+    - *CS327
+    - *CS335
+    - *CS346
+    - *CS376
+    - *CS380
+    - *CS4XX
+    - *CS4XY
+    - *CS495
+    - *CS498  

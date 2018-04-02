@@ -20,27 +20,36 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Add : Page
     {
-        public Add(List<Course> passedCourseList)
+        public Add(List<Curriculum> masterList, int passedIndex)
         {
             InitializeComponent();
-            courseList = passedCourseList;
+            curric = masterList;
+            this.index = passedIndex;
+            loader = new YAMLLoader();
         }
 
-        List<Course> courseList;
+        YAMLLoader loader;
+        List<Curriculum> curric;
         List<Course> prereqs;
+        private int index;
 
         private void Add_Class_Button(object sender, RoutedEventArgs e)
         {
             Course newClass = new Course();
             newClass.courseNumber = courseNumBox.Text;
-            newClass.courseTitle = courseNumBox.Text;
+            newClass.courseTitle = courseTitleBox.Text;
             newClass.creditHours = Int32.Parse(((ComboBoxItem)creditHourInput.SelectedItem).Content.ToString());
             newClass.fall = (bool)fallInput.IsChecked;
             newClass.spring = (bool)springInput.IsChecked;
-            newClass.prerequisites = prereqs;
-            courseList.Add(newClass);
-            Editor window = new Editor(); 
-            this.NavigationService.Navigate(window);
+            //newClass.prerequisites = prereqs;
+            //must instantiate a new list of type course for the prerquisites. Cannot leave unassigned.
+            newClass.prerequisites = new List<Course>();
+            loader.addCourseToCurriculum(index, newClass, prereqs);
+            loader.serializeFile();
+            
+
+            //Editor window = new Editor(); 
+            //this.NavigationService.Navigate(window);
         }
 
         private void Prereqs_Selector_Button(object sender, RoutedEventArgs e)
@@ -64,7 +73,7 @@ namespace Strategic_Advising
                 default:
                     break;
             }
-            for (int i = 0; i < prereqs.Count; i++)
+            for (int i = 1; i < prereqs.Count; i++)
             {
                 if (i == prereqs.Count - 1)
                 {

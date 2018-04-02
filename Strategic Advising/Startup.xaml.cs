@@ -31,12 +31,12 @@ namespace Strategic_Advising
         {
             YAMLLoader loader = new YAMLLoader();
             List<Curriculum> curricList = loader.getMasterList();
-            for(int i=2; i<curricList.Count; i++)
+            for(int i=3; i<curricList.Count; i++)
             {
                 ListBoxItem li = new ListBoxItem();
                 li.Content = curricList[i].name;
                 li.Tag = i;
-                if (i == 2)
+                if (i == 3)
                 {
                     li.IsSelected = true;
                 }
@@ -47,10 +47,10 @@ namespace Strategic_Advising
         public void onSubmit(object sender, RoutedEventArgs e)
         {
             int majorIndex = -1;
-            int coreIndex = 0;
+            int coreIndex = 1;
             if (chkHonors.IsChecked == true)
             {
-                coreIndex = 1;
+                coreIndex = 2;
             }
             majorIndex = getMajorIndex();
             bool isFall = (bool)Fall.IsChecked;
