@@ -19,13 +19,13 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="960,0" Width="0"/>
-        <TextBlock Grid.Row="1" Text="Course Number: " FontSize="18" HorizontalAlignment="Left" Margin="71,86,0,854"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="210,90,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="courseNumberInput"/>
-        <TextBlock Grid.Row="1" Text="Course Title: " FontSize="18" HorizontalAlignment="Left" Margin="71,50,0,889"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="210,51,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="courseTitleInput"/>
-        <TextBlock Grid.Row="1" Text="Credit Hours: " FontSize="18" HorizontalAlignment="Left" Margin="71,122,0,821"/>
+        <TextBlock Grid.Row="1" Text="Course Number: " FontSize="30" HorizontalAlignment="Left" Margin="71,86,0,854"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="295,93,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="courseNumberInput"/>
+        <TextBlock Grid.Row="1" Text="Course Title: " FontSize="30" HorizontalAlignment="Left" Margin="71,50,0,889"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="295,58,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="courseTitleInput"/>
+        <TextBlock Grid.Row="1" Text="Credit Hours: " FontSize="30" HorizontalAlignment="Left" Margin="71,122,0,821"/>
 
-        <CheckBox Content="Fall" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="18" Margin="71,151,0,0" Grid.Row="1" VerticalAlignment="Top" Width="154" Name="fallInput">
+        <CheckBox Content="Fall" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="30" Margin="156,167,0,0" Grid.Row="1" VerticalAlignment="Top" Width="154" Name="fallInput">
             <CheckBox.Resources>
                 <Style TargetType="{x:Type Path}">
                     <Setter Property="FlowDirection" Value="LeftToRight"/>
@@ -33,24 +33,24 @@
             </CheckBox.Resources>
         </CheckBox>
 
-        <CheckBox Content="Spring" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="18" Margin="71,174,0,0" Grid.Row="1" VerticalAlignment="Top" Width="154" Height="23" Name="springInput">
+        <CheckBox Content="Spring" FlowDirection="RightToLeft" HorizontalAlignment="Left" FontSize="30" Margin="156,206,0,0" Grid.Row="1" VerticalAlignment="Top" Width="154" Height="42" Name="springInput">
             <CheckBox.Resources>
                 <Style TargetType="{x:Type Path}">
                     <Setter Property="FlowDirection" Value="LeftToRight"/>
                 </Style>
             </CheckBox.Resources>
         </CheckBox>
-        <Button Content="Select Prerequisites" HorizontalAlignment="Left" Margin="71,202,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="120" Height="30" Click="Prereqs_Selector_Button"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="30,0,0,30" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Back_Button"/>
-        <Button Content="Clear Prerequisites" HorizontalAlignment="Left" Margin="196,202,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="120" Height="30" Click="Prereq_Clear_Button"/>
-        <Button Content="Edit" HorizontalAlignment="Left" Margin="196,273,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30" Click="Add_Class_Button"/>
-        <ComboBox HorizontalAlignment="Left" Margin="210,124,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Name="creditHourInput" >
+        <Button Content="Select Prerequisites" HorizontalAlignment="Left" Margin="170,253,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="120" Height="30" Click="Prereqs_Selector_Button"/>
+        <Button Content="Clear Prerequisites" HorizontalAlignment="Left" Margin="295,253,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="120" Height="30" Click="Prereq_Clear_Button"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="170,376,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30" Click="Add_Class_Button"/>
+        <Button Content="Back" HorizontalAlignment="Right" Margin="0,0,1810,98" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Back_Button"/>
+        <ComboBox HorizontalAlignment="Left" Margin="295,129,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Name="creditHourInput" Height="33" >
             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="4" HorizontalAlignment="Left" Width="30"/>
             <ComboBoxItem Content="5" HorizontalAlignment="Left" Width="30"/>
         </ComboBox>
-        <TextBlock HorizontalAlignment="Left" FontSize="18" Margin="196,237,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="30" Width="351" Name="listOfPrereqs"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="18" Margin="295,288,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="84" Width="351" Name="listOfPrereqs"/>
     </Grid>
 </Page>
