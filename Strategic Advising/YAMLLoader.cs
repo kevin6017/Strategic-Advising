@@ -68,5 +68,24 @@ namespace Strategic_Advising
             this.curric = curricList;
         }
 
+        public void changeCourseInfo(string oldCourseNum, Course newCourse)
+        {
+            int temp = this.curric[0].courses.FindIndex(x => x.courseNumber == oldCourseNum);
+
+            this.curric[0].courses[temp].courseNumber = newCourse.courseNumber;
+            this.curric[0].courses[temp].courseTitle = newCourse.courseTitle;
+            this.curric[0].courses[temp].creditHours = newCourse.creditHours;
+            this.curric[0].courses[temp].spring = newCourse.spring;
+            this.curric[0].courses[temp].fall= newCourse.fall;
+            this.curric[0].courses[temp].prerequisites = null;
+            if (newCourse.prerequisites!= null)
+            {
+                foreach (Course p in newCourse.prerequisites)
+                {
+                    this.curric[0].courses[temp].prerequisites.Add(getCourseFromMasterList(p));
+                }
+            }
+        }
+
     }
 }

@@ -22,18 +22,22 @@ namespace Strategic_Advising
     /// </summary>
     public partial class EditSelector : Page
     {
-        public EditSelector(List<Course> passedCourseList)
+        public EditSelector(int curricIndex)
         {
             InitializeComponent();
-            courseList = passedCourseList;
+            this.curricIndex = curricIndex;
+            loader = new YAMLLoader();
         }
 
-        List<Course> courseList;
+        int curricIndex;
         DataGridView dgv;
         DataTable dataTable;
+        private YAMLLoader loader;
+        private List<Course> courseList;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.courseList = loader.getCurriculum(curricIndex);
             dataTable = new DataTable("editSelectorTable");
             DataColumn dc1 = new DataColumn("Course Number", typeof(string));
             DataColumn dc2 = new DataColumn("Course Title", typeof(string));

@@ -20,10 +20,9 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Add : Page
     {
-        public Add(List<Curriculum> masterList, int passedIndex)
+        public Add(int passedIndex)
         {
             InitializeComponent();
-            curric = masterList;
             this.index = passedIndex;
             loader = new YAMLLoader();
         }

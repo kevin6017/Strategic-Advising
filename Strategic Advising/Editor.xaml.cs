@@ -62,14 +62,15 @@ namespace Strategic_Advising
             YAMLLoader loader = new YAMLLoader();
             ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
             int curricIndex = Int32.Parse(temp.Tag.ToString());
-            Add window = new Add(loader.getMasterList(), curricIndex);
+            Add window = new Add(curricIndex);
             this.NavigationService.Navigate(window);
         }
 
         private void Button_ClickEdit(object sender, RoutedEventArgs e)
         {
-            getSelectedClass();
-            EditSelector window = new EditSelector(courseList);
+            ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
+            int curricIndex = Int32.Parse(temp.Tag.ToString());
+            EditSelector window = new EditSelector(curricIndex);
             this.NavigationService.Navigate(window);
         }
 
