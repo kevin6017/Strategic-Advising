@@ -35,9 +35,17 @@ namespace Strategic_Advising
         {
             courseNumberInput.Text = courseList[classIndex].courseNumber; //popular online opinion says we should use bindings and dependencies to do this instead of doing directly
             courseTitleInput.Text = courseList[classIndex].courseTitle;
-            creditHourInput.SelectedValue = courseList[classIndex].creditHours.ToString();
             fallInput.IsChecked = courseList[classIndex].fall;
             springInput.IsChecked = courseList[classIndex].spring;
+            foreach (ComboBoxItem item in creditHourInput.Items)
+            {
+                if (item.Content as String == courseList[classIndex].creditHours.ToString())
+                {
+                    creditHourInput.SelectedItem = item;
+                    break;
+                }
+            }
+
             if (courseList[classIndex].prerequisites != null)
             {
                 prereqs = courseList[classIndex].prerequisites;
