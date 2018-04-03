@@ -21,60 +21,62 @@
             <RowDefinition Height="217.667"/>
             <RowDefinition Height="32.333"/>
             <RowDefinition Height="71.667"/>
-            <RowDefinition Height="Auto" MinHeight="141"/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto" MinHeight="157"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="41*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="778,0" Width="364"/>
-        <TextBlock Grid.Row="4" Text="Select a Major: " FontSize="18" Margin="139,0,1657,5" RenderTransformOrigin="0.419,3.361"/>
-        <TextBlock Grid.Row="4" Text="Honors Core:" FontSize="18" Margin="612,3,0,2" Width="108" HorizontalAlignment="Left"/>
-        <CheckBox Grid.Row="4" Margin="721,10,0,4" RenderTransformOrigin="0.49,0.533" HorizontalAlignment="Left" Width="17" FlowDirection="RightToLeft" x:Name="chkHonors">
+        <TextBlock Grid.Row="4" Text="Select a Major: " FontSize="30" Margin="139,0,1584,199" RenderTransformOrigin="0.419,3.361" Grid.RowSpan="2"/>
+        <TextBlock Grid.Row="4" Text="Honors Core:" FontSize="30" Margin="638,3,0,199" Width="177" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+        <CheckBox Grid.Row="4" Margin="819,21,0,211" RenderTransformOrigin="-4.147,1.2" HorizontalAlignment="Left" Width="17" FlowDirection="RightToLeft" x:Name="chkHonors" Grid.RowSpan="2">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
                     <SkewTransform/>
                     <RotateTransform/>
-                    <TranslateTransform X="0.34"/>
+                    <TranslateTransform X="157.998"/>
                 </TransformGroup>
             </CheckBox.RenderTransform>
         </CheckBox>
-        <TextBlock Grid.Row="5" Text="Minimum Credit Hour: " FontSize="18" Margin="139,108,0,86" HorizontalAlignment="Left" Width="181" />
-        <TextBlock Grid.Row="5" Text="Maximum Credit Hour: " FontSize="18" Margin="139,161,0,27" HorizontalAlignment="Left" Width="181"/>
-        <ComboBox Grid.Row="5" Grid.ColumnSpan="1" Margin="323,108,0,86" SelectedIndex="3" HorizontalAlignment="Left" Width="45" x:Name="ddlMinCredits">
-            <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="11" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="12" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="13" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="14" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="15" HorizontalAlignment="Left" Width="30"/>
+        <TextBlock Grid.Row="5" Text="Minimum Credit Hours: " FontSize="30" Margin="139,140,0,35" HorizontalAlignment="Left" Width="315" />
+        <TextBlock Grid.Row="5" Text="Maximum Credit Hours: " FontSize="30" Margin="139,193,0,18" HorizontalAlignment="Left" Width="315" Grid.RowSpan="2"/>
+        <ComboBox Grid.Row="5" Grid.ColumnSpan="1" Margin="476,140,0,30" SelectedIndex="3" FontSize="30" HorizontalAlignment="Left" Width="60" x:Name="ddlMinCredits">
+            <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="50" FontSize="30"/>
+            <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="50" FontSize="30"/>
+            <ComboBoxItem Content="11" HorizontalAlignment="Left" Width="50" FontSize="30"/>
+            <ComboBoxItem Content="12" HorizontalAlignment="Left" Width="50" FontSize="30"/>
+            <ComboBoxItem Content="13" HorizontalAlignment="Left" Width="50" FontSize="30"/>
+            <ComboBoxItem Content="14" HorizontalAlignment="Left" Width="50" FontSize="30"/>
+            <ComboBoxItem Content="15" HorizontalAlignment="Left" Width="50" FontSize="30"/>
         </ComboBox>
-        <ComboBox Grid.Row="5" Margin="323,161,0,32" SelectedIndex="2" HorizontalAlignment="Left" Width="45" x:Name="ddlMaxCredits">
-            <ComboBoxItem Content="16" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="17" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="18" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="19" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="20" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="21" HorizontalAlignment="Left" Width="30"/>
+        <ComboBox Grid.Row="5" Margin="476,193,0,10" SelectedIndex="2" HorizontalAlignment="Left" FontSize="30" Width="60" x:Name="ddlMaxCredits" Grid.RowSpan="2">
+            <ComboBoxItem Content="16" HorizontalAlignment="Left" Width="50" FontSize="30"/>
+            <ComboBoxItem Content="17" HorizontalAlignment="Left" Width="50" FontSize="30"/>
+            <ComboBoxItem Content="18" HorizontalAlignment="Left" Width="50" FontSize="30"/>
+            <ComboBoxItem Content="19" HorizontalAlignment="Left" Width="50" FontSize="30"/>
+            <ComboBoxItem Content="20" HorizontalAlignment="Left" Width="50" FontSize="30"/>
+            <ComboBoxItem Content="21" HorizontalAlignment="Left" Width="50" FontSize="30"/>
         </ComboBox>
-        <TextBlock Grid.Row="6" Text="Start Semester: " FontSize="18" Margin="139,27,0,53" HorizontalAlignment="Left" Width="124" Grid.RowSpan="2"/>
-        <Button Grid.Row="9" Content="Editor" Click="editorClick" HorizontalAlignment="Left" Width="80" Margin="30,0,0,30" Height="30" VerticalAlignment="Bottom"/>
-        <Button Grid.Row="9"  Content="Submit" Margin="0,0,30,30" Width="80" HorizontalAlignment="Right" Click="onSubmit" Height="30" VerticalAlignment="Bottom"/>
-        <RadioButton Content="Fall" FontSize="18" HorizontalAlignment="Left" Margin="263,1,0,0" Grid.Row="7" IsChecked="True" VerticalAlignment="Top" x:Name="Fall"/>
-        <RadioButton Content="Spring" FontSize="18" HorizontalAlignment="Left" Margin="263,29,0,0" Grid.Row="7" VerticalAlignment="Top"/>
-        <TextBlock Grid.Row="8" Text="Semesters Remaining: " FontSize="18" Margin="139,47,0,70" HorizontalAlignment="Left" Width="175"/>
-        <ComboBox Grid.Row="8" Grid.ColumnSpan="1" Margin="330,47,0,70" HorizontalAlignment="Left" Width="45" SelectedIndex="5" x:Name="ddlSemesters">
-            <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="4" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="5" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="6" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="7" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="8" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="30"/>
-            <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="30"/>
+        <TextBlock Grid.Row="7" Text="Start Semester: " FontSize="30" Margin="139,63,0,122" HorizontalAlignment="Left" Width="197" Grid.RowSpan="2"/>
+        <Button Grid.Row="10" Content="Editor" Click="editorClick" HorizontalAlignment="Left" Width="80" Margin="30,0,0,30" Height="30" VerticalAlignment="Bottom"/>
+        <Button Grid.Row="10"  Content="Submit" Margin="0,0,30,30" Width="80" HorizontalAlignment="Right" Click="onSubmit" Height="30" VerticalAlignment="Bottom"/>
+        <RadioButton Content="Fall" FontSize="30" HorizontalAlignment="Left" Margin="341,68,0,0" Grid.Row="7" IsChecked="True" VerticalAlignment="Top" x:Name="Fall" Height="39" Width="62" Grid.RowSpan="2"/>
+        <RadioButton Content="Spring" FontSize="30" HorizontalAlignment="Left" Margin="341,35,0,0" Grid.Row="8" VerticalAlignment="Top" Height="40" Width="107"/>
+        <TextBlock Grid.Row="9" Text="Semesters Remaining: " FontSize="30" Margin="139,0,0,165" HorizontalAlignment="Left" Width="291" Height="50" VerticalAlignment="Bottom"/>
+        <ComboBox Grid.Row="9" Grid.ColumnSpan="1" Margin="435,0,0,165" HorizontalAlignment="Left" Width="50" FontSize="30" SelectedIndex="5" x:Name="ddlSemesters" Height="50" VerticalAlignment="Bottom">
+            <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="50"/>
+            <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="50"/>
+            <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="50"/>
+            <ComboBoxItem Content="4" HorizontalAlignment="Left" Width="50"/>
+            <ComboBoxItem Content="5" HorizontalAlignment="Left" Width="50"/>
+            <ComboBoxItem Content="6" HorizontalAlignment="Left" Width="50"/>
+            <ComboBoxItem Content="7" HorizontalAlignment="Left" Width="50"/>
+            <ComboBoxItem Content="8" HorizontalAlignment="Left" Width="50"/>
+            <ComboBoxItem Content="9" HorizontalAlignment="Left" Width="50"/>
+            <ComboBoxItem Content="10" HorizontalAlignment="Left" Width="50"/>
         </ComboBox>
-        <ListBox HorizontalAlignment="Left" Height="130" Margin="268,1,0,0" Grid.Row="3" VerticalAlignment="Top" Width="250" Grid.RowSpan="3" x:Name="lbxMajors">
+        <ListBox HorizontalAlignment="Left" Height="130" Margin="350,1,0,0" Grid.Row="3" VerticalAlignment="Top" Width="250" Grid.RowSpan="3" x:Name="lbxMajors">
         </ListBox>
+        <TextBlock HorizontalAlignment="Right" FontSize="10" Grid.Row="2" TextWrapping="Wrap" Text="Full screen application to see all content" VerticalAlignment="Top" Width="177" Margin="0,49,246,0" Grid.RowSpan="2"/>
     </Grid>
 </Page>

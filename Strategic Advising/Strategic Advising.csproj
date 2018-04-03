@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo_40Q_icon.ico</ApplicationIcon>
+    <ApplicationIcon>res\logo_40Q_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
@@ -207,7 +207,7 @@
     <Resource Include="res\SAB_Remove.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo_40Q_icon.ico" />
+    <Resource Include="res\logo_40Q_icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\SAB_CS.png" />
