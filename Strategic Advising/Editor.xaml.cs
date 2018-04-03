@@ -76,8 +76,9 @@ namespace Strategic_Advising
 
         private void Button_ClickRemove(object sender, RoutedEventArgs e)
         {
-            getSelectedClass();
-            Remove window = new Remove(courseList);
+            ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
+            int curricIndex = Int32.Parse(temp.Tag.ToString());
+            Remove window = new Remove(curricIndex);
             this.NavigationService.Navigate(window);
         }
 

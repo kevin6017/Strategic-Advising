@@ -22,17 +22,21 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Remove : Page
     {
-        public Remove(List<Course> passedCourseList)
+        public Remove(int curricIndex)
         {
             InitializeComponent();
-            courseList = passedCourseList;
+            this.curricIndex = curricIndex;
+            loader = new YAMLLoader();
         }
-        List<Course> courseList;
+        int curricIndex;
+        private YAMLLoader loader;
+        private List<Course> courseList;
         DataGridView dgv;
         DataTable dataTable;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.courseList = loader.getCurriculum(curricIndex);
             dataTable = new DataTable("removeTable");
             DataColumn dc1 = new DataColumn("Course Number", typeof(string));
             DataColumn dc2 = new DataColumn("Course Title", typeof(string));
@@ -82,8 +86,8 @@ namespace Strategic_Advising
                 MessageBoxResult result = System.Windows.MessageBox.Show("Are you sure you want to remove this class?", "Confirmation", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    Course courseToRemove = courseList[e.RowIndex];
-                    testLabel.Content = courseToRemove.courseNumber.ToString();
+                    loader.removeCourse(courseList[e.RowIndex]);
+                    loader.serializeFile();
                     //Remove stuff and go back to editor page
                 }
             }

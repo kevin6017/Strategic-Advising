@@ -97,7 +97,10 @@ namespace Strategic_Advising
                     int numRemoved = c.prerequisites.RemoveAll(x => x.courseNumber == course.courseNumber);
                     if (numRemoved != 0)
                     {
-                        c.prerequisites.AddRange(course.prerequisites);
+                        if (course.prerequisites != null)
+                        {
+                            c.prerequisites.AddRange(course.prerequisites);
+                        }
                         //foreach(Course prereq in course.prerequisites)
                         //{
                         //    c.prerequisites.Add(getCourseFromMasterList(prereq));
