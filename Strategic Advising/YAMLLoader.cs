@@ -11,7 +11,7 @@ using System.Reflection;
 
 namespace Strategic_Advising
 {
-    class YAMLLoader
+    public class YAMLLoader
     {
         private List<Curriculum> curric = new List<Curriculum>();
 

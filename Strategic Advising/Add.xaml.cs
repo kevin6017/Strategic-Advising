@@ -20,15 +20,14 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Add : Page
     {
-        public Add(int passedIndex)
+        public Add(YAMLLoader passedLoader, int passedIndex)
         {
             InitializeComponent();
             this.index = passedIndex;
-            loader = new YAMLLoader();
+            this.loader = passedLoader;
         }
 
-        YAMLLoader loader;
-        List<Curriculum> curric;
+        private YAMLLoader loader;
         List<Course> prereqs;
         private int index;
 
@@ -93,7 +92,7 @@ namespace Strategic_Advising
 
         private void Back_Button(object sender, RoutedEventArgs e)
         {
-            Editor window = new Editor();
+            Editor window = new Editor(this.loader);
             this.NavigationService.Navigate(window);
         }
     }

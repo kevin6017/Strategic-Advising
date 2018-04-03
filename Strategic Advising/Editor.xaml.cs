@@ -23,13 +23,23 @@ namespace Strategic_Advising
         public Editor()
         {
             InitializeComponent();
+            this.loader = new YAMLLoader();
+            populateMajorSelectBox();
+            
+        }
+
+        public Editor(YAMLLoader passedLoader)
+        {
+            InitializeComponent();
+            this.loader = passedLoader;
             populateMajorSelectBox();
         }
 
+       private YAMLLoader loader;
+
         private void populateMajorSelectBox()
         {
-            YAMLLoader loader = new YAMLLoader();
-            List<Curriculum> curricList = loader.getMasterList();
+            List<Curriculum> curricList = this.loader.getMasterList();
             for (int i = 1; i < curricList.Count; i++)
             {
                 ListBoxItem li = new ListBoxItem();
@@ -54,15 +64,14 @@ namespace Strategic_Advising
             
         }
 
-        List<Course> courseList;
+        private List<Course> courseList;
 
         private void Button_ClickAdd(object sender, RoutedEventArgs e)
         {
-            //getSelectedClass();
-            YAMLLoader loader = new YAMLLoader();
+            //getSelectedClass()
             ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
             int curricIndex = Int32.Parse(temp.Tag.ToString());
-            Add window = new Add(curricIndex);
+            Add window = new Add(this.loader, curricIndex);
             this.NavigationService.Navigate(window);
         }
 
@@ -82,12 +91,12 @@ namespace Strategic_Advising
             this.NavigationService.Navigate(window);
         }
 
-        private void getSelectedClass()
-        {
-            ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
-            int curricIndex = Int32.Parse(temp.Tag.ToString());
-            courseList = new YAMLLoader().getCurriculum(curricIndex);
-        }
+        //private void getSelectedClass()
+        //{
+        //    ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
+        //    int curricIndex = Int32.Parse(temp.Tag.ToString());
+        //    courseList = new YAMLLoader().getCurriculum(curricIndex);
+        //}
 
     }
 }
