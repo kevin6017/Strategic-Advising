@@ -19,8 +19,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Content="Back" Margin="30,0,0,30" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
-        <Button Content="Remove" HorizontalAlignment="Center" Margin="0,0,30,100" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click_Remove"/>
+
         <WindowsFormsHost HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,143,0,0" Name="removeGrid"/>
+        <Label Content="" Name="testLabel" HorizontalAlignment="Left" Margin="115,0,0,30" Grid.Row="2" Height="26" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Page>
