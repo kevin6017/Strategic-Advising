@@ -22,12 +22,13 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Remove : Page
     {
-        public Remove(int curricIndex)
+        public Remove(int curricIndex, YAMLLoader passedLoader)
         {
             InitializeComponent();
             this.curricIndex = curricIndex;
-            loader = new YAMLLoader();
+            this.loader = passedLoader;
         }
+
         int curricIndex;
         private YAMLLoader loader;
         private List<Course> courseList;
@@ -86,8 +87,9 @@ namespace Strategic_Advising
                 MessageBoxResult result = System.Windows.MessageBox.Show("Are you sure you want to remove this class?", "Confirmation", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    loader.removeCourse(courseList[e.RowIndex]);
-                    loader.serializeFile();
+                    this.loader.removeCourse(courseList[e.RowIndex]);
+                    this.loader.serializeFile();
+                    this.NavigationService.Refresh();
                     //Remove stuff and go back to editor page
                 }
             }

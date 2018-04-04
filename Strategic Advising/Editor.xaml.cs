@@ -87,7 +87,7 @@ namespace Strategic_Advising
         {
             ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
             int curricIndex = Int32.Parse(temp.Tag.ToString());
-            Remove window = new Remove(curricIndex);
+            Remove window = new Remove(curricIndex, this.loader);
             this.NavigationService.Navigate(window);
         }
 
