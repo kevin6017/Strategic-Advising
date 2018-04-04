@@ -23,19 +23,29 @@ namespace Strategic_Advising
         public Editor()
         {
             InitializeComponent();
+            this.loader = new YAMLLoader();
+            populateMajorSelectBox();
+            
+        }
+
+        public Editor(YAMLLoader passedLoader)
+        {
+            InitializeComponent();
+            this.loader = passedLoader;
             populateMajorSelectBox();
         }
 
+       private YAMLLoader loader;
+
         private void populateMajorSelectBox()
         {
-            YAMLLoader loader = new YAMLLoader();
-            List<Curriculum> curricList = loader.getMasterList();
-            for (int i = 2; i < curricList.Count; i++)
+            List<Curriculum> curricList = this.loader.getMasterList();
+            for (int i = 1; i < curricList.Count; i++)
             {
                 ListBoxItem li = new ListBoxItem();
                 li.Content = curricList[i].name;
                 li.Tag = i;
-                if (i == 2)
+                if (i == 1)
                 {
                     li.IsSelected = true;
                 }
@@ -54,35 +64,39 @@ namespace Strategic_Advising
             
         }
 
-        List<Course> courseList;
+        private List<Course> courseList;
 
         private void Button_ClickAdd(object sender, RoutedEventArgs e)
         {
-            getSelectedClass();
-            Add window = new Add(courseList);
+            //getSelectedClass()
+            ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
+            int curricIndex = Int32.Parse(temp.Tag.ToString());
+            Add window = new Add(this.loader, curricIndex);
             this.NavigationService.Navigate(window);
         }
 
         private void Button_ClickEdit(object sender, RoutedEventArgs e)
         {
-            getSelectedClass();
-            EditSelector window = new EditSelector(courseList);
+            ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
+            int curricIndex = Int32.Parse(temp.Tag.ToString());
+            EditSelector window = new EditSelector(curricIndex);
             this.NavigationService.Navigate(window);
         }
 
         private void Button_ClickRemove(object sender, RoutedEventArgs e)
         {
-            getSelectedClass();
-            Remove window = new Remove(courseList);
+            ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
+            int curricIndex = Int32.Parse(temp.Tag.ToString());
+            Remove window = new Remove(curricIndex);
             this.NavigationService.Navigate(window);
         }
 
-        private void getSelectedClass()
-        {
-            ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
-            int curricIndex = Int32.Parse(temp.Tag.ToString());
-            courseList = new YAMLLoader().getCurriculum(curricIndex);
-        }
+        //private void getSelectedClass()
+        //{
+        //    ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
+        //    int curricIndex = Int32.Parse(temp.Tag.ToString());
+        //    courseList = new YAMLLoader().getCurriculum(curricIndex);
+        //}
 
     }
 }

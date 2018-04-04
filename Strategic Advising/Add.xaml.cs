@@ -20,27 +20,34 @@ namespace Strategic_Advising
     /// </summary>
     public partial class Add : Page
     {
-        public Add(List<Course> passedCourseList)
+        public Add(YAMLLoader passedLoader, int passedIndex)
         {
             InitializeComponent();
-            courseList = passedCourseList;
+            this.index = passedIndex;
+            this.loader = passedLoader;
         }
 
-        List<Course> courseList;
+        private YAMLLoader loader;
         List<Course> prereqs;
+        private int index;
 
         private void Add_Class_Button(object sender, RoutedEventArgs e)
         {
             Course newClass = new Course();
             newClass.courseNumber = courseNumBox.Text;
-            newClass.courseTitle = courseNumBox.Text;
+            newClass.courseTitle = courseTitleBox.Text;
             newClass.creditHours = Int32.Parse(((ComboBoxItem)creditHourInput.SelectedItem).Content.ToString());
             newClass.fall = (bool)fallInput.IsChecked;
             newClass.spring = (bool)springInput.IsChecked;
-            newClass.prerequisites = prereqs;
-            courseList.Add(newClass);
-            Editor window = new Editor(); 
-            this.NavigationService.Navigate(window);
+            //newClass.prerequisites = prereqs;
+            //must instantiate a new list of type course for the prerquisites. Cannot leave unassigned.
+            newClass.prerequisites = new List<Course>();
+            loader.addCourseToCurriculum(index, newClass, prereqs);
+            loader.serializeFile();
+            
+
+            //Editor window = new Editor(); 
+            //this.NavigationService.Navigate(window);
         }
 
         private void Prereqs_Selector_Button(object sender, RoutedEventArgs e)
@@ -64,7 +71,7 @@ namespace Strategic_Advising
                 default:
                     break;
             }
-            for (int i = 0; i < prereqs.Count; i++)
+            for (int i = 1; i < prereqs.Count; i++)
             {
                 if (i == prereqs.Count - 1)
                 {
@@ -85,7 +92,7 @@ namespace Strategic_Advising
 
         private void Back_Button(object sender, RoutedEventArgs e)
         {
-            Editor window = new Editor();
+            Editor window = new Editor(this.loader);
             this.NavigationService.Navigate(window);
         }
     }

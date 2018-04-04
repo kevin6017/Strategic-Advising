@@ -30,14 +30,23 @@ namespace Strategic_Advising
         int classIndex;
         List<Course> courseList;
         List<Course> prereqs;
+        private string oldCourseNumber;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             courseNumberInput.Text = courseList[classIndex].courseNumber; //popular online opinion says we should use bindings and dependencies to do this instead of doing directly
             courseTitleInput.Text = courseList[classIndex].courseTitle;
-            creditHourInput.SelectedValue = courseList[classIndex].creditHours.ToString();
             fallInput.IsChecked = courseList[classIndex].fall;
             springInput.IsChecked = courseList[classIndex].spring;
+            foreach (ComboBoxItem item in creditHourInput.Items)
+            {
+                if (item.Content as String == courseList[classIndex].creditHours.ToString())
+                {
+                    creditHourInput.SelectedItem = item;
+                    break;
+                }
+            }
+
             if (courseList[classIndex].prerequisites != null)
             {
                 prereqs = courseList[classIndex].prerequisites;
@@ -53,6 +62,7 @@ namespace Strategic_Advising
                     }
                 }
             }
+            oldCourseNumber = courseList[classIndex].courseNumber;
         }
 
         private void Add_Class_Button(object sender, RoutedEventArgs e)
@@ -63,6 +73,9 @@ namespace Strategic_Advising
             courseList[classIndex].fall = (bool)fallInput.IsChecked;
             courseList[classIndex].spring = (bool)springInput.IsChecked;
             courseList[classIndex].prerequisites = prereqs;
+            YAMLLoader loader = new YAMLLoader();
+            loader.changeCourseInfo(oldCourseNumber, courseList[classIndex]);
+            loader.serializeFile();
             Editor window = new Editor();
             this.NavigationService.Navigate(window);
         }
