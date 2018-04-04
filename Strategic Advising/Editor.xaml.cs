@@ -79,7 +79,7 @@ namespace Strategic_Advising
         {
             ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
             int curricIndex = Int32.Parse(temp.Tag.ToString());
-            EditSelector window = new EditSelector(curricIndex);
+            EditSelector window = new EditSelector(this.loader, curricIndex);
             this.NavigationService.Navigate(window);
         }
 

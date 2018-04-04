@@ -22,11 +22,11 @@ namespace Strategic_Advising
     /// </summary>
     public partial class EditSelector : Page
     {
-        public EditSelector(int curricIndex)
+        public EditSelector(YAMLLoader passedLoader,int curricIndex)
         {
             InitializeComponent();
             this.curricIndex = curricIndex;
-            loader = new YAMLLoader();
+            this.loader = passedLoader;
         }
 
         int curricIndex;
@@ -37,7 +37,7 @@ namespace Strategic_Advising
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            this.courseList = loader.getCurriculum(curricIndex);
+            this.courseList = this.loader.getCurriculum(curricIndex);
             dataTable = new DataTable("editSelectorTable");
             DataColumn dc1 = new DataColumn("Course Number", typeof(string));
             DataColumn dc2 = new DataColumn("Course Title", typeof(string));
@@ -78,7 +78,7 @@ namespace Strategic_Advising
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                Edit window = new Edit(courseList, e.RowIndex);
+                Edit window = new Edit(courseList, e.RowIndex, this.loader);
                 this.NavigationService.Navigate(window);
             }
         }
