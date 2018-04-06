@@ -27,6 +27,8 @@
         <ScrollViewer Grid.Row="1" Name="springView" ScrollChanged="ScrollChanged" HorizontalAlignment="Left" Height="625" VerticalAlignment="Top" Width="570" Margin="1030,100,0,0"  RenderTransformOrigin="0.5,0.495" CanContentScroll="False" VerticalScrollBarVisibility="Disabled" Grid.RowSpan="2">
             <WindowsFormsHost Name ="springForm"></WindowsFormsHost>
         </ScrollViewer>
+        <TextBlock HorizontalAlignment="Left" Margin="315,55,0,0" Grid.Row="1" FontSize="30" TextWrapping="Wrap" Text="Fall" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1030,55,0,0" Grid.Row="1" FontSize="30" TextWrapping="Wrap" Text="Spring" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

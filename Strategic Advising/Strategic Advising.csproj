@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>res\logo_40Q_icon.ico</ApplicationIcon>
+    <ApplicationIcon>res\igwefhkjf_sfj_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
@@ -214,6 +214,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\SAB_CS_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\igwefhkjf_sfj_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.2.0.0\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\dotnet\Fody.targets')" />
