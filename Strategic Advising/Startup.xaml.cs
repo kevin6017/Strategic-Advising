@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace Strategic_Advising
 {
@@ -23,6 +24,13 @@ namespace Strategic_Advising
         public Startup()
         {
             InitializeComponent();
+            //OpenFileDialog ofd = new OpenFileDialog();
+            //ofd.DefaultExt = ".eyaml";
+            //if (ofd.ShowDialog() == true)
+            //{
+            //    string filename = ofd.FileName;
+
+            //}
             populateMajorSelectBox();
             
         }

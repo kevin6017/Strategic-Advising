@@ -43,16 +43,14 @@ namespace Strategic_Advising
             //must instantiate a new list of type course for the prerquisites. Cannot leave unassigned.
             newClass.prerequisites = new List<Course>();
             loader.addCourseToCurriculum(index, newClass, prereqs);
-            loader.serializeFile();
-            
-
-            //Editor window = new Editor(); 
-            //this.NavigationService.Navigate(window);
+           
+            Editor window = new Editor(this.loader); 
+            this.NavigationService.Navigate(window);
         }
 
         private void Prereqs_Selector_Button(object sender, RoutedEventArgs e)
         {
-            ClassSelectorWindow csWindow = new ClassSelectorWindow();
+            ClassSelectorWindow csWindow = new ClassSelectorWindow(this.loader);
             bool? dialogResult = csWindow.ShowDialog();
             switch (dialogResult)
             {

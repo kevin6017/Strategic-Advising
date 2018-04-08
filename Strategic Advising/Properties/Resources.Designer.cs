@@ -59,5 +59,15 @@ namespace Strategic_Advising.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] MasterCourseList {
+            get {
+                object obj = ResourceManager.GetObject("MasterCourseList", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

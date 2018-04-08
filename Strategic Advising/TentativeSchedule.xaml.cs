@@ -29,12 +29,15 @@ namespace Strategic_Advising
         private List<Semester> semesterList;
         private CompletedClasses completedClasses;
         private List<SemesterView> semesterViews;
+        private YAMLLoader loader;
 
-        public TentativeSchedule(List<Semester> semesters, CompletedClasses prevPage)
+        public TentativeSchedule(List<Semester> semesters, CompletedClasses prevPage, YAMLLoader passedLoader)
         {
             InitializeComponent();
+            this.loader = passedLoader;
             this.semesterList = semesters;
             completedClasses = prevPage;
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -270,7 +273,7 @@ namespace Strategic_Advising
         private List<Course> getClasses()
         {
             List<Course> coursesToAdd = new List<Course>();
-            ClassSelectorWindow csWindow = new ClassSelectorWindow();
+            ClassSelectorWindow csWindow = new ClassSelectorWindow(this.loader);
             bool? dialogResult = csWindow.ShowDialog();
             switch (dialogResult)
             {

@@ -20,20 +20,20 @@ namespace Strategic_Advising
     /// </summary>
     public partial class ClassSelectorWindow : Window
     {
-        private YAMLLoader loader = new YAMLLoader();
+        private YAMLLoader loader;
         private DataGridView dgv;
         private List<Course> coursesToAdd;
         //private List<Curriculum> curric = new List<Curriculum>();
 
-        public ClassSelectorWindow()
+        public ClassSelectorWindow(YAMLLoader passedLoader)
         {
             InitializeComponent();
+            this.loader = passedLoader;
             populateMajorSelectBox();
         }
 
         private void populateMajorSelectBox()
         {
-            YAMLLoader loader = new YAMLLoader();
             List<Curriculum> curricList = loader.getMasterList();
             for (int i = 3; i < curricList.Count; i++)
             {

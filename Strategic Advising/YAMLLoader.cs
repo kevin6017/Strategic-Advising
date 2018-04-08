@@ -7,7 +7,10 @@ using System.IO;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 using System.Reflection;
-
+using System.Windows.Forms;
+using System.Windows.Resources;
+using System.Resources;
+using Strategic_Advising.Properties;
 
 namespace Strategic_Advising
 {
@@ -15,12 +18,15 @@ namespace Strategic_Advising
     {
         private List<Curriculum> curric = new List<Curriculum>();
 
+
         public YAMLLoader()
         {
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            var temp = assembly.GetManifestResourceStream("Strategic_Advising.res.MasterCourseList.eyaml");
-            StreamReader rdr = new StreamReader(temp);
+            //May throw exception here.
+            FileStream fs = File.Open(@"MasterCourseList.eyaml", FileMode.Open, FileAccess.Read);
+            StreamReader rdr = new StreamReader(fs);
             string yaml = rdr.ReadToEnd();
+            rdr.Close();
+            fs.Close();
             var ds = new DeserializerBuilder().WithNamingConvention(new CamelCaseNamingConvention()).Build();
             this.curric = ds.Deserialize<List<Curriculum>>(yaml);
         }
@@ -35,7 +41,7 @@ namespace Strategic_Advising
             return this.curric[index].courses;
         }
 
-        //may not need this stuff
+
         public void addCourseToCurriculum(int index, Course course, List<Course> prereqs)
         {
             if (prereqs != null)
@@ -58,9 +64,13 @@ namespace Strategic_Advising
 
         public void serializeFile()
         {
+            FileStream fs = File.Open(@"MasterCourseList.eyaml", FileMode.Open, FileAccess.Write);
             Serializer serial = new SerializerBuilder().Build();
             string yaml = serial.Serialize(this.curric);
-            //File.WriteAllText("Strategic_Advising.res.MasterCourseList.eyaml", yaml);
+            StreamWriter writer = new StreamWriter(fs);
+            writer.Write(yaml);
+            writer.Close();
+            fs.Close();
         }
 
         public void setMasterList(List<Curriculum> curricList)

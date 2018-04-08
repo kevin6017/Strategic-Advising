@@ -73,7 +73,7 @@ namespace Strategic_Advising
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Editor window = new Editor();
+            Editor window = new Editor(this.loader);
             this.NavigationService.Navigate(window);
 
         }
@@ -88,7 +88,6 @@ namespace Strategic_Advising
                 if (result == MessageBoxResult.Yes)
                 {
                     this.loader.removeCourse(courseList[e.RowIndex]);
-                    this.loader.serializeFile();
                     this.NavigationService.Refresh();
                     //Remove stuff and go back to editor page
                 }

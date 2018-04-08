@@ -43,6 +43,7 @@ namespace Strategic_Advising
         int numSemesters;
         int maxCredits;
         int minCredits;
+        YAMLLoader loader;
 
         public bool getIsFall()
         {
@@ -51,7 +52,7 @@ namespace Strategic_Advising
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            YAMLLoader loader = new YAMLLoader();
+            this.loader = new YAMLLoader();
             List<Course> courseList = loader.getCurriculum(coreIndex);
             courseList.AddRange(loader.getCurriculum(majorIndex));
             dgv = new DataGridView();
@@ -72,7 +73,7 @@ namespace Strategic_Advising
             Scheduler scheduler = new Scheduler(completedCourses, numSemesters, isFall, coreIndex, majorIndex, maxCredits, minCredits);
             List<Semester> listOfSemesters = scheduler.getSemesterList();
            
-            TentativeSchedule window = new TentativeSchedule(listOfSemesters, this);
+            TentativeSchedule window = new TentativeSchedule(listOfSemesters, this, this.loader);
             this.NavigationService.Navigate(window);
         }
 

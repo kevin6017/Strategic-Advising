@@ -55,6 +55,7 @@ namespace Strategic_Advising
 
         private void homeClick(object sender, RoutedEventArgs e)
         {
+            this.loader.serializeFile();
             Startup window = new Startup();
             this.NavigationService.Navigate(window);
         }
