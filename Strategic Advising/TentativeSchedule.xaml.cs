@@ -18,6 +18,7 @@ using System.Reflection;
 using System.IO;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Windows.Forms.Integration;
 
 namespace Strategic_Advising
 {
@@ -42,41 +43,49 @@ namespace Strategic_Advising
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
-            FlowLayoutPanel fallpanel = new FlowLayoutPanel();
-            FlowLayoutPanel springpanel = new FlowLayoutPanel();
-            fallpanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            springpanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-
-            //var semesterList = new JsonLoader().loadScheduleList("Strategic_Advising.res.SampleSchedule.json");
-
-            bool isFall = this.completedClasses.getIsFall();
+                        
             semesterViews = new List<SemesterView>();
-            if(semesterList[0].isFall == false)
-            {
-                fallpanel.Controls.Add(new SemesterView());
-            }
+            
+            int rowCounter = 1;
             foreach (Semester sem in semesterList)
             {
-                SemesterView semView = new SemesterView(sem);
-                
+                if (masterGrid.RowDefinitions.Count-1 < rowCounter)
+                {
+                    RowDefinition temp = new RowDefinition();
+                    temp.Height = GridLength.Auto;
+                    masterGrid.RowDefinitions.Add(temp);
+                }
+
+                SemesterView semView = new SemesterView(sem);                
                 semView.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
+                WindowsFormsHost tempHost = new WindowsFormsHost();
+                tempHost.Child = semView;
+                tempHost.Height = semView.Height;
+                tempHost.Width = semView.Width;
+
 
                 if (sem.isFall)
                 {
-                    fallpanel.Controls.Add(semView);
+                    tempHost.SetValue(Grid.ColumnProperty, 0);
+                    tempHost.SetValue(Grid.RowProperty, rowCounter);
                     semesterViews.Add(semView);
                 }
                 else
                 {
-                    springpanel.Controls.Add(semView);
+                    tempHost.SetValue(Grid.ColumnProperty, 1);
+                    tempHost.SetValue(Grid.RowProperty, rowCounter);
                     semesterViews.Add(semView);
+                    rowCounter++;
                 }
-
-                isFall = !isFall;
+                masterGrid.Children.Add(tempHost);
             }
-            fallForm.Child = fallpanel;
-            springForm.Child = springpanel;
+
+            //move back button
+            RowDefinition lastRow = new RowDefinition();
+            lastRow.Height = GridLength.Auto;
+            masterGrid.RowDefinitions.Add(lastRow);
+            thotButton.SetValue(Grid.RowProperty, masterGrid.RowDefinitions.Count-1);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -89,20 +98,6 @@ namespace Strategic_Advising
         {
             CompletedClasses window = completedClasses;
             this.NavigationService.Navigate(window);
-        }
-
-        private void ScrollChanged(object sender, ScrollChangedEventArgs e)
-        {
-            if (sender == fallView)
-            {
-                springView.ScrollToHorizontalOffset(e.HorizontalOffset);
-                springView.ScrollToVerticalOffset(e.VerticalOffset);
-            }
-            else
-            {
-                fallView.ScrollToHorizontalOffset(e.HorizontalOffset);
-                fallView.ScrollToVerticalOffset(e.VerticalOffset);
-            }
         }
 
         private void cellClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -274,10 +269,6 @@ namespace Strategic_Advising
             }
             return coursesToAdd;
         }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }
