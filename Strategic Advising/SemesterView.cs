@@ -24,11 +24,6 @@ namespace Strategic_Advising
             this.AllowUserToAddRows = false;
         }
 
-        public SemesterView()
-        {
-           
-        }
-
         public int getSemesterPosition()
         {
             return this.semester.position;

@@ -21,7 +21,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Content="Back" Margin="30,0,0,30" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30" Width="80" Click="Button_Click"/>
+        <Button Content="Back" Margin="30,0,0,30" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30" Width="80" Click="backButtonClick"/>
         <WindowsFormsHost HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,143,0,0" Name="editSelectorGrid"/>
     </Grid>
 </Page>

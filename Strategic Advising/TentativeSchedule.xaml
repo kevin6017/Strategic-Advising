@@ -21,7 +21,7 @@
             <RowDefinition Height="Auto" MinHeight="120"/>
         </Grid.RowDefinitions>
 
-        <Button Name="thotButton" Content="THOT BUTTON" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Grid.Row="0" Grid.Column="0" Margin="0,0,0,41" Click="Button_Click"/>
+        <Button Name="thotButton" Content="THOT BUTTON" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Grid.Row="0" Grid.Column="0" Margin="0,0,0,41" Click="homeButtonClick"/>
 
     </Grid>
 </Page>

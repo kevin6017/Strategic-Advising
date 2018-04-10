@@ -39,7 +39,6 @@ namespace Strategic_Advising
             newClass.creditHours = Int32.Parse(((ComboBoxItem)creditHourInput.SelectedItem).Content.ToString());
             newClass.fall = (bool)fallInput.IsChecked;
             newClass.spring = (bool)springInput.IsChecked;
-            //newClass.prerequisites = prereqs;
             //must instantiate a new list of type course for the prerquisites. Cannot leave unassigned.
             newClass.prerequisites = new List<Course>();
             loader.addCourseToCurriculum(index, newClass, prereqs);

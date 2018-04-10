@@ -15,8 +15,8 @@
 
         </ListBox>
         <WindowsFormsHost HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,125,0,0" Name="sampleGrid"/>
-        <Button Content="Show List" HorizontalAlignment="Left" Margin="108,322,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Button_Click"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="108,374,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="Button_Click_1"/>
+        <Button Content="Show List" HorizontalAlignment="Left" Margin="108,322,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="loadButtonClick"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="108,374,0,0" VerticalAlignment="Top" Height="30" Width="80" Click="selectButtonClick"/>
 
     </Grid>
 </Window>

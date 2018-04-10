@@ -60,14 +60,9 @@ namespace Strategic_Advising
             this.NavigationService.Navigate(window);
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
-
         private List<Course> courseList;
 
-        private void Button_ClickAdd(object sender, RoutedEventArgs e)
+        private void addButtonClick(object sender, RoutedEventArgs e)
         {
             //getSelectedClass()
             ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
@@ -76,7 +71,7 @@ namespace Strategic_Advising
             this.NavigationService.Navigate(window);
         }
 
-        private void Button_ClickEdit(object sender, RoutedEventArgs e)
+        private void editButtonClick(object sender, RoutedEventArgs e)
         {
             ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
             int curricIndex = Int32.Parse(temp.Tag.ToString());

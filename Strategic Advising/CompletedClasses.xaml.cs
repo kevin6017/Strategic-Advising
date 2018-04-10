@@ -61,7 +61,7 @@ namespace Strategic_Advising
             sampleGrid.Child = dgv;           
         }
 
-        public void Button_Click(object sender, RoutedEventArgs e)
+        public void scheduleButtonClick(object sender, RoutedEventArgs e)
         {
             HashSet<Course> completedCoursesSet = new HashSet<Course>();
             foreach(DataGridViewRow row in dgv.SelectedRows)
@@ -77,7 +77,7 @@ namespace Strategic_Advising
             this.NavigationService.Navigate(window);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void homeButtonClick(object sender, RoutedEventArgs e)
         {
             Startup window = new Startup();
             this.NavigationService.Navigate(window);

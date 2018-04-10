@@ -88,13 +88,13 @@ namespace Strategic_Advising
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void homeButtonClick(object sender, RoutedEventArgs e)
         {
             Startup window = new Startup();
             this.NavigationService.Navigate(window);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ccButtonClick(object sender, RoutedEventArgs e)
         {
             CompletedClasses window = completedClasses;
             this.NavigationService.Navigate(window);
@@ -239,17 +239,6 @@ namespace Strategic_Advising
             int semPosition = dgv.getSemesterPosition();
             dgv.removeCourse(course);
             semesterList[semPosition] = dgv.getSemester();
-            //foreach (Semester sem in semesterList)
-            //{
-            //    //temp.Remove(temp.Find(x => x.courseNumber == course.courseNumber));
-            //    List<Course> courseList = sem.classes;
-            //    if (courseList.Remove(courseList.Find(x => x.courseNumber == course.courseNumber)))
-            //    {
-            //        dgv.DataSource = courseList;
-            //        break;
-            //    };
-
-            //}
         }
 
         private List<Course> getClasses()

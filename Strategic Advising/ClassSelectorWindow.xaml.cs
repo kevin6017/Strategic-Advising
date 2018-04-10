@@ -23,7 +23,6 @@ namespace Strategic_Advising
         private YAMLLoader loader;
         private DataGridView dgv;
         private List<Course> coursesToAdd;
-        //private List<Curriculum> curric = new List<Curriculum>();
 
         public ClassSelectorWindow(YAMLLoader passedLoader)
         {
@@ -48,7 +47,7 @@ namespace Strategic_Advising
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void loadButtonClick(object sender, RoutedEventArgs e)
         {
             ListBoxItem temp = (ListBoxItem)majorSelect.SelectedItem;
             int curricIndex = Int32.Parse(temp.Tag.ToString());
@@ -59,7 +58,7 @@ namespace Strategic_Advising
             sampleGrid.Child = dgv;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void selectButtonClick(object sender, RoutedEventArgs e)
         {
             coursesToAdd = new List<Course>();
             foreach(DataGridViewRow row in dgv.SelectedRows)

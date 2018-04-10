@@ -83,7 +83,7 @@ namespace Strategic_Advising
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void backButtonClick(object sender, RoutedEventArgs e)
         {
             Editor window = new Editor(this.loader);
             this.NavigationService.Navigate(window);
