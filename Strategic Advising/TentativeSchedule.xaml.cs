@@ -52,30 +52,17 @@ namespace Strategic_Advising
 
             bool isFall = this.completedClasses.getIsFall();
             semesterViews = new List<SemesterView>();
-
+            if(semesterList[0].isFall == false)
+            {
+                fallpanel.Controls.Add(new SemesterView());
+            }
             foreach (Semester sem in semesterList)
             {
                 SemesterView semView = new SemesterView(sem);
                 
                 semView.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
 
-                //DataGridView dgv = new DataGridView();
-                //dgv.ColumnCount = 0;
-                //DataTable dt = new DataTable("semesterTable");
-                //dt.Columns.Add(new DataColumn("Course Title", typeof(string)));
-                //for (var j = 0; j < semesterList[i].classes.Count(); j++)
-                //{
-                //    DataRow dr = dt.NewRow();
-                //    dr[0] = semesterList[i].classes[j];
-                //    dt.Rows.Add(dr);
-                //}
-
-                //dgv.Width = 600;
-                //var bindingList = new BindingList<Course>(sem.classes.ToList<Course>());
-                //dgv.DataSource = bindingList;
-                //dgv.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
-                //dgv.AllowUserToAddRows = false;
-                if (isFall)
+                if (sem.isFall)
                 {
                     fallpanel.Controls.Add(semView);
                     semesterViews.Add(semView);
