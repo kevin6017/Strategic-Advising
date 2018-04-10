@@ -64,7 +64,7 @@ namespace Strategic_Advising
 
         public void serializeFile()
         {
-            FileStream fs = File.Open(@"MasterCourseList.eyaml", FileMode.Open, FileAccess.Write);
+            FileStream fs = File.Open(@"MasterCourseList.eyaml", FileMode.Create, FileAccess.Write);
             Serializer serial = new SerializerBuilder().Build();
             string yaml = serial.Serialize(this.curric);
             StreamWriter writer = new StreamWriter(fs);
