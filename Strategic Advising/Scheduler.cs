@@ -285,7 +285,7 @@ namespace Strategic_Advising
                    
                 }
             }
-            if (currentCourse.courseNumber == "CS495" || currentCourse.courseNumber == "CS498" || currentCourse.courseNumber == "MATH498")
+            if (currentCourse.courseNumber == "CS495" || currentCourse.courseNumber == "CS498" || currentCourse.courseNumber == "MATH498" || currentCourse.courseNumber == "HONR499")
             {
                 int remainingCredits = -currentCourse.creditHours;
                 foreach (Course c in remainingCourseList)
