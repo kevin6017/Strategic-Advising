@@ -18,10 +18,10 @@
             <ImageBrush ImageSource="res\SAB_TS.png"></ImageBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" MinHeight="120"/>
+            <RowDefinition Height="68"/>
+            <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
-
-        <Button Name="thotButton" Content="THOT BUTTON" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Grid.Row="0" Grid.Column="0" Margin="0,0,0,41" Click="homeButtonClick"/>
-
+        <Button Name="thotButton" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30" Width="80" Grid.Column="0" Margin="30,0,0,111" Click="BackToCompletedClasses_Button" Grid.Row="1"/>
+        <Button Content="Home" HorizontalAlignment="Left" Margin="30,0,0,30" Grid.Row="2" VerticalAlignment="Bottom" Height="30" Width="80" Click="homeButtonClick"/>
     </Grid>
 </Page>

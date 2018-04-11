@@ -46,10 +46,10 @@ namespace Strategic_Advising
                         
             semesterViews = new List<SemesterView>();
             
-            int rowCounter = 1;
+            int rowCounter = 4;
             foreach (Semester sem in semesterList)
             {
-                if (masterGrid.RowDefinitions.Count-1 < rowCounter)
+                if (masterGrid.RowDefinitions.Count - 2 < rowCounter)
                 {
                     RowDefinition temp = new RowDefinition();
                     temp.Height = GridLength.Auto;
@@ -258,6 +258,11 @@ namespace Strategic_Advising
             }
             return coursesToAdd;
         }
-        
+
+        private void BackToCompletedClasses_Button(object sender, RoutedEventArgs e)
+        {
+            CompletedClasses window = completedClasses;
+            this.NavigationService.Navigate(window);
+        }
     }
 }
