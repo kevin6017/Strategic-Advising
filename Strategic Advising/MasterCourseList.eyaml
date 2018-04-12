@@ -176,7 +176,7 @@
       prerequisites: null
     - &MATH111
       courseNumber: "MATH111"
-      courseTitle: "Second Level Math Class that I dont know the title of"
+      courseTitle: "Precalculus Algebra"
       creditHours: 3
       fall: true
       spring: true
@@ -184,12 +184,36 @@
         - *MATH108
     - &MATH112
       courseNumber: "MATH112"
-      courseTitle: "Second Level Math Class that I dont know the title of"
+      courseTitle: "Precalculus Trigonometry"
       creditHours: 3
       fall: true
       spring: true
       prerequisites:
         - *MATH111
+    - &MATH150
+      courseNumber: "MATH150"
+      courseTitle: "Introduction to Secondary Mathematics Education"
+      creditHours: 3
+      fall: true
+      spring: true
+      prerequisites:
+        - *MATH112
+    - &MATH161
+      courseNumber: "MATH161"
+      courseTitle: "Calculus 1"
+      creditHours: 3
+      fall: true
+      spring: true
+      prerequisites:
+        - *MATH112
+    - &MATH162
+      courseNumber: "MATH162"
+      courseTitle: "Calculus 2"
+      creditHours: 3
+      fall: true
+      spring: true
+      prerequisites:
+        - *MATH161
     - &MATH165
       courseNumber: "MATH165"
       courseTitle: "Calculus 1"
@@ -207,6 +231,22 @@
       spring: true
       prerequisites:
         - *MATH165
+    - &MATH201
+      courseNumber: "MATH201"
+      courseTitle: "Number, Operations, and Algebraic Reasoning for the Elementary Teacher"
+      creditHours: 4
+      fall: true
+      spring: true
+      prerequisites:
+        - *MATH108
+    - &MATH202
+      courseNumber: "MATH202"
+      courseTitle: "Data Analysis Geometry and Measurement for the Elementary Teacher"
+      creditHours: 3
+      fall: true
+      spring: true
+      prerequisites:
+        - *MATH201
     - &MATH215
       courseNumber: "MATH215"
       courseTitle: "Discrete Systems"
@@ -223,6 +263,33 @@
       spring: true
       prerequisites:
         - *MATH165
+    - &MATH221
+      courseNumber: "MATH221"
+      courseTitle: "Probability and Statistics"
+      creditHours: 3 
+      fall: true
+      spring: true
+      prerequisites:
+        - *MATH162
+    - &MATH250
+      courseNumber: "MATH250"
+      courseTitle: "Pre-College Mathematics from an Advanced Viewpoint"
+      creditHours: 3
+      fall: false
+      spring: true
+      prerequisites:
+        - *MATH166
+        - *MATH215
+        - *MATH150
+    - &MATH251
+      courseNumber: "MATH251"
+      courseTitle: "Introduction to Mathematics of Finance"
+      creditHours:  2
+      fall: true
+      spring: false
+      prerequisites: 
+        - *MATH111
+        - *MATH112
     - &MATH259
       courseNumber: "MATH259"
       courseTitle: "Intro to Mathematical Software"
@@ -239,6 +306,29 @@
       spring: true
       prerequisites:
         - *MATH166
+    - &RMI270
+      courseNumber: "RMI270"
+      courseTitle: "Principles of Risk Managment and Insurance"
+      creditHours: 3
+      fall: true
+      spring: true
+      prerequisites: null
+    - &MATH310
+      courseNumber: "MATH310"
+      courseTitle: "Topics in Algebra for the Elementary and Middle School Teacher"
+      creditHours: 3
+      fall: true
+      spring: false
+      prerequisites:
+        - *MATH202
+    - &MATH316
+      courseNumber: "MATH316"
+      courseTitle: "Topics in Number Theory for the Elementary and Middle School Teacher"
+      creditHours: 3
+      fall: true
+      spring: false
+      prerequisites:
+        - *MATH202
     - &MATH320
       courseNumber: "MATH320"
       courseTitle: "Probability"
@@ -248,6 +338,57 @@
       prerequisites:
         - *MATH166
         - *MATH215
+    - &MATH321
+      courseNumber: "MATH321"
+      courseTitle: "Mathematical Statistics"
+      creditHours: 4
+      fall: false
+      spring: true
+      prerequisites:
+        - *MATH320
+    - &MATH331
+      courseNumber: "MATH331"
+      courseTitle: "Technology in the Teaching of Secondary Mathematics"
+      creditHours: 3
+      fall: false
+      spring: true
+      prerequisites:
+        - *MATH250
+    - &MATH335
+      courseNumber: "MATH335"
+      courseTitle: "Math Models"
+      creditHours: 3
+      fall: false
+      spring: true
+      prerequisites:
+        - *MATH166
+        - *MATH217
+    - &MATH351
+      courseNumber: "MATH351"
+      courseTitle: "Mathematical of Finance"
+      creditHours: 4
+      fall: false
+      spring: true
+      prerequisites: 
+        - *MATH165
+        - *MATH251 
+    - &MATH360
+      courseNumber: "MATH360"
+      courseTitle: "Topics in Geometry for the Elementary and Middle School Teacher"
+      creditHours: 3
+      fall: false
+      spring: true
+      prerequisites:
+        - *MATH202
+    - &MATH362
+      courseNumber: "MATH362"
+      courseTitle: "Numerical Analysis"
+      creditHours: 3
+      fall: true
+      spring: false
+      prerequisites:
+        - *MATH166
+        - *MATH259
     - &MATH374
       courseNumber: "MATH374"
       courseTitle: "Differential Equations"
@@ -256,6 +397,43 @@
       spring: false
       prerequisites:
         - *MATH166
+    - &MATH393
+      courseNumber: "MATH393"
+      courseTitle: "Teaching and Learning Mathematics in the Secondary School"
+      creditHours: 3
+      fall: false
+      spring: true
+      prerequisites:
+        - *MATH250
+    - &MATH395A
+      courseNumber: "MATH395A"
+      courseTitle: "Teaching and Learning Mathematics in the Secondary School (Concentration 1)"
+      creditHours: 3
+      fall: true
+      spring: false
+      prerequisites:
+        - *MATH250
+        - *MATH310
+        - *MATH360
+        - *MATH393
+    - &MATH3XX
+      courseNumber: "MATH3XX"
+      courseTitle: "Math Ed Elective 1"
+      creditHours: 3
+      fall: true
+      spring: true
+      prerequisites: 
+        - *MATH215
+        - *MATH217
+    - &MATH3XY
+      courseNumber: "MATH3XY"
+      courseTitle: "Math Ed Elective 2"
+      creditHours: 3
+      fall: true
+      spring: true
+      prerequisites: 
+        - *MATH215
+        - *MATH217
     - &MATH411
       courseNumber: "MATH411"
       courseTitle: "Abstract Algebra 1"
@@ -265,6 +443,39 @@
       prerequisites:
         - *MATH215
         - *MATH217
+    - &MATH412
+      courseNumber: "MATH412"
+      courseTitle: "Abstract Algebra 2"
+      creditHours: 3
+      fall: false
+      spring: true
+      prerequisites:
+        - *MATH411
+    - &MATH452
+      courseNumber: "MATH452"
+      courseTitle: "Mathematics of Life Contingencies"
+      creditHours: 4
+      fall: true
+      spring: false
+      prerequisites:
+        - *MATH321
+        - *MATH351
+    - &MATH457
+      courseNumber: "MATH457"
+      courseTitle: "Actuarial Models 1"
+      creditHours: 4
+      fall: true
+      spring: false
+      prerequisites:
+        - *MATH321
+    - &MATH458
+      courseNumber: "MATH458"
+      courseTitle: "Actuarial Models 2"
+      creditHours: 3
+      fall: false
+      spring: true
+      prerequisites:
+        - *MATH321
     - &MATH471
       courseNumber: "MATH471"
       courseTitle: "Real Analysis 1"
@@ -274,21 +485,6 @@
       prerequisites:
         - *MATH215
         - *MATH267
-    - &MATH498
-      courseNumber: "MATH498"
-      courseTitle: "Senior Seminar"
-      creditHours: 2
-      fall: false
-      spring: true
-      prerequisites: null
-    - &MATH412
-      courseNumber: "MATH412"
-      courseTitle: "Abstract Algebra 2"
-      creditHours: 3
-      fall: false
-      spring: true
-      prerequisites:
-        - *MATH411
     - &MATH472
       courseNumber: "MATH472"
       courseTitle: "Real Analysis 2"
@@ -297,6 +493,21 @@
       spring: true
       prerequisites:
         - *MATH471
+    - &MATH496
+      courseNumber: "MATH496"
+      courseTitle: "Capstone Course for Mathematics Teaching Majors"
+      creditHours: 3
+      fall: false
+      spring: true
+      prerequisites:
+        - *MATH395A
+    - &MATH498
+      courseNumber: "MATH498"
+      courseTitle: "Senior Seminar"
+      creditHours: 2
+      fall: false
+      spring: true
+      prerequisites: null  
     - &MATH4XX
       courseNumber: "MATH4XX"
       courseTitle: "MATH elective  w/ MATH 215 prereq"
@@ -323,107 +534,69 @@
       prerequisites:
         - *MATH217
         - *MATH267
-    - &MATH335
-      courseNumber: "MATH335"
-      courseTitle: "Math Models"
+    - &EDJH385
+      courseNumber: "EDJH385"
+      courseTitle: "Principles of Teaching in the Middle School"
       creditHours: 3
-      fall: false
+      fall: true
       spring: true
       prerequisites:
-        - *MATH166
-        - *MATH217
-    - &MATH362
-      courseNumber: "MATH362"
-      courseTitle: "Numerical Analysis"
+        - *MATH393
+    - &EDSE320
+      courseNumber: "EDSE380"
+      courseTitle: "Reading for Diverse Learners in Secondary Content Classes (Online)"
       creditHours: 3
       fall: true
-      spring: false
+      spring: true
       prerequisites:
-        - *MATH166
-        - *MATH259
-    - &MATH251
-      courseNumber: "MATH251"
-      courseTitle: "Introduction to Mathematics of Finance"
-      creditHours:  2
-      fall: true
-      spring: false
-      prerequisites: 
-        - *MATH111
         - *MATH112
-    - &MATH321
-      courseNumber: "MATH321"
-      courseTitle: "Mathematical Statistics"
-      creditHours: 4
-      fall: false
-      spring: true
-      prerequisites:
-        - *MATH320
-    - &MATH351
-      courseNumber: "MATH351"
-      courseTitle: "Mathematical of Finance"
-      creditHours: 4
-      fall: false
-      spring: true
-      prerequisites: 
-        - *MATH165
-        - *MATH251 
-    - &MATH452
-      courseNumber: "MATH452"
-      courseTitle: "Mathematics of Life Contingencies"
-      creditHours: 4
-      fall: true
-      spring: false
-      prerequisites:
-        - *MATH321
-        - *MATH351
-    - &MATH457
-      courseNumber: "MATH457"
-      courseTitle: "Actuarial Models 1"
-      creditHours: 4
-      fall: true
-      spring: false
-      prerequisites:
-        - *MATH321
-    - &MATH458
-      courseNumber: "MATH458"
-      courseTitle: "Actuarial Models 2"
+    - &EDSE380
+      courseNumber: "EDSE380"
+      courseTitle: "Principles of Teaching in the Secondary School"
       creditHours: 3
-      fall: false
+      fall: true
       spring: true
       prerequisites:
-        - *MATH321
-    - &RMI270
-      courseNumber: "RMI270"
-      courseTitle: "Principles of Risk Managment and Insurance"
+        - *MATH393
+    - &EDFO420
+      courseNumber: "EDFO420"
+      courseTitle: "Social, Historical, and Philosophical Foundations of Education (Junior Only)"
+      creditHours: 3
+      fall: true
+      spring: true
+      prerequisites:
+        - *MATH215
+    - &EDMU205
+      courseNumber: "EDMU205"
+      courseTitle: "Introduction to Multicultural Education"
+      creditHours: 3
+      fall: true
+      spring: true
+      prerequisites:
+        - *MATH112
+    - &EDPS251
+      courseNumber: "EDPS251"
+      courseTitle: "Human Growth and Development for Secondary Education"
       creditHours: 3
       fall: true
       spring: true
       prerequisites: null
-    - &MATH161
-      courseNumber: "MATH161"
-      courseTitle: "Calculus 1"
+    - &EDPS390
+      courseNumber: "EDPS390"
+      courseTitle: "Educational Psychology"
       creditHours: 3
       fall: true
       spring: true
       prerequisites:
-        - *MATH112
-    - &MATH162
-      courseNumber: "MATH162"
-      courseTitle: "Calculus 2"
-      creditHours: 3
-      fall: true
+        - *EDPS251
+    - &StudentTeaching
+      courseNumber: "StudentTeaching"
+      courseTitle: "Student Teaching"
+      creditHours: 12
+      fall: false
       spring: true
       prerequisites:
-        - *MATH161
-    - &MATH221
-      courseNumber: "MATH221"
-      courseTitle: "Probability and Statistics"
-      creditHours: 3 
-      fall: true
-      spring: true
-      prerequisites:
-        - *MATH162
-
+        - *MATH395A
     - &CS120
       courseNumber: "CS120"
       courseTitle: "Computer Science 1"
@@ -684,7 +857,34 @@
 - &MathEdMiddle
   name: "Math Education - Middle"
   courses:
-    - *MATH108
+    - *MATH165
+    - *MATH166
+    - *MATH215
+    - *MATH217
+    - *MATH221
+    - *MATH250
+    - *MATH496
+    - *MATH201
+    - *MATH202
+    - *MATH310
+    - *MATH316
+    - *MATH360
+    - *MATH3XX
+    - *MATH3XY
+    - *EDFO420
+    - *EDJH385
+    - *EDMU205
+    - *EDPS251
+    - *EDPS390
+    - *EDSE320
+    - *EDSE380
+    - *MATH150
+    - *MATH331
+    - *MATH393
+    - *MATH395A
+    - *StudentTeaching
+
+
 
 - &MathEdSecondary
   name: "Math Eduacation - Secondary"
