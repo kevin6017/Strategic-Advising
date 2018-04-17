@@ -103,6 +103,7 @@ namespace Strategic_Advising
             }
             if (courseList[classIndex].prerequisites != null)
             {
+                listOfPrereqs.Text = "";
                 for (int i = 0; i < prereqs.Count; i++)
                 {
                     if (i == prereqs.Count - 1)

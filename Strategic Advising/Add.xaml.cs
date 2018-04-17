@@ -68,7 +68,8 @@ namespace Strategic_Advising
                 default:
                     break;
             }
-            for (int i = 1; i < prereqs.Count; i++)
+            listOfPrereqs.Text = "";
+            for (int i = 0; i < prereqs.Count; i++)
             {
                 if (i == prereqs.Count - 1)
                 {
