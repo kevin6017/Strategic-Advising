@@ -69,15 +69,18 @@ namespace Strategic_Advising
                     break;
             }
             listOfPrereqs.Text = "";
-            for (int i = 0; i < prereqs.Count; i++)
+            if (prereqs != null)
             {
-                if (i == prereqs.Count - 1)
+                for (int i = 0; i < prereqs.Count; i++)
                 {
-                    listOfPrereqs.Text += prereqs[i].courseNumber;
-                }
-                else
-                {
-                    listOfPrereqs.Text += prereqs[i].courseNumber + ", ";
+                    if (i == prereqs.Count - 1)
+                    {
+                        listOfPrereqs.Text += prereqs[i].courseNumber;
+                    }
+                    else
+                    {
+                        listOfPrereqs.Text += prereqs[i].courseNumber + ", ";
+                    }
                 }
             }
         }
