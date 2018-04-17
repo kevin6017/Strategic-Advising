@@ -54,6 +54,11 @@ namespace Strategic_Advising
                     RowDefinition temp = new RowDefinition();
                     temp.Height = GridLength.Auto;
                     masterGrid.RowDefinitions.Add(temp);
+
+                    
+                    
+                    
+                    
                 }
 
                 SemesterView semView = new SemesterView(sem);                
@@ -66,15 +71,16 @@ namespace Strategic_Advising
 
                 if (sem.isFall)
                 {
-                    tempHost.SetValue(Grid.ColumnProperty, 0);
+                    tempHost.SetValue(Grid.ColumnProperty, 1);
                     tempHost.SetValue(Grid.RowProperty, rowCounter);
                     semesterViews.Add(semView);
                 }
                 else
                 {
-                    tempHost.SetValue(Grid.ColumnProperty, 1);
+                    tempHost.SetValue(Grid.ColumnProperty, 2);
                     tempHost.SetValue(Grid.RowProperty, rowCounter);
                     semesterViews.Add(semView);
+                    addSummerButtonToRow(rowCounter);
                     rowCounter++;
                 }
                 masterGrid.Children.Add(tempHost);
@@ -87,11 +93,77 @@ namespace Strategic_Advising
             thotButton.SetValue(Grid.RowProperty, masterGrid.RowDefinitions.Count-1);
 
         }
+        private void addSummerButtonToRow(int rowCounter) {
+            System.Windows.Controls.Button tempSummerButton = new System.Windows.Controls.Button();
+            tempSummerButton.Content = "Add Summer Semester";
+            tempSummerButton.SetValue(Grid.RowProperty, rowCounter);
+            tempSummerButton.SetValue(Grid.ColumnProperty, 3);
+            masterGrid.Children.Add(tempSummerButton);
+            //set button formatting here?
+            tempSummerButton.Click += new RoutedEventHandler(summerButtonClick);
+        }
+        protected void summerButtonClick(object sender, EventArgs e)
+        {
+            //resize summer column
+            masterGrid.ColumnDefinitions[3].Width = GridLength.Auto;
+
+            //create new semester
+            Semester temp = new Semester();
+            temp.classes = new List<Course>();
+
+            //create a generic course
+            Course course = new Course();
+            course.courseNumber = "GENERIC";
+            course.courseTitle = "Filler Course";
+            course.creditHours = 3;
+            course.fall = true;
+            course.spring = true;
+            course.prerequisites = null;
+            course.priority = new int[3] { -1, -1, -1 };
+
+            //add course to semester
+            temp.classes.Add(course);
+            temp.totalCreditHours += course.creditHours;
+
+            //create new semesterView
+            SemesterView semView = new SemesterView(temp);
+            semView.CellMouseClick += new DataGridViewCellMouseEventHandler(cellClick);
+
+            //put SemView in fromHost and set position/attributes
+            WindowsFormsHost tempHost = new WindowsFormsHost();
+            tempHost.Child = semView;
+            tempHost.Height = semView.Height;
+            tempHost.Width = semView.Width;
+            System.Windows.Controls.Button btn = (System.Windows.Controls.Button)sender;
+            tempHost.SetValue(Grid.RowProperty, btn.GetValue(Grid.RowProperty));
+            tempHost.SetValue(Grid.ColumnProperty, btn.GetValue(Grid.ColumnProperty));
+            masterGrid.Children.Remove((System.Windows.UIElement)sender);
+            masterGrid.Children.Add(tempHost);
+
+            // in correct place in semesterview list
+            WindowsFormsHost prevSpringHost = (WindowsFormsHost)GetGridElement(masterGrid, (int)btn.GetValue(Grid.RowProperty), (int)btn.GetValue(Grid.ColumnProperty));
+            SemesterView prevSpring = (SemesterView)prevSpringHost.Child;
+            semView.getSemester().position = prevSpring.getSemester().position+1;
+
+            //MenuStrip
+
+        }
 
         private void homeButtonClick(object sender, RoutedEventArgs e)
         {
             Startup window = new Startup();
             this.NavigationService.Navigate(window);
+        }
+
+        private UIElement GetGridElement(Grid g, int r, int c)
+        {
+            for (int i = 0; i < g.Children.Count; i++)
+            {
+                UIElement e = g.Children[i];
+                if (Grid.GetRow(e) == r && Grid.GetColumn(e) == c)
+                    return e;
+            }
+            return null;
         }
 
         private void ccButtonClick(object sender, RoutedEventArgs e)
@@ -131,21 +203,23 @@ namespace Strategic_Advising
                 {
                     int i = sem.position;
                     string menuItemName = "";
-                    if (isSemFall)
+                    if (sem.isFall)
                     {
                         menuItemName += "Fall " + fallCounter;
                         fallCounter++;
                     }
-                    else
+                    else if (sem.isSpring)
                     {
                         menuItemName += "Spring " + springCounter;
                         springCounter++;
                     }
-                    ToolStripMenuItem item = new ToolStripMenuItem(menuItemName);
-                    item.Tag = sem.position;
-                    item.Click += (sender2, e2) => moveClass(sender2, e2, dgv);
-                    move.DropDownItems.Add(item);
-                    isSemFall = !isSemFall;
+                    
+                        ToolStripMenuItem item = new ToolStripMenuItem(menuItemName);
+                        item.Tag = sem.position;
+                        item.Click += (sender2, e2) => moveClass(sender2, e2, dgv);
+                        move.DropDownItems.Add(item);
+                        isSemFall = !isSemFall;
+                    
                 }
 
                 

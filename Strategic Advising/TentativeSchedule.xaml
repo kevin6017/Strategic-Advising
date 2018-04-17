@@ -11,8 +11,10 @@
 
     <Grid Name="masterGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Name="backButtons" Width="110"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="235"/>
         </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="res\SAB_TS.png"></ImageBrush>

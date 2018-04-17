@@ -200,6 +200,7 @@ namespace Strategic_Advising
             {
                 Semester currentSemester = new Semester();
                 currentSemester.isFall = isFallTracker;
+                currentSemester.isFall = !isFallTracker;
                 currentSemester.totalCreditHours = 0;
                 int currentClassIndex = 0;
                 currentSemester.classes = new List<Course>();

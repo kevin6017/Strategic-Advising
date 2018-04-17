@@ -17,5 +17,7 @@ namespace Strategic_Advising
         public int totalCreditHours { get; internal set; }
 
         public bool isFall { get; internal set; }
+
+        public bool isSpring { get; internal set; }
     }
 }
