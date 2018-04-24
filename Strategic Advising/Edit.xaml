@@ -42,7 +42,7 @@
         </CheckBox>
         <Button Content="Select Prerequisites" HorizontalAlignment="Left" Margin="170,253,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="120" Height="30" Click="Prereqs_Selector_Button"/>
         <Button Content="Clear Prerequisites" HorizontalAlignment="Left" Margin="295,253,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="120" Height="30" Click="Prereq_Clear_Button"/>
-        <Button Content="Edit" HorizontalAlignment="Left" Margin="170,376,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30" Click="Add_Class_Button"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="170,376,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30" Click="Edit_Course_Button"/>
         <Button Content="Back" HorizontalAlignment="Right" Margin="0,0,1810,98" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Width="80" Click="Back_Button"/>
         <ComboBox HorizontalAlignment="Left" Margin="295,129,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Name="creditHourInput" Height="33" >
             <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="30"/>

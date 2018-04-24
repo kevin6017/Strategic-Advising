@@ -34,7 +34,7 @@ namespace Strategic_Advising
         private void populateMajorSelectBox()
         {
             List<Curriculum> curricList = loader.getMasterList();
-            for (int i = 3; i < curricList.Count; i++)
+            for (int i = 1; i < curricList.Count; i++)
             {
                 ListBoxItem li = new ListBoxItem();
                 li.Content = curricList[i].name;

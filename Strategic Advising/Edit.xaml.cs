@@ -30,7 +30,7 @@ namespace Strategic_Advising
 
         int classIndex;
         List<Course> courseList;
-        List<Course> prereqs;
+        List<Course> prereqs = new List<Course>();
         private string oldCourseNumber;
         private YAMLLoader loader;
 
@@ -67,7 +67,7 @@ namespace Strategic_Advising
             oldCourseNumber = courseList[classIndex].courseNumber;
         }
 
-        private void Add_Class_Button(object sender, RoutedEventArgs e)
+        private void Edit_Course_Button(object sender, RoutedEventArgs e)
         {
             courseList[classIndex].courseNumber = courseNumberInput.Text;
             courseList[classIndex].courseTitle = courseTitleInput.Text;
@@ -75,7 +75,7 @@ namespace Strategic_Advising
             courseList[classIndex].fall = (bool)fallInput.IsChecked;
             courseList[classIndex].spring = (bool)springInput.IsChecked;
             courseList[classIndex].prerequisites = prereqs;
-            this.loader.changeCourseInfo(oldCourseNumber, courseList[classIndex]);
+            //this.loader.changeCourseInfo(oldCourseNumber, courseList[classIndex]);
             Editor window = new Editor(this.loader);
             this.NavigationService.Navigate(window);
         }
@@ -101,7 +101,7 @@ namespace Strategic_Advising
                 default:
                     break;
             }
-            if (courseList[classIndex].prerequisites != null)
+            if (prereqs != null)
             {
                 listOfPrereqs.Text = "";
                 for (int i = 0; i < prereqs.Count; i++)
